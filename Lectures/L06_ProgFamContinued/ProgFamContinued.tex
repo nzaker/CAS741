@@ -1,0 +1,129 @@
+%\documentclass[handout]{beamer} 
+\documentclass[t,12pt,numbers,fleqn]{beamer}
+%\documentclass[ignorenonframetext]{beamer}
+
+\newif\ifquestions
+%\questionstrue
+\questionsfalse
+
+\usepackage{pgfpages} 
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    unicode=false}
+\urlstyle{same}
+
+\usepackage{booktabs}
+\usepackage{hhline}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{array}
+\usepackage{listings}
+\usepackage{bm}
+\usepackage{colortbl}
+\usepackage{bnf}
+\newcommand{\colA}{2.1cm}
+\newcommand{\colB}{6.9cm}
+\newcommand{\colC}{1.1cm} %do not need this column if binding time is not listed
+\newcommand{\colAwidth}{0.15\textwidth}
+\newcommand{\colBwidth}{0.7\textwidth}
+
+\newcounter{temp}
+\setcounter{temp}{0}
+
+\bibliographystyle{plain}
+
+%\usetheme{Iimenau}
+
+\useoutertheme{split} %so the footline can be seen, without needing pgfpages
+
+%\pgfpagesuselayout{resize to}[letterpaper,border shrink=5mm,landscape]  %if this is uncommented, the hyperref links do not work
+
+\mode<presentation>{}
+
+\input{../def-beamer}
+
+\newcommand{\topic}{06 Program Families Continued}
+
+\input{../titlepage}
+
+\begin{document}
+
+\input{../footline}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Program Families Continued}
+
+\bi
+\item Administrative details
+\item Questions?
+\item License and copyright
+\item Motivation
+\item Proposed Family Methods
+\item Family of Mesh Generators
+\item Family of Linear Solvers
+\item Family of Material Behaviour Models
+\ei
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Administrative Details}
+
+\bi
+\item Add me to your GitHub repos, my GitHub id is \texttt{smiths}
+\item Assign me an issue to review your problem statements
+\bi
+\item Clearly state that you would like me to review your problem statement
+\item Include a link to your problem statement
+\ei
+\item Updates to SRS template
+\item Commonality analysis should start from SRS template
+\item Presentations
+\bi
+\item VGA by default, ask if need adapter
+\item Can you my laptop
+\ei
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Administrative Details: Deadlines}
+~\newline
+\begin{tabular}{l l l}
+\textbf{Problem Statement} & Week 02 & Sept 15\\
+\textbf{SRS Present} & Week 04 & Week of Sept 25\\
+\textbf{SRS} & Week 05 & Oct 4\\
+V\&V Present & Week 06 & Week of Oct 16\\
+V\&V Plan & Week 07 & Oct 25\\
+MG Present & Week 08 & Week of Oct 30\\
+MG & Week 09 & Nov 8\\
+MIS Present & Week 10 & Week of Nov 13\\
+MIS & Week 11 & Nov 22\\
+Impl.\ Present & Week 12 & Week of Nov 27\\
+Final Documentation & Week 13 & Dec 6\\
+\end {tabular}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Questions?}
+\begin{itemize}
+\item Questions about ...
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
