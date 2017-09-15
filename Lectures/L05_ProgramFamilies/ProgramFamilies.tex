@@ -85,6 +85,11 @@
 \ei
 \item Updates to SRS template
 \item Commonality analysis should start from SRS template
+\item Presentations
+\bi
+\item VGA by default, ask if need adapter
+\item Can you my laptop
+\ei
 \ei
 
 \end{frame}
@@ -117,6 +122,290 @@ Final Documentation & Week 13 & Dec 6\\
 \begin{itemize}
 \item Questions about ...
 \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Specification Qualities}
+
+\begin{itemize}
+
+\item \structure{What are the important qualities for a specification?}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Specification Qualities}
+
+\begin{itemize}
+\item The qualities we previously discussed (usability, maintainability,
+  reusability, verifiability etc.)
+\item Clear, unambiguous,  understandable
+\item Consistent
+\item Complete
+\begin{itemize}
+\item Internal completeness
+\item External completeness
+\end{itemize}
+\item Incremental
+\item Validatable
+\item Abstract
+\item Traceable
+\end{itemize}
+
+Summarized in \cite[p.\ 406]{SmithAndKoothoor2016}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Clear, Unambiguous, Understandable}
+
+\begin{itemize}
+
+\item Specification fragment for a word-processor
+\begin{itemize}
+\item \structure{Selecting is the process of designating 
+areas of the document that you want to 
+work on. Most editing and formatting 
+actions require two steps: first you 
+select what you want to work on, 
+such as text or graphics; then you 
+initiate the appropriate action.}
+\end{itemize}
+\item What are the potential problems with this specification?
+\begin{itemize}
+\item<2-> {\alert{Can an area be scattered?}}
+\item<2->{\alert{Can both text and graphics be selected?}}
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Clear, Unambiguous, Understandable}
+
+\begin{itemize}
+
+\item Specification fragment from a real safety-critical system
+\begin{itemize}
+\item \structure{The message must be triplicated. The three
+copies must be forwarded through three 
+different physical channels. The receiver 
+accepts the message on the basis of a 
+two-out-of-three voting policy.}
+\end{itemize}
+\item What is a potential problems with this specification?
+\begin{itemize}
+\item<2-> {\alert{Can a message be accepted as soon as we receive 2 out of 3 identical copies, or do we need to wait
+for receipt of the 3rd}}
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Unambiguous, Validatable}
+
+\begin{itemize}
+
+\item Specification fragment for an end-user program
+\begin{itemize}
+\item \structure{The program shall be user friendly.}
+\end{itemize}
+\item What is a potential problems with this specification?
+\begin{itemize}
+\item<2-> {\alert{What does it mean to be user friendly?}}
+\item<2-> {\alert{Who is a typical user?}}
+\item<2-> {\alert{How would you measure success or failure in meeting this requirement?}}
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Unambiguous, Validatable}
+
+\begin{itemize}
+
+\item Specification fragment for a linear solver
+\begin{itemize}
+\item \structure{Given $A$ and $b$, solve the  linear system $A x = b$ for $x$, such that the error in any entry of
+$x$ is less than 5 \%.}
+\end{itemize}
+\item What is a potential problems with this specification?
+\begin{itemize}
+\item<2-> {\alert{Is $A$ constrained to be square?}}
+\item<2-> {\alert{Can $A$ be singular?}}
+\item<2-> {\alert{Even if the problem is made completely unambiguous, the requirement cannot be validated.}}
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Consistent}
+
+\begin{itemize}
+
+\item Specification fragment for a word-processor
+\begin{itemize}
+\item \structure{The whole text should be kept in lines 
+of equal length. The length is specified 
+by the user. Unless the user gives an 
+explicit hyphenation command, 
+a carriage return should occur only 
+at the end of a word.}
+\end{itemize}
+\item What is a potential problems with this specification?
+\begin{itemize}
+\item<2-> {\alert{What if the length of a word exceeds the length of the line?}}
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Same Symbol/Term Different Meaning}
+
+\begin{itemize}
+
+\item \structure{Can you think of some symbols/terms that have different
+    meanings depending on the context?}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Consistent}
+
+\begin{itemize}
+
+\item Language and terminology must be consistent within the specification
+\item Potential problem with homonyms, for instance consider the symbol $\sigma$
+\begin{itemize}
+\item Represents standard deviation
+\item Represents stress
+\item Represents the Stefan-Boltzmann constant (for radiative heat transfer)
+\end{itemize}
+\item Changing the symbol may be necessary for consistency, but it could adversely effect understandability
+\item Potential problem with synonyms
+\begin{itemize}
+\item Externally funded graduate students, versus eligible graduate students, versus non-VISA students
+%ask who would think about graduate school?
+\item Material behaviour model versus constitutive equation
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Complete}
+
+\begin{itemize}
+
+\item Internal completeness
+\begin{itemize}
+\item The specification must define any new concept or terminology that it uses
+\begin{itemize}
+\item A glossary is helpful for this purpose
+\end{itemize}
+\end{itemize}
+\item External completeness
+\begin{itemize}
+\item The specification must document all the needed requirements
+\begin{itemize}
+\item Difficulty: when should one stop?
+\end{itemize}
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Incremental}
+
+\begin{itemize}
+
+\item Referring to the specification process
+\begin{itemize}
+\item Start from a sketchy document and progressively add details
+\item A document template can help with this
+\end{itemize}
+\item Referring to the specification document
+\begin{itemize}
+\item Document is structured and can be understood in increments
+\item Again a document template can help with this
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Traceable}
+
+\begin{itemize}
+
+\item Explicit links
+\bi
+\item Within document
+\item Between documents
+\ei
+\item Use labels, cross-references, traceability matricies
+\item Common sense suggests traceability improves maintainability
+\item Shows consequence of change
+\item Minimizes cost of recertification
+\item Additional advantages
+\bi
+\item Program comprehension
+\item Impact analysis
+\item Reuse
+\ei
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Accuracy Versus Precision}
+
+\begin{center}
+ \includegraphics[width=1.0\textwidth]{../Figures/AccuracyPrecision_FromUniversityOfHawaiiAtManoa.png}
+\end{center}
+
+\structure{What is the distinction between accuracy and precision?}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
