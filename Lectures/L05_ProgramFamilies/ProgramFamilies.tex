@@ -46,7 +46,7 @@
 
 \input{../def-beamer}
 
-\newcommand{\topic}{05 Program Families DRAFT}
+\newcommand{\topic}{05 Program Families}
 
 \input{../titlepage}
 
@@ -62,7 +62,7 @@
 \bi
 \item Administrative details
 \item Questions?
-\item License and copyright
+\item Specification Qualities
 \item Motivation
 \item Proposed Family Methods
 \item Family of Mesh Generators
@@ -77,19 +77,21 @@
 \frametitle{Administrative Details}
 
 \bi
-\item Add me to your GitHub repos, my GitHub id is \texttt{smiths}
-\item Assign me an issue to review your problem statements
-\bi
-\item Clearly state that you would like me to review your problem statement
-\item Include a link to your problem statement
-\ei
-\item Updates to SRS template
-\item Commonality analysis should start from SRS template
+\item Problem statement should be clear on input and output
 \item Presentations
 \bi
 \item VGA by default, ask if need adapter
-\item Can you my laptop
+\item Can use my laptop
 \ei
+\item Do NOT reproduce all of the cas 741 repo in your repo, just the blank
+  project template (moved to the top level)
+\item Use the same names as the original
+\item Delete example text from templates
+\item 80 columns in tex files
+\item Spell check
+\item Replace ``in order to'' by ``to''
+\item Use a \texttt{.gitignore} file
+\item Look at \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/Repos.xlsx}{work of class mates}
 \ei
 
 \end{frame}
@@ -118,9 +120,46 @@ Final Documentation & Week 13 & Dec 6\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
+\frametitle{Administrative Details: Presentation Schedule}
+
+\bi
+\item{SRS Present}
+\bi
+\item Tuesday: Paul, Isobel, Keshav
+\item Friday: Devi, Shushen, Xiaoye
+\ei
+\item V\&V Present
+\bi
+\item Tuesday: Steven, Alexandre P., Alexander S.
+\item Friday: Geneva, Jason, Yuzhi
+\ei
+\item MG Present
+\bi
+\item Tuesday: Xiaoye, Shushen, Devi, Keshav, \structure{Alex P}, Paul
+\item Friday: Yuzhi, Jason, Geneva, Alex S, \structure{Isobel}, Steven
+\ei
+\item MIS Present
+\bi
+\item Tuesday: Isobel, Keshav, Paul
+\item Friday: Shushen, Xiaoye, Devi
+\ei
+\item Impl.\ Present
+\bi
+\item Tuesday: Alexander S., Steven, Alexandre P.
+\item Friday: Jason, Geneva, Yuzhi
+\ei
+
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
 \frametitle{Questions?}
 \begin{itemize}
-\item Questions about ...
+\item Questions about problem statements?
+\item Questions about SRS?
 \end{itemize}
 \end{frame}
 
@@ -669,7 +708,7 @@ leads to weak error bounds
 \item Specific physical model?
 \item Multipurpose tool?
 \end{itemize}
-\item Commonality analysis
+\item Commonality Analysis (CA)
 \begin{itemize}
 \item Terminology
 \item Commonalities
@@ -688,9 +727,7 @@ leads to weak error bounds
 
 \begin{frame}
 
-\frametitle{Commonality Analysis Template}
-
-From \cite{Smith2006}
+\frametitle{CA Template From \cite{Smith2006}}
 
 \scalebox{1.0}{
 \begin{minipage}{0.94\columnwidth}
