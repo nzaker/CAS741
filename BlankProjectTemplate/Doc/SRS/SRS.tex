@@ -84,11 +84,12 @@
 	
 \maketitle
 
-\pagenumbering{roman}
-\tableofcontents
+~\newpage
 
-\begin{table}[bp]
-\caption{\bf Revision History}
+\pagenumbering{roman}
+
+\section{Revision History}
+
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
@@ -96,7 +97,8 @@ Date 1 & 1.0 & Notes\\
 Date 2 & 1.1 & Notes\\
 \bottomrule
 \end{tabularx}
-\end{table}
+
+~\newpage
 
 \section{Reference Material}
 
@@ -175,6 +177,11 @@ which heat is transferred in
 \wss{Add any other abbreviations or acronyms that you add}
 
 \newpage
+
+\tableofcontents
+
+~\newpage
+
 \pagenumbering{arabic}
 
 \section{Introduction}
