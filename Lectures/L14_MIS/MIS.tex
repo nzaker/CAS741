@@ -1,0 +1,123 @@
+%\documentclass[handout]{beamer} 
+\documentclass[t,12pt,numbers,fleqn]{beamer}
+%\documentclass[ignorenonframetext]{beamer}
+
+\newif\ifquestions
+%\questionstrue
+\questionsfalse
+
+\usepackage{pgfpages} 
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    unicode=false}
+\urlstyle{same}
+
+\bibliographystyle{plain}
+
+%\usetheme{Iimenau}
+
+\useoutertheme{split} %so the footline can be seen, without needing pgfpages
+
+%\pgfpagesuselayout{resize to}[letterpaper,border shrink=5mm,landscape]  %if this is uncommented, the hyperref links do not work
+
+\mode<presentation>{}
+
+\input{../def-beamer}
+
+\newcommand{\topic}{14 Module Interface Specification (MIS)}
+
+\input{../titlepage}
+
+\begin{document}
+
+\input{../footline}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Module Interface Specification (MIS)}
+
+\bi
+\item Administrative details
+\item Questions?
+\ei
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Administrative Details}
+
+\bi
+\item admin points
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Administrative Details: Deadlines}
+~\newline
+\begin{tabular}{l l l}
+\textbf{MG Present} & Week 08 & Week of Oct 30\\
+\textbf{MG} & Week 09 & Nov 8\\
+MIS Present & Week 10 & Week of Nov 13\\
+MIS & Week 11 & Nov 22\\
+Impl.\ Present & Week 12 & Week of Nov 27\\
+Final Documentation & Week 13 & Dec 6\\
+\end {tabular}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Administrative Details: Presentation Schedule}
+
+\bi
+\item MG Present
+\bi
+\item \textbf{Tuesday: Xiaoye, Shusheng, Devi, Keshav, Alex P, Paul}
+\item \textbf{Friday: Yuzhi, Jason, Geneva, Alex S, Isobel, Steven}
+\ei
+\item MIS Present
+\bi
+\item Tuesday: Isobel, Keshav, Paul
+\item Friday: Shusheng, Xiaoye, Devi
+\ei
+\item Impl.\ Present
+\bi
+\item Tuesday: Alexander S., Steven, Alexandre P.
+\item Friday: Jason, Geneva, Yuzhi
+\ei
+
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Questions?}
+\begin{itemize}
+\item Questions about ...
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[allowframebreaks]
+\frametitle{References}
+
+\bibliography{../../ReferenceMaterial/References}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

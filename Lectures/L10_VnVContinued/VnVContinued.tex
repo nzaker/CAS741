@@ -512,15 +512,20 @@ constituents of compound conditions are exercised at least once
 
 \begin{frame}
 \frametitle{Specific SC V\&V Approaches}
-Summary in \cite{Smith2016}
+Summary of most points below in \cite{Smith2016}
 \begin{itemize}
 \item Compare to closed-form solutions
 \item Method of manufactured solutions \cite{Roache1998}
 \item Interval arithmetic \cite{Hickey2001}
 \item Convergence studies
 \item Compare to other program (parallel testing)
+\item Can also consider using code inspection
+\bi
+\item \cite{KellyAndShepard2000,
+  ShepardAndKelly2001}
+\item \href{http://www.cs.nott.ac.uk/~pszcah/G53QAT/fi.pdf}{Sample checklists}
+\ei
 \end{itemize}
-Can also consider using code inspection~\cite{KellyAndShepard2000, ShepardAndKelly2001}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -536,6 +541,11 @@ Can also consider using code inspection~\cite{KellyAndShepard2000, ShepardAndKel
 \item Accuracy
 \item Performance
 \item Relative comparison
+\ei
+\item Usability
+\bi
+\item \href{https://measuringu.com/sus/}{Fairly simple standard survey}
+\item \href{https://gitlab.cas.mcmaster.ca/andrem5/RogueReborn/blob/master/Doc/TestPlan/TestPlan.pdf}{Example}
 \ei
 \end{itemize}
 \end{frame}
