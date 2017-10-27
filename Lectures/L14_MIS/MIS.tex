@@ -16,6 +16,9 @@
     unicode=false}
 \urlstyle{same}
 
+\usepackage{booktabs}
+\usepackage{multirow}
+
 \bibliographystyle{plain}
 
 %\usetheme{Iimenau}
@@ -44,6 +47,20 @@
 \bi
 \item Administrative details
 \item Questions?
+\item Module guide example
+\item Integration testing
+\item Mathematical review (\cite{HoffmanAndStrooper1995} and separate slides)
+\begin{itemize}
+\item Multiple assignment statement
+\item Conditional rules
+\item etc.
+\end{itemize}
+\item MIS overview
+\item Modules with external interaction
+\item Abstract objects
+\item Abstract data types
+\item Generic MIS
+\item Inheritance
 \ei
 \end{frame}
 
@@ -53,7 +70,17 @@
 \frametitle{Administrative Details}
 
 \bi
-\item admin points
+\item GitHub issues for colleagues
+\bi
+\item Assigned 1 colleague (see \texttt{Repos.xlsx} in repo)
+\item Provide at least 5 issues on their SRS
+\item Grading as before
+\item Due by Tuesday, Oct 30, 11:59 pm
+\ei
+
+\item For MG presentation, we'll try to use my laptop only
+\item Template for MG in repo
+
 \ei
 
 \end{frame}
@@ -105,8 +132,1388 @@ Final Documentation & Week 13 & Dec 6\\
 \begin{frame}
 \frametitle{Questions?}
 \begin{itemize}
-\item Questions about ...
+\item Questions about Module Guide and the presentation?
 \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Solar Water Heating System Example}
+
+\bi
+\item \href{https://github.com/smiths/swhs}{https://github.com/smiths/swhs}
+\item Solve ODEs for temperature of water and PCM
+\item Solve for energy in water and PCM
+\item Generate plots
+\ei
+
+\begin{figure}
+{
+\includegraphics[width=0.5\textwidth]{../Figures/Tank.pdf}
+}
+\end{figure}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Anticipated Changes?}
+
+\structure{What are some anticipated changes?}\\
+~\newline
+Hint: the software follows the Input $\rightarrow$ Calculate $\rightarrow$
+Output design pattern
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Anticipated Changes}
+
+\bi
+\item The specific hardware on which the software is to run
+\item The format of the initial input data
+\item The format of the input parameters
+\item The constraints on the input parameters
+\item The format of the output data
+\item The constraints on the output results
+\item How the governing ODEs are defined using the input parameters
+\item How the energy equations are defined using the input parameters
+\item How the overall control of the calculations is orchestrated
+\item The implementation of the sequence data structure
+\item The algorithm used for the ODE solver
+\item The implementation of plotting data
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Module Hierarchy by Secrets}
+\begin{table}[h!]
+\centering
+\begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
+\toprule
+\textbf{Level 1} & \textbf{Level 2}\\
+\midrule
+
+{Hardware-Hiding Module} & ~ \\
+\midrule
+
+\multirow{6}{0.3\textwidth}{Behaviour-Hiding Module} & Input Parameters Module\\
+& Output Format Module\\
+& Temperature ODEs Module\\
+& Energy Equations Module\\ 
+& Control Module\\
+& Specification Parameters\\
+\midrule
+
+\multirow{3}{0.3\textwidth}{Software Decision Module} & {Sequence Data Structure Module}\\
+& ODE Solver Module\\
+& Plotting Module\\
+\bottomrule
+
+\end{tabular}
+\caption{Module Hierarchy}
+\label{TblMH}
+\end{table}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Example Modules from SWHS}
+
+\textbf{Hardware Hiding Modules}
+
+\begin{description}
+\item[Secrets:] The data structure and algorithm used to implement the virtual
+  hardware.
+\item[Services:] Serves as a virtual hardware used by the rest of the
+  system. This module provides the interface between the hardware and the
+  software. So, the system can use it to display outputs or to accept inputs.
+\item[Implemented By:] OS
+\end{description}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Example Modules from SWHS}
+
+\textbf{Input Parameters Module}
+
+\begin{description}
+\item[Secrets:] The data structure for input parameters, how the
+values are input and how the values are verified.  The load and verify secrets
+are isolated to their own access programs (like submodules). %    This, combined
+% with the fact that all of the services are invoked together, suggests that the
+% one module one secret rule can be relaxed here.
+\item[Services:] Gets input from user (including material properties, processing
+  conditions, and numerical parameters), stores input and verifies that the
+  input parameters comply with physical and software constraints. Throws an
+  error if a parameter violates a physical constraint. Throws a warning if a
+  parameter violates a software constraint.  % Stored parameters can be read
+  % individually, but write access is only to redefine the entire set of inputs.
+\item[Implemented By:] SWHS
+\end{description}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Example Modules from SWHS}
+
+\textbf{ODE Solver Module}
+
+\begin{description}
+\item[Secrets:] The algorithm to solve a system of first order ODEs initial
+  value problem from a given starting time until the given event function shows
+  termination.
+\item[Services:] Solves an ODE using the governing equation, initial
+  conditions, event function and numerical parameters.
+\item[Implemented By:] Matlab
+\end{description}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}[plain, fragile]
+
+\frametitle{SWHS Uses Hierarchy (approximately)}
+
+\begin{center}
+\includegraphics[scale=0.55]{../Figures/UsesHierarchy.pdf}
+\end{center}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Mesh Generator Example}
+\vspace{-1cm}
+\begin{figure}[H]
+\includegraphics[scale=0.4, angle=0]{../Figures/ExampleMesh.pdf}
+\end{figure}\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Mesh Generator Complex Circular Geometry}
+\begin{figure}[H]
+\includegraphics[scale=0.25]{../Figures/magnetron1.pdf}
+\end{figure}\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Mesh Generator Example: Design Goals}
+\begin{itemize}
+\item Independent and flexible representation for each mesh entity
+\item Complete separation of geometric data from the topology
+\item The mesh generator should work with different coordinate systems
+\item A flexible data structure to store sets of vertices, edges and triangles
+\item Different mesh generation algorithms with a minimal amount of local changes
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Example Mesh Gen Modular Decomposition}
+
+%\vspace{-1.5cm}
+% \begin{center}
+% \includegraphics[width=0.5\textwidth]{DecompBySecretHierarchyExample.png}
+% \end{center}
+
+\href{https://gitlab.cas.mcmaster.ca/smiths/se2aa4_cs2me3/blob/master/Lectures/L14_ModuleDecompositionContinued/DecompBySecretHierarchyExample.png}{Link}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Another Mesh Generator Uses Hierarchy \cite{ElSheikhEtAl2004}}
+\begin{figure}[H]
+\includegraphics[scale=0.345]{../Figures/hierarchy_diagram.pdf}
+\end{figure}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Module Testing}
+
+\structure{Is it possible to begin testing before all of the modules have been
+  implemented when there is a use relation between modules?}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Module Testing \cite{GhezziEtAl2003}}
+
+\begin{itemize}
+
+\item Scaffolding needed to create the environment in which the module should be
+  tested
+\item Stubs - a module used by the module under test
+\item Driver - module activating the module under test
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Testing a Functional Module \cite{GhezziEtAl2003}}
+
+\includegraphics[scale=0.5]{../Figures/TestingAFunctModule.png}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Integration Testing}
+
+\begin{itemize}
+\item Big-bang approach
+\begin{itemize}
+\item First test individual modules in isolation
+\item Then test integrated system
+\end{itemize}
+\item Incremental approach
+\begin{itemize}
+\item Modules are progressively integrated and tested
+\item Can proceed both top-down and bottom-up according to the USES relation
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Integration Testing and USES relation}
+
+\begin{itemize}
+\item If integration and test proceed bottom-up only need drivers
+\item Otherwise if we proceed top-down only stubs are needed
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Example \cite{GhezziEtAl2003}}
+
+\begin{center}
+\includegraphics[scale=0.35]{../Figures/Example.png}
+\end{center}
+
+\begin{itemize}
+\item $M_1$ USES $M_2$ and $M_2$ IS\_COMPOSED\_OF \{$M_{2,1}$, $M_{2,2}$\}
+\item \structure{In what order would you test these modules?}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Example \cite{GhezziEtAl2003}}
+
+\begin{center}
+\includegraphics[scale=0.35]{../Figures/Example.png}
+\end{center}
+
+\begin{itemize}
+\item $M_1$ USES $M_2$ and $M_2$ IS\_COMPOSED\_OF \{$M_{2,1}$, $M_{2,2}$\}
+\item Case 1
+\begin{itemize}
+\item Test $M_1$ providing a stub for $M_2$ and a driver for $M_1$
+\item Then provide an implementation for $M_{2,1}$ and a stub for $M_{2,2}$
+\end{itemize}
+\item Case 2
+\begin{itemize}
+\item Implement $M_{2,2}$ and test it by using a driver
+\item Implement $M_{2,1}$ and test the combination of $M_{2,1}$ and $M_{2,2}$
+  (i.e.\ $M_2$) by using a driver
+\item Finally implement $M_1$ and test it with $M_2$ using a driver for $M_1$
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Overview of MIS}
+\begin{itemize}
+\item See Hoffman and Strooper \cite{HoffmanAndStrooper1995}
+\item The MIS precisely specifies the modules observable behaviour - what the module does
+\item The MIS does not specify the internal design
+\item The idea of an MIS is inspired by the principles of software engineering
+\item Advantages
+\begin{itemize}
+\item Improves many software qualities
+\item Programmers can work in parallel
+\item Assumptions about how the code will be used are recorded
+\item Test cases can be decided on early, and they benefit from a clear specification of the behaviour
+\item A well designed and documented MIS is easier to read and understand than complex code
+\item Can use the interface without understanding details
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Overview of MIS}
+\begin{itemize}
+\item Options for specifying an MIS
+\begin{itemize}
+\item Trace specification
+\item Pre and post conditions specification
+\item Input/output specification
+\item \structure{Before/after specification - module state machine}
+\item Algebraic specification
+\end{itemize}
+\item Best to follow a template
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{MIS Template}
+
+\begin{itemize}
+\item Uses
+\begin{itemize}
+\item Imported constants, data types and access programs
+\end{itemize}
+\item Syntax
+\begin{itemize}
+\item Exported constants and types
+\item Exported functions (access routine interface syntax)
+\end{itemize}
+\item Semantics
+\begin{itemize}
+\item State variables
+\item State invariants
+\item Assumptions
+\item Access routine semantics
+\item Local functions
+\item Local types
+\item Local constants
+\item Considerations
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{MIS Uses Section}
+\begin{itemize}
+\item Specify imported constants
+\item Specify imported types
+\item Specify imported access programs
+\item The specification of one module will often depend on using the interface specified by another module
+\item When there are many modules the uses information is very useful for navigation of the documentation
+\item Documents the use relation between modules
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{MIS Syntax Section}
+\begin{itemize}
+\item Specify exported constants
+\item Specify exported types
+\item Specify access routine names, the input and output parameter types and exceptions
+\item Show access routines in tabular form
+\begin{itemize}
+\item Important design decisions are made at this point
+\item The goal is to have the syntax match many implementation languages
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Syntax of a Sequence Module}
+
+\textbf{Exported Constants}\\
+~\newline
+MAX\_SIZE = 100\\
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Syntax of a Sequence Module Continued}
+
+\textbf{Exported Access Programs}\\
+~\newline
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+seq\_init & ~ & ~ & ~\\
+\hline
+seq\_add & integer, integer & ~ & FULL, POS\\
+\hline
+seq\_del & integer & ~ & POS\\
+\hline
+seq\_setval & integer, integer & ~ & POS\\
+\hline
+seq\_getval & integer & integer & POS\\
+\hline
+seq\_size & ~ & integer & ~\\
+\hline
+
+\end{tabular}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{MIS Semantics Section}
+
+\begin{itemize}
+\item State variables
+\begin{itemize}
+\item Give state variable(s) name and type
+\item State variables define the state space
+\item If a module has state then it will have ``memory''
+\end{itemize}
+\item State invariant
+\begin{itemize}
+\item A predicate on the state space that restricts the ``legal'' states of the module
+\item After every access routine call, the state should satisfy the invariant
+\item Cannot have a state invariant without state variables
+\item Just stating the invariant does not ``enforce'' it, the access routine semantics need to maintain it
+\item Useful for understandabilty, testing and for proof
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Semantics Section Continued}
+
+\begin{itemize}
+\item Local functions, local types and local constants
+\begin{itemize}
+\item Declared for specification purposes only
+\item Not available at run time
+\item Helpful to make complex specifications easier to read
+\end{itemize}
+\item Considerations
+\begin{itemize}
+\item For information that does not fit elsewhere
+\item Useful to tell the user if the module violates a quality criteria
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Sequence MIS Semantics}
+
+\textbf{State Variables}\\
+$s$: sequence of integer
+~\newline
+
+\textbf{State Invariant}\\
+$| s | \leq \mathrm{MAX\_SIZE}$
+~\newline
+
+\textbf{Assumptions}\\
+seq\_init() is called before any other access program
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Sequence MIS Semantics Continued}
+
+\textbf{Access Routine Semantics}\\
+~\newline
+seq\_init():
+\begin{itemize}
+\item transition: $s := < >$
+\item exception: none
+\end{itemize}
+~\newline
+\noindent seq\_add($i, p$):
+\begin{itemize}
+\item transition: $s := s[0..i-1] || <p> || s[i..|s|-1]$
+\item exception: $exc := (|s| = \mathrm{MAX\_SIZE} \Rightarrow  \mathrm{FULL} ~ | ~ i \notin [0..|s|] \Rightarrow
+\mathrm{POS})$
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Access Routine Semantics Continued}
+
+\noindent seq\_del($i$):
+\begin{itemize}
+\item transition: $s := s[0..i-1] || s[i+1..|s|-1]$
+\item exception:  $exc := (i \notin [0..|s|-1] \Rightarrow \mathrm{POS})$
+\end{itemize}
+~\newline
+\noindent seq\_setval($i, p$):
+\begin{itemize}
+\item transition: $s[i] := p$
+\item exception: $exc := (i \notin [0..|s|-1] \Rightarrow \mathrm{POS})$
+\end{itemize}
+~\newline
+\noindent seq\_getval($i$):
+\begin{itemize}
+\item output: $out := s[i]$
+\item exception: $exc := (i \notin [0..|s|-1] \Rightarrow \mathrm{POS})$
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Access Routine Semantics Continued}
+
+\noindent seq\_size():
+\begin{itemize}
+\item output: $out := | s |$
+\item exception: none
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Exception Signaling}
+
+\begin{itemize}
+\item Useful to think about exceptions in the design process
+\item Will need to decide how exception signalling will be done
+\begin{itemize}
+\item A special return value, a special status parameter, a global variable
+\item Invoking an exception procedure
+\item Using built-in language constructs
+\end{itemize}
+\item Caused by errors made by programmers, not by users
+\item Write code so that it avoid exceptions
+\item Exceptions will be particularly useful during testing
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Assumptions versus Exceptions}
+
+\begin{itemize}
+\item The assumptions section lists assumptions the module developer is permitted to make about the programmer's behaviour
+\item Assumptions are expressed in prose
+\item Use assumptions to simplify the MIS and to reduce the complexity of the final implementation
+\item Interface design should provide the programmer with a means to check so that they can avoid exceptions
+\item When an exceptions occurs no state transitions should take place, any output is {\it don't care}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Quality Criteria}
+
+\begin{itemize}
+\item Consistent
+\begin{itemize}
+\item Name conventions
+\item Ordering of parameters in argument lists
+\item Exception handling, etc.
+\end{itemize}
+\item Essential - omit unnecessary features
+\item General - cannot always predict how the module will be used
+\item As implementation independent as possible
+\item Minimal - avoid access routines with two potentially independent services
+\item High cohesion - components are closely related
+\item Low coupling - not strongly dependent on other modules
+\item Opaque - information hiding
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{SWHS Example}
+
+Look at SWHS repo
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Modules with External Interaction}
+
+\begin{itemize}
+\item In general, some modules may interact with the environment or other modules
+%\item The Display Point Masses Applet module does this
+\item Environment might include the keyboard, the screen, the file system, motors, sensors, etc.
+\item Sometimes the interaction is informally specified using prose (natural language)
+\item Can introduce an environment variable
+\begin{itemize}
+\item Name, type
+\item Interpretation
+\end{itemize}
+\item Environment variables include the screen, the state of a motor (on, direction of rotation, power level, etc.),
+the position of a robot
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{External Interaction Continued}
+
+\begin{itemize}
+\item Some external interactions are hidden
+\begin{itemize}
+\item Present in the implementation, but not in the MIS
+\item An example might be OS memory allocation calls
+\end{itemize}
+\item External interaction described in the MIS
+\begin{itemize}
+\item Naming access programs of the other modules
+\item Specifying how the other module's state variables are changed
+\item The MIS should identify what external modules are used
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{MIS for GUI Modules}
+
+\begin{itemize}
+\item Could introduce an environment variable
+\item window: sequence [RES\_H][RES\_V] of pixelT
+\begin{itemize}
+\item Where window[r][c] is the pixel located at row r and column c, with numbering zero-relative and beginning at the
+upper left corner
+\item Would still need to define pixelT
+\end{itemize}
+\item Could formally specify the environment variable transitions
+\item More often it is reasonable to specify the transition in prose
+\item In some cases the proposed GUI might be shown by rough sketches
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Display Point Masses Module Syntax}
+
+\textbf{Exported Access Programs}\\
+~\newline
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exc}\\
+\hline
+DisplayPointMassesApplet & ~ & DisplayPointMassesApplet & ~\\
+\hline
+paint & ~ & ~ & ~\\
+\hline
+\end{tabular}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Display Point Masses Module Semantics}
+
+\textbf{Environment Variables}\\
+$\mathit{win}:$ 2D sequence of pixels displayed within a web-browser \\
+
+\noindent DisplayPointMassesApplet():
+\begin{itemize}
+\item transition: The state of the abstract object ListPointMasses is modified as follows:\\
+ListPointMasses.init()\\
+ListPointMasses.add(0, PointMassT(20, 20, 10))\\
+ListPointMasses.add(1, PointMassT(120, 200, 20))\\
+...
+\end{itemize}
+
+\noindent paint():
+\begin{itemize}
+\item transition $win := $ Modify window so that the point masses in ListPointMasses 
+are plotted as circles.  The centre of each circles should be the corresponding x and y coordinates and the radius should
+be the mass of the point mass.
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Specification of ADTs}
+\begin{itemize}
+\item Similar template to abstract objects
+\item ``Template Module'' as opposed to ``Module''
+\item ``Exported Types'' that are abstract use a ?
+\begin{itemize}
+\item pointT = ?
+\item pointMassT = ?
+\end{itemize}
+\item Access routines know which abstract object called them
+\item Use ``self'' to refer to the current abstract object
+\item Use a dot ``.'' to reference methods of an abstract object
+\begin{itemize}
+\item $p.\mbox{xcoord()}$
+\item $\mathit{self}.pt.\mbox{dist}(p.\mbox{point}())$
+\end{itemize}
+\item Similar notation to Java
+\item The syntax of the interface in C is different
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Syntax Line ADT Module}
+
+\textbf{Template Module}\\
+~\newline
+lineADT\\
+~\newline
+\textbf{Uses}\\
+~\newline
+pointADT\\
+~\newline
+\textbf{Exported Types}\\
+~\newline
+lineT = ?
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Syntax Line ADT Module Continued}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+new lineT & pointT, pointT & lineT & ~\\
+\hline
+start & ~ & pointT & ~\\
+\hline
+end & ~ & pointT & ~\\
+\hline 
+length & ~ & real & ~\\
+\hline
+midpoint & ~ & pointT & ~\\
+\hline
+rotate & real & ~ & ~\\
+\hline
+\end{tabular}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Semantics Line ADT Module}
+
+\textbf{State Variables}\\
+~\newline
+$s$: pointT\\
+$e$: pointT\\
+~\newline
+\textbf {State Invariant}\\
+~\newline
+None\\
+~\newline
+\textbf{Assumptions}\\
+~\newline
+None
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Access Routine Semantics Line ADT Module}
+
+\noindent new lineT ($p_1, p_2$):
+\begin{itemize}
+\item transition: $s, e := p_1, p_2$
+\item output: $out := \mathit{self}$
+\item exception: none
+\end{itemize}
+
+\noindent start:
+\begin{itemize}
+\item output: $out := s$
+\item exception: none
+\end{itemize}
+
+\noindent end:
+\begin{itemize}
+\item output: $out := e$
+\item exception: none
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Access Routine Semantics Continued}
+
+\noindent length:
+\begin{itemize}
+\item output: $out := s.\mathrm{dist}(e)$
+\item exception: none
+\end{itemize}
+
+\noindent midpoint:
+\begin{itemize}
+\item output: $out := $
+$$\mathrm{new~} \mathrm{pointT} (\mathrm{avg}(s.\mathrm{xcoord}, e.\mathrm{xcoord}), \mathrm{avg}(s.\mathrm{ycoord},
+e.\mathrm{ycoord}))$$
+\item exception: none
+\end{itemize}
+
+\noindent rotate ($\phi$):\\
+$\phi$ is in radians
+\begin{itemize}
+\item transition: $s.\mathrm{rotate}(\phi), e.\mathrm{rotate}(\phi)$
+\item exception: none
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Line ADT Local Functions}
+
+\textbf{Local Functions}\\
+~\newline
+avg: real $\times$ real $\rightarrow$ real
+
+\noindent avg($x_1, x_2$) $\equiv \frac{x_1 + x_2}{2}$
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+% \frametitle{ADTs in C}
+
+% \begin{itemize}
+% \item Each object will be a pointer to a struct that holds its state
+% \item The interface for each routine, other than initialization routines, will need this pointer
+% \item There is an implicit object of the ADT type as the first input parameter in all routines other than init
+% \item Need to add a prefix to all routines, other than initialization routines, to avoid naming conflicts
+% \item For PointADT, using prefix {\tt pt\_}
+% \begin{itemize}
+% \item {\tt typedef struct Point* pointT;}
+% \item \uncover<2->{\tt pointT pt\_init(float x, float y);}
+% \item \uncover<3->{\tt float pt\_xcoord(pointT self);}
+% \item \uncover<4->{\tt float pt\_ycoord(pointT self);}
+% \item \uncover<5->{\tt float pt\_dist(pointT self, pointT p);}
+% \end{itemize}
+% \item For PointMassADT use prefix {\tt pm\_}
+% \end{itemize}
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Generic Modules}
+
+\begin{itemize}
+\item What if we have a sequence of integers, instead of a sequence of point masses?
+\item What if we want a stack of integers, or characters, or pointT, or pointMassT?
+\item Do we need a new specification for each new abstract object?
+\item No, we can have a single abstract specification implementing a family of abstract objects that are distinguished
+only by a few variabilities
+\item Rather than duplicate nearly identical modules, we parameterize one \structure{generic module} with respect to
+type(s)
+\item Advantages
+\begin{itemize}
+\item Eliminate chance of inconsistencies between modules
+\item Localize effects of possible modifications
+\item Reuse
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Generic Stack Module Syntax}
+
+\textbf{Generic Module}\\
+~\newline
+Stack(T)\\
+~\newline
+\textbf{Exported Constants}\\
+~\newline
+$\mbox{MAX\_SIZE} = 100$
+~\newline
+
+\textbf{Exported Access Programs}\\
+~\newline
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+... & ... & ... & ...\\
+\hline
+\end{tabular}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Stack Module Syntax}
+
+\textbf{Exported Access Programs}\\
+~\newline
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+s\_init & ~ & ~ & ~\\
+\hline
+s\_push & T & ~ & FULL\\
+\hline
+s\_pop & ~ & ~ & EMPTY\\
+\hline
+s\_top & ~ & T & EMPTY\\
+\hline
+s\_depth & ~ & integer & ~\\
+\hline
+\end{tabular}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Semantics}
+
+\textbf{State Variables}\\
+~\newline
+\uncover<2->{\structure<2>{$s$: sequence of T}}\\
+~\newline
+\textbf{State Invariant}\\
+~\newline
+\uncover<3->{\structure<3>{$|s| \leq \mbox{MAX\_SIZE}$}}\\
+~\newline
+\textbf{Assumptions}\\
+~\newline
+\uncover<4->{\structure<4>{s\_init() is called before any other access routine}}\\
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Access Routine Semantics}
+
+s\_init():
+\begin{itemize}
+\item transition: \uncover<2->{\structure<2>{$s := <>$}}
+\item exception: \uncover<3->{\structure<3>{none}}
+\end{itemize}
+
+\noindent s\_push(x):
+\begin{itemize}
+\item transition: \uncover<4->{\structure<4>{$s := s || <x>$}}
+\item exception: \uncover<5->{\structure<5>{$exc := (|s| = \mbox{MAX\_SIZE} \Rightarrow \mbox{FULL})$}}
+\end{itemize}
+
+\noindent s\_pop():
+\begin{itemize}
+\item transition: \uncover<6->{\structure<6>{$s := s[0..|s| - 2]$}}
+\item exception: \uncover<7->{\structure<7>{$exc := (|s| = 0 \Rightarrow \mbox{EMPTY})$}}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Access Routine Semantics Continued}
+
+\noindent s\_top():
+\begin{itemize}
+\item output: \uncover<2->{\structure<2>{$out := s[|s| - 1]$}}
+\item exception: \uncover<3->{\structure<3>{$exc := (|s| = 0 \Rightarrow \mbox{EMPTY})$}}
+\end{itemize}
+
+\noindent s\_depth():
+\begin{itemize}
+\item output: \uncover<4->{\structure<4>{$out := |s|$}}
+\item exception: \uncover<5->{\structure<5>{none}}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Stack Module Properties}
+
+$\{ \mathit{true} \}$
+
+~~~~~s\_init()
+
+$\{ | s' | = 0 \}$
+
+~\newline
+$\{ | s | < \mbox{MAX\_SIZE} \}$
+
+~~~~~s\_push($x$)
+
+$\{ | s' | = | s | + 1 \wedge s'[|s'| - 1] = x \wedge s'[0..|s|-1] = s[0..|s|-1] \}$
+
+~\newline
+$\{ |s| < \mbox{MAX\_SIZE} \}$
+
+~~~~~s\_push($x$)\\
+~~~~~s\_pop()
+
+$s' = s$
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Object Oriented Design}
+\begin{itemize}
+\item One kind of module, ADT, called class
+\item A class exports operations (procedures) to manipulate instance objects (often called methods)
+\item Instance objects accessible via references
+\item Can have multiple instances of the class (class can be thought of as roughly corresponding to the notion of a type)
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Inheritance}
+\begin{itemize}
+\item Another relation between modules (in addition to USES and IS\_COMPONENT\_OF)
+\item ADTs may be organized in a hierarchy
+\item Class B may specialize class A
+\begin{itemize}
+\item B inherits from A
+\item Conversely, A generalizes B
+\end{itemize}
+\item A is a superclass of B
+\item B is a subclass of A
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Template Module Employee}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Except}\\
+\hline
+Employee & string, string, moneyT & Employee & ~\\
+\hline
+first\_Name & ~ & string & ~\\
+\hline
+last\_Name & ~ & string & ~\\
+\hline
+where & ~ & siteT & ~\\
+\hline
+salary & ~ & moneyT & ~\\
+\hline
+fire & ~ & ~ & ~\\
+\hline
+assign & siteT & ~ & ~\\
+\hline
+\end{tabular}\\
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Inheritance Examples}
+
+\textbf{Template Module}
+Administrative\_Staff \textbf{inherits} Employee\\
+~\newline
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exception}\\
+\hline
+do\_this & folderT & ~ & ~\\
+\hline
+\end{tabular}\\
+~\newline
+
+\textbf{Template Module}
+Technical\_Staff \textbf{inherits} Employee\\
+~\newline
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exception}\\
+\hline
+get\_skill & ~ & skillT & ~\\
+\hline
+def\_skill & skillT & ~ & ~\\
+\hline
+\end{tabular}\\
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Inheritance Continued}
+
+\begin{itemize}
+\item A way of building software incrementally
+\item Useful for long lived applications because new features can be added without breaking the old applications
+\item A subclass defines a subtype
+\item A subtype is substitutable for the parent type
+\item Polymorphism - a variable referring to type A can refer to an object of type B if B is a subclass of A
+\item Dynamic binding - the method invoked through a reference depends on the type of the object associated with the
+reference at runtime
+\item All instances of the sub-class are instances of the super-class, so the type of the sub-class is a subtype
+\item All instances of Administrative\_Staff and Technical\_Staff are instances of Employee
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+% \frametitle{Inheritance Continued}
+
+% emp1, emp2: Employee\\
+% emp3: Technical\_Staff\\
+
+% emp1 = Administrative\_Staff() \uncover<2->{\structure{$\surd$}}\\
+% emp2 = Technical\_Staff() \uncover<3->{\structure{$\surd$}}\\
+% emp3 = emp1 \uncover<4->{\structure{$\times$}}\\
+% emp3 = (Technical\_Staff) emp1 \uncover<5->{\structure{$\surd$}}\\
+% ~\newline
+% \uncover<6->{Polymorphism: type of RHS must be a subtype of the LHS}
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Dynamic Binding}
+
+\begin{itemize}
+\item Many languages, like C, use static type checking
+\item OO languages use dynamic type checking as the default
+\item There is a difference between a \structure{type} and a \structure{class} once we know this
+\begin{itemize}
+\item Types are known at compile time
+\item The class of an object may be known only at run time
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Point ADT Module}
+
+\textbf{Template Module}\\
+~\newline
+PointT\\
+~\newline
+\textbf{Uses}\\
+~\newline
+N/A\\
+~\newline
+\textbf{Syntax}\\
+~\newline
+\textbf{Exported Types}\\
+~\newline
+PointT = ?\\
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Point ADT Module Continued}
+
+\textbf{Exported Access Programs}\\
+~\newline
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+new PointT & real, real & PointT & ~\\
+\hline
+xcoord & ~ & real & ~\\
+\hline
+ycoord & ~ & real & ~\\
+\hline
+dist & PointT & real & ~\\
+\hline
+\end{tabular}
+
+~\newline
+\textbf{Semantics}\\
+~\newline
+\textbf{State Variables}\\
+~\newline
+$xc$: real\\
+$yc$: real
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Point Mass ADT Module}
+
+\textbf{Template Module}\\
+~\newline
+PointMassT \textbf{inherits} PointT\\
+~\newline
+\textbf{Uses}\\
+~\newline
+PointT\\
+~\newline
+\textbf{Syntax}\\
+~\newline
+\textbf{Exported Types}\\
+~\newline
+PointMassT = ?\\
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Point Mass ADT Module Continued}
+
+\textbf{Exported Access Programs}\\
+~\newline
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+new PointMassT & real, real, real & PointMassT & NegMassExcep\\
+\hline
+mval & ~ & real & ~\\
+\hline 
+force & PointMassT & real & ~\\
+\hline
+fx & PointMassT & real & ~\\
+\hline
+\end{tabular}
+
+~\newline
+\textbf{Semantics}\\
+~\newline
+\textbf{State Variables}\\
+~\newline
+$ms$: real
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Point Mass ADT Module Semantics}
+
+\noindent new PointMassT($x, y, m$):
+\begin{itemize}
+\item transition: $xc, yc, ms := x, y, m$
+\item output: $out := \mathit{self}$
+\item exception: $exc := (m < 0 \Rightarrow \mbox{NegativeMassException})$
+\end{itemize}
+~\newline
+\noindent force($p$):
+\begin{itemize}
+\item output: $$out := \mathrm{UNIVERAL\_G} \frac{\mathit{self}.ms \times p.ms}
+{\mathit{self}.\mathrm{dist}(p)^2}$$
+\item exception: none
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Examples}
+
+\begin{itemize}
+\item Example Point Line and Circle
+\item Example Robot Path
+\item Example Vector Space
+\item Example Othello Program
+\item Example Maze Formal Specification (Dr.\ v.\ Mohrenschildt)
+\item Mustafa ElSheikh Mesh Generator \cite{CaretteEtAl2011}
+\item Wen Yu Mesh Generator \cite{SmithAndYu2009}
+\item Sven Barendt Filtered Backprojection
+\item Sanchez sDFT
+\end{itemize}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
