@@ -296,7 +296,7 @@ $*$ operators include $\forall$, $\exists$ and $+$ are used
 \begin{frame}
 %\frametitle{Quantifiers Example for Rank Function}
 
-\noindent $\mbox{rank}(a, A): \mathbb{R} \times \mathbb{R}^n \rightarrow \mathbb{N}$\newline
+\noindent $\mbox{rank}(a, A): \mathbb{R} \times \mathbb{R}^n \rightarrow \mathbb{R}$\newline
 $\mbox{rank}(a, A) \equiv \mbox{avg}(\mbox{indexSet}(a, \mbox{sort}(A)))$\newline
 
 \noindent $\mbox{indexSet}(a, B): \mathbb{R} \times \mathbb{R}^n \rightarrow \mbox{ set of }
@@ -310,7 +310,7 @@ $\forall (a: \mathbb{R} | a \in A : \exists(b: \mathbb{R} | b \in B: b = a)
 \wedge \mbox{count}(a, A) = \mbox{count}(b, B)) \wedge \forall (i: \mathbb{N} | i \in [1..|A|-1] : B_i \leq B_{i+1})$\newline
 
 \noindent $\mbox{count}(a, A): \mathbb{R} \times \mathbb{R}^n \rightarrow \mathbb{N}$\newline
-$\mbox{count}(a, A): + (x: \mathbb{N} | x \in A \wedge x = a : 1)$\newline
+$\mbox{count}(a, A): + (x: \mathbb{R} | x \in A \wedge x = a : 1)$\newline
 
 \noindent $\mbox{avg}(C): \mbox{ set of } \mathbb{N} \rightarrow \mathbb{R}$\newline
 $\mbox{avg}(C) \equiv + (x: \mathbb{N} | x \in C : x) / |C|$\newline
