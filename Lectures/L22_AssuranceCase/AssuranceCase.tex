@@ -67,7 +67,9 @@
 \item Grading as before
 \item Due by Tuesday, Dec 5, 11:59 pm
 \ei
-
+\item Today is the last ``lecture''
+\item Next week for presentations
+\item Following Tuesday for Discussion
 \ei
 
 \end{frame}
@@ -80,7 +82,7 @@
 \begin{tabular}{l l l}
 \textbf{MIS} & Week 11 & Nov 29\\
 \textbf{Impl.\ Present} & Week 12 & Week of Nov 27\\
-Final Documentation & Week 13 & Dec 6\\
+\textbf{Final Documentation} & Week 13 & Dec 6\\
 \end {tabular}
 
 \end{frame}
@@ -106,6 +108,75 @@ Final Documentation & Week 13 & Dec 6\\
 \ei
 \ei
 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Final Documentation}
+\begin{itemize}
+\item Looking for 
+\bi
+\item Revision of documentation
+\item Consistency between documents
+\item Traceability between documents - should be able to pick a requirement and
+  trace it all the way to testing
+\item Effort made to address issues and comments
+\item Appropriate challenge level
+\ei
+\item Make it easy to see changes from Rev 0
+\bi
+\item Specific explanation in Revision History
+\item Comments in tex file
+\ei
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Final Documentation}
+\begin{itemize}
+\item Requirements Document revised and improved
+\item Design Documents revised and improved
+\item Test Plan revised and improved
+\item Test Report
+\item Source Code
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Final Documentation: Source Code}
+\begin{itemize}
+\item Comments on ``what'' not ``how''
+\item Identifiers that are consistent, distinctive, and meaningful
+\item Avoidance of hard-coded constants (other than maybe 0 and 1)
+\item Appropriate modularization
+\item Consistent indentation
+\item Explicit identification of coding standards
+\item Parameters are in the same order for all functions
+\item Descriptive names of source code files
+\item Traceability to modules in module guide
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Final Documentation}
+\begin{itemize}
+\item Traceability between documents
+\item Look for an obvious requirement to see if it is in the requirements
+  document and traceable through the other documents
+\item Installability - instructions given, makefiles etc to support, means to
+  validate the installation, required libraries are explicitly identified
+\item Learnability - instructions to get someone started using the software
+\item Robustness - can the software handle garbage inputs reasonably
+\item Performance - measured if appropriate
+\item Usability - measured if appropriate
+\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -170,7 +241,7 @@ Final Documentation & Week 13 & Dec 6\\
 
 \bi
 \item Permission to others to reproduce or distribute a work
-\item License are distinguished by the restrictions (conditions)
+\item Licenses are distinguished by the restrictions (conditions)
 \ei
 
 \end{frame}
@@ -278,6 +349,202 @@ Final Documentation & Week 13 & Dec 6\\
 \item \href{http://choosealicense.com/licenses/}{Another summary}
 \item \href{https://tldrlegal.com}{Plain English summaries}
 
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Assurance Cases in Scientific Computing \cite{SmithEtAl2017}}
+
+\bi
+\item Assurance cases
+\bi 
+\item Organized and explicit argument for correctness
+\item Successfully used for safety critical systems
+\ei
+\item Advantages for SC
+\bi
+\item Engaging domain experts
+\item Producing necessary and relevant documentation
+\item Evidence that can be verified/replicated by a third party
+\ei
+\item Example of 3dfim+
+\bi
+\item No errors found
+\item However
+\bi
+\item Documentation ambiguities
+\item No warning about parametric statistical model
+\ei
+\ei
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Assurance Cases in SC Motivation}
+
+\bi
+\item Do we put too much trust in the quality of SCS?
+\item Are enough checks and balances in place, especially for safety related
+  software?
+\item Problems with imposing external requirements for certification
+\bi
+\item External body does not have expertise
+\item SCS developers dislike documentation
+\ei
+\item Solution -- Assurance Cases by experts
+\bi
+\item Experts engaged
+\item Relevant documentation
+\ei
+\item Current techniques of development and testing still used, but arguments
+  will no longer be ad hoc and incompletely documented
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hoffset=-.45in
+\begin{frame}[plain]
+%\frametitle{Goal Structuring Notation}
+
+\includegraphics[width=1.19\textwidth]{../Figures/assuranceBasic.pdf}
+
+\end{frame}
+\hoffset=0in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hoffset=-.2in
+\begin{frame}[plain]
+%\frametitle{3dfim+ Software}
+
+\includegraphics[width=1.\textwidth]{../Figures/AFNI_screenshot.PNG}
+
+\end{frame}
+\hoffset=0in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hoffset=-.2in
+\begin{frame}[plain]
+%\frametitle{Correlation of One Voxel}
+
+\includegraphics[width=1.\textwidth]{../Figures/scaledvoxelANDIdealsignalVStime_least.png}
+
+\end{frame}
+\hoffset=0in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hoffset=-.2in
+\begin{frame}[plain]
+%\frametitle{Context and Assumption in Top Goal}
+
+\includegraphics[width=0.95\textwidth]{../Figures/TopAC.pdf}
+
+\end{frame}
+\hoffset=0in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hoffset=-.27in
+\begin{frame}[plain]
+%\frametitle{Top Goal}
+
+\includegraphics[width=1.15\textwidth]{../Figures/TopGoal.pdf}
+
+\end{frame}
+\hoffset=0in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hoffset=-.2in
+\begin{frame}[plain]
+%\frametitle{GR Decomposition}
+
+\includegraphics[width=0.95\textwidth]{../Figures/GRTop.pdf}
+
+\end{frame}
+\hoffset=0in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hoffset=-.21in
+\begin{frame}[plain]
+%\frametitle{Modifiability of Documentation Requirements}
+
+\includegraphics[width=1.14\textwidth]{../Figures/Modifiable.pdf}
+
+\end{frame}
+\hoffset=0in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hoffset=-.3in
+\begin{frame}[plain]
+%\frametitle{Generic Evidence}
+
+\includegraphics[width=1.15\textwidth]{../Figures/Generic.pdf}
+
+\end{frame}
+\hoffset=0in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\hoffset=-.2in
+\begin{frame}[plain]
+%\frametitle{Defined Operational Assumptions}
+
+\includegraphics[width=0.75\textwidth]{../Figures/GSN_GA.pdf}
+
+\end{frame}
+\hoffset=0in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Proposed Changes to 3dfim+}
+
+\bi
+\item No mistakes found in calculations
+\item Goal of original software was not certification
+\item Problems found
+\bi
+\item GR goal not satisfied
+\bi
+\item Not complete, verifiable, modifiable or traceable
+\item Coordinate system information missing
+\item Ambiguous rank function
+\ei
+\item Inputs not checked in code
+\item User not informed of their responsibility to use tool with correct
+  statistical model
+\ei
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Concluding Remarks}
+
+\bi
+\item Hopefully motivated assurance cases for SC
+\item Quality is improved by looking at a problem from different perspectives,
+  assurance cases provide a systematic and rigorous way to introduce a new
+  perspective
+\item An assurance cases will likely use the same documentation and ideas used
+  in CAS 741
+\item However, an assurance case can focus and direct efforts right from the
+  start of the project
 \ei
 
 \end{frame}
