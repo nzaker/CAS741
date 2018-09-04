@@ -62,10 +62,10 @@
 
 \begin{itemize}
 
-\item Lecture times
+\item Lecture times (ITB/222)
 \begin{itemize}
-\item Tuesdays, 9:00 am to 10:30 am
-\item Fridays, 9:00 am to 10:30 am
+\item Wednesdays, 10:30 am to 12:00 noon
+\item Fridays, , 10:30 am to 12:00 noon
 \end{itemize}
 \item This course uses Avenue
 \begin{itemize}
@@ -82,8 +82,7 @@
 \begin{itemize}
 \item \url{https://github.com/}
 \item Create an account, if you do not already have one
-\item Access to your repo to instructor, all students in
-  the class, your supervisor?, other interested parties?
+\item Give the instructor (me) master access to your repo
 \end{itemize}
 
 \end{itemize}
@@ -273,7 +272,8 @@ logic and discrete mathematics
 \item System architecture
 \item Detailed design
 \item Implementation
-\item Testing and inspection
+\item Verification and Validation Plan
+\item Verification and Validation Report
 \ei
 \end{itemize}
 \end{itemize}
@@ -300,7 +300,8 @@ logic and discrete mathematics
 \item Module Guide (MG)
 \item Module Interface Specification (MIS)
 \item Implementation (and appropriate programming language)
-\item Testing
+\item VnV Plan
+\item VnV Report
 \ee
 \item Deliverables can potentially be modified to provide project flexibility
 \end {itemize}
@@ -314,10 +315,38 @@ logic and discrete mathematics
 \frametitle{``Faked'' Rational Design Process}
 
 \begin{center}
-\includegraphics[scale=0.6]{../Figures/OverviewOfProcess.pdf}
+\includegraphics[scale=0.4]{../Figures/Waterfall.pdf}
 \end{center}
 
 See Parnas and Clements 1986 about ``Faking It''
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Our ``Faked'' Process}
+
+\begin{center}
+\includegraphics[scale=0.55]{../Figures/VModelOfProcess.pdf}
+\end{center}
+\vspace{-1.0cm}
+V Model
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Our Deliverables}
+
+\begin{center}
+\includegraphics[scale=0.55]{../Figures/VModelOfProcessXOut.pdf}
+\end{center}
+\vspace{-1.0cm}
+Not all docs necessary
 
 \end{frame}
 
@@ -353,14 +382,18 @@ See Parnas and Clements 1986 about ``Faking It''
 
 \item System Requirements Specification (SRS) 20\%
 
-\item Verification and Validation Plan 10\%
+\item Verification and Validation Plan 15\%
+\begin{itemize}
+\item System VnV Plan 10\%
+\item Unit VnV Plan 5\%
+\end{itemize}
 
-\item Module Guide (MG) 10\%
+\item Module Guide (MG) 5\%
 
-\item Module Interface Specification (MIS) 10\%
+\item Module Interface Specification (MIS) 15\%
 
 \item Final Documentation (including revised versions of previous documents,
-  plus the source code and a testing report) 35\%
+  plus the source code and a testing reports (System and Unit)) 30\%
 
 \end {enumerate}
 
@@ -374,7 +407,8 @@ See Parnas and Clements 1986 about ``Faking It''
 \begin {itemize}
 
 \item Ideas to improve the course are welcomed
-\item Missed/late work use MSAF, or a penalty of 20 \% per working day
+\item Missed/late work please communicate in advance, or a penalty of 20 \% per
+  working day
 \item If there is a problem with discrimination please contact the Department
   Chair, or other appropriate body
 
@@ -413,7 +447,7 @@ the transcript, and/or suspension or expulsion from the university.
 
 \item \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/ReferenceMaterial/SoftEngForScienceBook.pdf}{\bibentry{Smith2016}}
 \item \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/ReferenceMaterial/SmithLaiAndKhedri2007fulltext.pdf}{\bibentry{SmithEtAl2007}}
-
+\item \href{https://github.com/smiths/swhs}{Solar Water Heating System Example}
 \end{itemize}
 
 \end{frame}
