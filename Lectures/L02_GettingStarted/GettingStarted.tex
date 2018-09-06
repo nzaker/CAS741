@@ -56,10 +56,10 @@
 
 \bi
 \item Administrative details
-\item Introductions?
-\item Questions on suggested reading?
+\item Any more introductions?
 \item Project choices
 \item Software tools
+\item Questions on suggested reading?
 \item Software Engineering for Scientific Computing literature
 \ei
 
@@ -71,8 +71,9 @@
 \frametitle{Administrative Details}
 
 \bi
+\item Classes are 1.5 hours long  :-)
 \item Benches and white boards
-\item Use folder structure given in repo
+\item Use folder structure given in repo (will be updating)
 \item Post any questions as issues in our repo
 \item Problem statement due Friday, Sept 15 by 11:59 pm
 \ei
@@ -121,14 +122,23 @@
 
 \item System Requirements Specification (SRS) 20\%
 
-\item Verification and Validation Plan 10\%
+\item Verification and Validation (VnV) Plan 15\%
+\begin{enumerate}
+\item System VnV Plan 10\%
+\item Unit VnV Plan 5\%
+\end{enumerate}
 
-\item Module Guide (MG) 10\%
+\item Module Guide (MG) 5\%
 
-\item Module Interface Specification (MIS) 10\%
+\item Module Interface Specification (MIS) 15\%
 
-\item Final Documentation (including revised versions of previous documents,
-  plus the source code and a testing report) 35\%
+\item Final Documentation 30\%
+\begin{enumerate}
+\item Problem Statement, SRS, System VnV Plan, MG, MIS, Unit VnV Plan (Revised)
+\item Code
+\item System VnV Report
+\item Unit VnV Report
+\end{enumerate}
 
 \end {enumerate}
 
@@ -142,9 +152,10 @@
 \begin{tabular}{l l l}
 Problem Statement & Week 02 & Sept 15\\
 System Requirements Specification (SRS) & Week 05 & Oct 4\\
-Verification and Validation Plan & Week 07 & Oct 25\\
+System VnV Plan & Week 07 & Oct 25\\
 Module Guide (MG) & Week 09 & Nov 8\\
 Module Interface Specification (MIS) & Week 11 & Nov 22\\
+Unit VnV Plan & Week 11 & Nov 22\\
 Final Documentation & Week 13 & Dec 6\\
 \end {tabular}
 
@@ -165,10 +176,10 @@ Final Documentation & Week 13 & Dec 6\\
 ~\newline
 \begin{tabular}{l l l}
 SRS Present & Week 04 & Week of Sept 25\\
-V\&V Present & Week 06 & Week of Oct 16\\
+Syst.\ VnV Present & Week 06 & Week of Oct 16\\
 MG Present & Week 08 & Week of Oct 30\\
 MIS Present & Week 10 & Week of Nov 13\\
-Implementation Present & Week 12 & Week of Nov 27\\
+Unit VnV or Implement Present & Week 12 & Week of Nov 27\\
 \end {tabular}
 
 \bi
@@ -176,6 +187,7 @@ Implementation Present & Week 12 & Week of Nov 27\\
 \item Specific schedule depends on final class registration and need
 \item Informal presentations with the goal of improving everyone's written
   deliverables
+\item You will be assigned to ask questions of your colleagues
 \ei
 
 \end{frame}
@@ -211,20 +223,6 @@ Implementation Present & Week 12 & Week of Nov 27\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Questions on Suggested Reading?}
-
-\begin {itemize}
-
-\item \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/ReferenceMaterial/SoftEngForScienceBook.pdf}{Smith2016~\cite{Smith2016}}
-\item \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/ReferenceMaterial/SmithLaiAndKhedri2007fulltext.pdf}{SmithEtAl2007~\cite{SmithEtAl2007}}
-
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
 \frametitle{Project Selection: Desired Qualities}
 \begin{itemize}
 \item Related to scientific computing
@@ -257,6 +255,7 @@ Implementation Present & Week 12 & Week of Nov 27\\
   \href{http://www.tiem.utk.edu/~gross/bioed/bealsmodules/predator-prey.html}{Predator
     prey dynamics}
 \item Imaging: filters, edge detection etc.
+\item Medical Imaging
 \item etc.
 \end{itemize}
 
@@ -366,6 +365,44 @@ First either init repo or clone (git init, git clone), then typical workflow is
 \item The problem statement
 \ei
 \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Suggested Reading Questions?}
+
+\begin {itemize}
+
+\item
+  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/ReferenceMaterial/SoftEngForScienceBook.pdf}
+  {Smith2016~\cite{Smith2016}}
+\item
+  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/ReferenceMaterial/SmithLaiAndKhedri2007fulltext.pdf}
+  {SmithEtAl2007~\cite{SmithEtAl2007}}
+\item
+  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/ReferenceMaterial/ParnasAndClements1986.pdf}
+  {{ParnasAndClements1986}}
+\item \href{https://github.com/smiths/swhs}{Solar Water Heating System Example}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Literature on SE applied to SCS}
+
+\begin {itemize}
+
+\item Highlights problems with SE
+\item Highlights gap/chasm between SE and SC
+\item Studies of SE applied to SC
+\item Reproducibility
+
+\end{itemize}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
