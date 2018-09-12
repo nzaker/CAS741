@@ -69,6 +69,8 @@
 \frametitle{Administrative Details}
 
 \bi
+\item Can everyone access GitLab? \href{https://gitlab.cas.mcmaster.ca/smiths/cas741}{https://gitlab.cas.mcmaster.ca/smiths/cas741}
+\item Create a GitHub account if you don't already have one
 \item Add \texttt{smiths} to your GitHub repos
 \item Linked-In
 \item \structure{Assign the instructor an issue to review your problem statement}
@@ -80,50 +82,52 @@
 
 \begin{frame}
 \frametitle{Administrative Details: Deadlines}
+
 ~\newline
 \begin{tabular}{l l l}
-\textbf{Problem Statement} & Week 02 & Sept 15\\
-SRS Present & Week 04 & Week of Sept 25\\
+Problem Statement & Week 02 & Sept 14\\
+SRS Present & Week 04 & Week of Sept 24\\
 SRS & Week 05 & Oct 4\\
-V\&V Present & Week 06 & Week of Oct 16\\
-V\&V Plan & Week 07 & Oct 25\\
-MG Present & Week 08 & Week of Oct 30\\
-MG & Week 09 & Nov 8\\
-MIS Present & Week 10 & Week of Nov 13\\
-MIS & Week 11 & Nov 22\\
-Impl.\ Present & Week 12 & Week of Nov 27\\
-Final Documentation & Week 13 & Dec 6\\
+Syst.\ VnV Present & Week 06 & Week of Oct 15\\
+System VnV Plan & Week 07 & Oct 22\\
+MG Present & Week 08 & Week of Oct 29\\
+MG & Week 09 & Nov 5\\
+MIS Present & Week 10 & Week of Nov 12\\
+MIS & Week 11 & Nov 19\\
+Unit VnV or Impl.\ Present & Week 12 & Week of Nov 26\\
+Unit VnV Plan & Week 13 & Dec 3\\
+Final Doc & Week 14 & Dec 10\\
 \end {tabular}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\frametitle{Introductions}
+% \begin{frame}
+% \frametitle{Introductions}
 
-\begin{itemize}
-\item Your name
-\item Degree program
-\item Academic background
-\item Experience with:
-\begin{itemize}
-\item Scientific computing
-\item Continuous math
-\item Discrete math
-\item Software engineering
-\item Software development technology
-\bi
-\item Git
-\item GitHub or GitLab
-\item LaTeX
-\item Make etc.
-\ei
-\end{itemize}
-\item What do you hope to get out of this course?
-\end{itemize}
+% \begin{itemize}
+% \item Your name
+% \item Degree program
+% \item Academic background
+% \item Experience with:
+% \begin{itemize}
+% \item Scientific computing
+% \item Continuous math
+% \item Discrete math
+% \item Software engineering
+% \item Software development technology
+% \bi
+% \item Git
+% \item GitHub or GitLab
+% \item LaTeX
+% \item Make etc.
+% \ei
+% \end{itemize}
+% \item What do you hope to get out of this course?
+% \end{itemize}
 
-\end{frame}
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -137,7 +141,11 @@ Final Documentation & Week 13 & Dec 6\\
 \item LaTex?
 \ei
 \item Partial tex files in the blank project template
-\item \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/BlankProjectTemplate/Doc/ProblemStatement/ProblemStatement.tex}{Problem statement}
+\item
+  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/tree/master/BlankProjectTemplate/docs/ProblemStatement}{Problem
+    statement}
+\item Copy the folder structure and README files from the blank project, but
+  wait for tex files for deliverables
 \end{itemize}
 \end{frame}
 
@@ -148,8 +156,9 @@ Final Documentation & Week 13 & Dec 6\\
 \bi
 \item Written in LaTeX
 \item Due electronically (on GitHub) by deadline
+\item Generated files should NOT be under source control (except pdf)
 \item Comments might be typed directly into your source
-\item For later assignments with LaTeX source, include the LaTeX
+\item For all assignments with LaTeX source, include the LaTeX
   commands for comments
 \item \textbf{What} problem are you trying to solve?
 \item \textbf{Not how} you are going to solve the problem
@@ -169,6 +178,15 @@ Final Documentation & Week 13 & Dec 6\\
 \frametitle{Sample Project Statements} 
 
 \bi
+\item
+  \href{https://github.com/icbicket/SpectrumImageAnalysisPy/blob/master/Doc/ProblemStatement/ProblemStatement.tex}
+  {SpectrumImageAnalysisPy}
+\item
+  \href{https://github.com/palmerst/cas741_sp/blob/master/Doc/ProblemStatement/ProblemStatement.pdf}{Aqueous
+    Speciation Diagram Generator}
+\item
+  \href{https://github.com/aoananp/cas741/blob/master/Doc/ProblemStatement/ProblemStatement.pdf}{System
+    of ODE solver library}
 \item \href{https://gitlab.cas.mcmaster.ca/ThisTooShallParse/3XA3_CParser}{CParser}
 \item \href{https://gitlab.cas.mcmaster.ca/theateam/FloppyFishGroup}{FloppyFish}
 \item
@@ -179,65 +197,6 @@ Final Documentation & Week 13 & Dec 6\\
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{SE For SC Literature}
-
-\begin {itemize}
-
-\item CAS 741 process is document driven, adapted
-from the waterfall model~\cite{GhezziEtAl2003, VanVliet2000}
-\item Many say a document driven process is not used by, nor suitable for,
-scientific software.
-\bi
-\item Scientific developers naturally use an agile
-  philosophy~\cite{AckroydEtAl2008, CarverEtAl2007, EasterbrookAndJohns2009, Segal2005}, 
-\item or an amethododical process~\cite{Kelly2013}
-\item or a knowledge acquisition driven process~\cite{Kelly2015}.
-\ei
-\item Scientists do not view rigid, process-heavy approaches,
-  favorably~\cite{CarverEtAl2007}
-\item Reports for each stage of development are counterproductive~\cite[p.~373]{Roache1998}
-\item Up-front requirements are
-impossible~\cite{CarverEtAl2007, SegalAndMorris2008}
-\item \structure{What are some arguments in favour of a rational document driven
-    process?}
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Counter Arguments}
-
-\begin {itemize}
-
-\item Just because document driven is not used, does not mean it will not work
-\item Documentation provides many
-benefits~\cite{Parnas2010}: 
-\bi
-\item easier reuse of old designs
-\item better communication about requirements
-\item more useful design reviews
-\item easier integration of separately
-written modules
-\item more effective code inspection
-\item more effective testing
-\item more efficient corrections and improvements.
-\ei
-\item Actually faking a rational design process
-\item Too complex for up-front requirements sounds like an excuse
-\bi
-\item Laws of physics/science slow to change
-\item Often simple design patterns
-\item Think program family, not individual member
-\ei
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 \frametitle{Definition of Software Qualities}
@@ -574,6 +533,145 @@ Draw a diagram showing the relationships between the various software qualities
 \item Most software qualities do not have universally accepted
 \item Can you directly measure maintainability?
 \item How might you measure maintainability?
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{SRS versus CA}
+
+\begin{itemize}
+\item SRS (Software Requirements Specification)
+\begin{itemize}
+\item Requirements for a software product
+\item Usually for specific physical problems
+\end{itemize}
+\item CA (Commonality Analysis)
+\begin{itemize}
+\item Requirements for a family of related software products
+\item Sometime for specific physical problems
+\item Commonly used for a library of general purpose tools
+\item Distinguish commonalities, variabilities and parameters of variation
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Big Picture View of SRS/CA}
+
+\begin{itemize}
+\item Goal statement(s)
+\item Inputs and outputs
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for SWHS}
+
+\structure{What are the goal statement for the Solar Water Heating System?}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for SWHS}
+
+\noindent Given the temperature of the heating coil, initial conditions for the
+temperature of the water and the temperature of the phase change material, and
+material properties, the goal statements are:
+
+\begin{itemize}
+
+\item[GS1:] Predict the water 
+temperature over time.
+
+\item[GS2:] Predict the PCM 
+temperature over time.
+	
+\item[GS3:] Predict the 
+change in the energy of the water over time.
+
+\item[GS4:] Predict the 
+change in the energy of the PCM over time.
+
+\end{itemize}
+
+(Consider using names instead of numbers for labels.)
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for GlassBR}
+
+Given the dimensions of the glass plane, glass type, the characteristics of the explosion, and
+the tolerable probability of breakage, the goal statements are:
+\begin{itemize}
+\item[GS1:] Analyze and predict whether the
+  glass slab under consideration will be able to withstand the explosion of a
+  certain degree which is calculated based on user input.
+\end{itemize}  
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for Game Physics}
+
+\begin{itemize}
+	
+\item[G\_linear:] Given the physical properties, initial positions and
+  velocities, and forces applied on a set of rigid bodies, determine their new
+  positions and velocities over a period of time (IM-IM\_FT).
+
+\item[G\_ang:] Given the physical properties, initial orientations and
+  angular velocities, and forces applied on a set of rigid bodies, determine
+  their new orientations and angular velocities over a period of
+  time. (IM-IM\_FR).
+
+\item[G\_dtcCol:] Given the initial positions and velocities of a set
+  of rigid bodies, determine if any of them will collide with one another over a
+  period of time.
+
+\item[G\_Col:] Given the physical properties, initial linear and angular
+  positions and velocities, determine the new positions and velocities over a
+  period of time of rigid bodies that have undergone a collision (IM-IM\_C).
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for Linear Solver}
+
+\structure{What would be a good goal statement for a library of linear solvers?}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for Linear Solver}
+
+\begin{itemize}
+	
+\item[G1] Given a system of $n$ linear equations represented by matrix $A$ and
+  column vector $b$, return $x$ such that $Ax = b$, if possible
+
 \end{itemize}
 
 \end{frame}
