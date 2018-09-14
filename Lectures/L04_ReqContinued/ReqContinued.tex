@@ -50,6 +50,7 @@
 \bi
 \item Administrative details
 \item Questions?
+\item Goal statment examples
 \item Requirements documentation for scientific computing
 \item A new requirements template
 \item Advantages of new template and examples
@@ -73,8 +74,8 @@
 \ei
 \item Do not put generated files under version control
 \item Create a \texttt{.gitignore} file
-\item Updates to SRS template
-\item Commonality analysis should also start from SRS template
+\item SRS template in blank project folder should be good
+\item The CA template will be revised soon
 \ei
 
 \end{frame}
@@ -83,19 +84,21 @@
 
 \begin{frame}
 \frametitle{Administrative Details: Deadlines}
+
 ~\newline
 \begin{tabular}{l l l}
-\textbf{Problem Statement} & Week 02 & Sept 15\\
-\textbf{SRS Present} & Week 04 & Week of Sept 25\\
+\textbf{Problem Statement} & Week 02 & Sept 14\\
+\textbf{SRS Present} & Week 04 & Week of Sept 24\\
 \textbf{SRS} & Week 05 & Oct 4\\
-V\&V Present & Week 06 & Week of Oct 16\\
-V\&V Plan & Week 07 & Oct 25\\
-MG Present & Week 08 & Week of Oct 30\\
-MG & Week 09 & Nov 8\\
-MIS Present & Week 10 & Week of Nov 13\\
-MIS & Week 11 & Nov 22\\
-Impl.\ Present & Week 12 & Week of Nov 27\\
-Final Documentation & Week 13 & Dec 6\\
+Syst.\ VnV Present & Week 06 & Week of Oct 15\\
+System VnV Plan & Week 07 & Oct 22\\
+MG Present & Week 08 & Week of Oct 29\\
+MG & Week 09 & Nov 5\\
+MIS Present & Week 10 & Week of Nov 12\\
+MIS & Week 11 & Nov 19\\
+Unit VnV or Impl.\ Present & Week 12 & Week of Nov 26\\
+Unit VnV Plan & Week 13 & Dec 3\\
+Final Doc & Week 14 & Dec 10\\
 \end {tabular}
 
 \end{frame}
@@ -106,30 +109,30 @@ Final Documentation & Week 13 & Dec 6\\
 \frametitle{Administrative Details: Presentation Schedule}
 
 \bi
-\item{SRS Present}
+\item SRS Present
 \bi
-\item Tuesday: Paul, Isobel, Keshav
-\item Friday: Devi, Shushen, Xiaoye
+\item Wednesday: Jennifer, Yang, Brooks
+\item Friday: Vajiheh, Olu, Karol
 \ei
-\item V\&V Present
+\item Syst V\&V Plan Present
 \bi
-\item Tuesday: Steven, Alexandre P., Alexander S.
-\item Friday: Geneva, Jason, Yuzhi
+\item Wednesday: Malavika, Robert, Qirui
+\item Friday: Jian, Hanane
 \ei
 \item MG Present
 \bi
-\item Tuesday: Xiaoye, Shushen, Devi, Keshav, Isobel, Paul
-\item Friday: Yuzhi, Jason, Geneva, Alexander S, Alexandre P., Steven
+\item Wednesday: Karol, Malavika, Robert, Quirui, Jian, Hanane
+\item Friday: Vajiheh, Olu, Jennifer, Yang, Brooks
 \ei
 \item MIS Present
 \bi
-\item Tuesday: Isobel, Keshav, Paul
-\item Friday: Shushen, Xiaoye, Devi
+\item Wednesday: Malavika, Robert, Qirui
+\item Friday: Jian, Hanane,  Jennifer
 \ei
-\item Impl.\ Present
+\item Unit VnV Plan or Impl.\ Present
 \bi
-\item Tuesday: Alexander S., Steven, Alexandre P.
-\item Friday: Jason, Geneva, Yuzhi
+\item Wednesday: Yang, Brooks, Vajiheh
+\item Friday: Olu, Karol
 \ei
 
 \ei
@@ -168,6 +171,122 @@ Final Documentation & Week 13 & Dec 6\\
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Big Picture View of SRS/CA}
+
+\begin{itemize}
+\item Goal statement(s)
+\item Inputs and outputs
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for SWHS}
+
+\structure{What are the goal statement for the Solar Water Heating System?}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for SWHS}
+
+\noindent Given the temperature of the heating coil, initial conditions for the
+temperature of the water and the temperature of the phase change material, and
+material properties, the goal statements are:
+
+\begin{itemize}
+
+\item[GS1:] Predict the water 
+temperature over time.
+
+\item[GS2:] Predict the PCM 
+temperature over time.
+	
+\item[GS3:] Predict the 
+change in the energy of the water over time.
+
+\item[GS4:] Predict the 
+change in the energy of the PCM over time.
+
+\end{itemize}
+
+(Consider using names instead of numbers for labels.)
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for GlassBR}
+
+Given the dimensions of the glass plane, glass type, the characteristics of the explosion, and
+the tolerable probability of breakage, the goal statements are:
+\begin{itemize}
+\item[GS1:] Analyze and predict whether the
+  glass slab under consideration will be able to withstand the explosion of a
+  certain degree which is calculated based on user input.
+\end{itemize}  
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for Game Physics}
+
+\begin{itemize}
+	
+\item[G\_linear:] Given the physical properties, initial positions and
+  velocities, and forces applied on a set of rigid bodies, determine their new
+  positions and velocities over a period of time (IM-IM\_FT).
+
+\item[G\_ang:] Given the physical properties, initial orientations and
+  angular velocities, and forces applied on a set of rigid bodies, determine
+  their new orientations and angular velocities over a period of
+  time. (IM-IM\_FR).
+
+\item[G\_dtcCol:] Given the initial positions and velocities of a set
+  of rigid bodies, determine if any of them will collide with one another over a
+  period of time.
+
+\item[G\_Col:] Given the physical properties, initial linear and angular
+  positions and velocities, determine the new positions and velocities over a
+  period of time of rigid bodies that have undergone a collision (IM-IM\_C).
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for Linear Solver}
+
+\structure{What would be a good goal statement for a library of linear solvers?}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for Linear Solver}
+
+\begin{itemize}
+	
+\item[G1] Given a system of $n$ linear equations represented by matrix $A$ and
+  column vector $b$, return $x$ such that $Ax = b$, if possible
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 
