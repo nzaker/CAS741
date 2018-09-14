@@ -62,6 +62,7 @@
 \bi
 \item Administrative details
 \item Questions?
+\item Finish up on SRS
 \item Specification Qualities
 \item Motivation
 \item Proposed Family Methods
@@ -161,6 +162,225 @@ Final Documentation & Week 13 & Dec 6\\
 \item Questions about problem statements?
 \item Questions about SRS?
 \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{\frametitle{More on the Template}
+\begin{itemize}%[<+-| alert@+>]%[iacolor=gray]
+\item Why a new template?
+\item The new template
+\begin{itemize}
+\item Overview of changes from existing templates
+\item Goal $\rightarrow$ Theoretical Model $\rightarrow$ Instanced Model hierarchy
+\item Traceability matrix
+\item System behaviour, including input constraints
+\end{itemize}
+\end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{\frametitle{Why a New Template?}
+From \cite{SmithAndLai2005, Lai2004}
+\begin{enumerate}%[<+-| alert@+>]%[iacolor=gray]
+%\item Reasons for a new template also form principles for its design
+\item One user viewpoint for the physical model
+\item Assumptions distinguish models
+\item High potential for reuse of functional requirements
+\item Characteristic hierarchical nature facilitates change
+\item Continuous mathematics presents a challenge
+\end{enumerate}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\frame{\frametitle{Overview of the New Template}
+
+\begin{itemize}
+
+\item{Reference Material}
+
+\item{Introduction:} 
+{a) Purpose of the Document}
+{b) Scope of the Software Product}
+{c) Organization of the Document}
+
+\item General System Description:
+{a) System Context}
+{b) User Characteristics}
+{c) System Constraints}
+
+\item \structure<2->{Specific System Description:
+a) Problem Description 
+b) Solution Characteristics Specification
+c) Non-functional Requirements}
+
+\item{Other System Issues}
+
+\item \structure<2->{Traceability Matrix}
+
+\item List of Possible Changes in the Requirements
+
+\item{Values of Auxiliary Constants}
+
+\item{References}
+
+\end{itemize}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Excerpts from Specific System Description}
+
+\begin{itemize}
+
+\item Problem Description
+\begin{itemize}
+\item Physical system description (\textbf{PS}) 
+\item Goals (\textbf{G})
+\end{itemize}
+ 
+\item Solution Characteristics Specification
+\begin{itemize}
+\item Assumptions (\textbf{A})
+\item Theoretical models (\textbf{T})
+\item Data definitions
+\item Instanced models (\textbf{M})
+\item Data constraints
+\item System behaviour
+\end{itemize}
+
+\item Non-functional Requirements
+\begin{itemize}
+\item Accuracy of input data
+\item Sensitivity of the model
+\item Tolerance of the solution
+\item Solution validation strategies (now moved to a separate document)
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Refinement from Abstract to Concrete}
+
+\begin{overlayarea}{\textwidth}{5.3cm}
+\begin{figure}[H]
+\includegraphics<1>[scale=0.41]{../Figures/RefinementHierarchy.pdf}
+\includegraphics<2>[scale=0.41]{../Figures/RefinementG1.pdf}
+\includegraphics<3>[scale=0.41]{../Figures/RefinementT11.pdf}
+\includegraphics<4>[scale=0.41]{../Figures/RefinementM111.pdf}
+\includegraphics<5>[scale=0.41]{../Figures/RefinementT12.pdf}
+\end{figure}
+\end{overlayarea}
+
+\begin{overlayarea}{\textwidth}{1cm}
+
+\only<2>{\textbf{G1}: Solve for unknown forces}
+
+\only<3>{
+\begin{center} 
+$%\begin{displaymath}
+\mathbf{(T1_1)}~\left\{ 
+\begin{array}{lll}
+\textrm{$\sum{F_{xi}} = 0$}\\  
+\textrm{$\sum{F_{yi}} = 0$}\\
+\textrm{$\sum{M_i} = 0$}\\
+\end{array} \right. $%\end{displaymath}
+\end{center}
+}
+
+\only<4>{
+\begin{center} $%\begin{displaymath}
+\textbf{(M1)}~\left\{ 
+\begin{array}{lll}
+\textrm{$F_{ax} - F_1\cdot \cos\theta_3 - F_2\cdot \cos\theta_4 - F_{bx} = 0$} \\ 
+\textrm{$F_{ay} - F_1\cdot \sin\theta_3 - F_2\cdot \sin\theta_4 + F_{by} = 0$}\\
+\textrm{$- F_1\cdot x_1\sin\theta_3 - F_2\cdot x_2\sin\theta_4 + F_{by}\cdot L = 0$}\\
+\end{array} \right. 
+$%\end{displaymath}
+\end{center}
+}
+
+\only<5>{
+The virtual work done by all the external forces and couples acting on the system is zero for each independent virtual
+displacement of the system, or mathematically $\delta U = 0$
+}
+\end{overlayarea}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Other goals and models}
+\begin{itemize}
+\item \textbf{G2}: Solve for the functions of shear force and bending moment along the beam
+\item \textbf{G3}: Solve for the function of deflection along the beam
+\item $\mathbf{T3_1}$: $\frac{d^2 y}{d x^2} = \frac{M}{EI}$, $y(0) = y(L) = 0$
+\item $\mathbf{T3_2}$: $y$ determined by moment area method
+\item $\mathbf{T3_3}$: $y$ determined using Castigliano's theorem
+\item $\mathbf{M3_{11}}$: $y = \frac{12 \int_0^L (\int_0^L M dx) dx}{Eeh^3}$, $y(0) = y(L) = 0$
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Kreyman and Parnas Five Variable Model}
+\begin{itemize}
+\item See \cite{KreymanAndParnas2002}
+\item An alternative approach
+\item Unfortunately the numerical algorithm is not hidden in the requirements specification
+\item The analogy with real-time systems leads to some confusion
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Examples}
+\begin{itemize}
+\item \href{https://github.com/smiths/swhs}{Solar Water Heating System}
+\item \href{https://github.com/JacquesCarette/literate-scientific-software/tree/master/CaseStudies/glass/Documentation/SRS}{GlassBR}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Summary of Template}
+\begin{itemize}
+\item Quality is a concern for scientific computing software
+\item Software engineering methodologies can help
+\item Motivated, justified and illustrated a method of writing requirements specification for engineering computation
+to improve reliability
+\item Also improve quality with respect to usability, verifiability, maintainability, reusability and portability
+\item Tabular expressions to reduce ambiguity, encourage systematic approach
+\item Conclusions can be generalized because other computation problems follow the same pattern of \emph{Input} then
+\emph{Calculate} then \emph{Output}
+\item Benefits of approach should increase as the number of details and the number of people involved increase
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Summary of Template (Continued)}
+\begin{itemize}
+\item A new template for scientific computing has been developed
+\item Characteristics of scientific software guided the design
+\item Designed for reuse
+\item Functional requirements split into ``Problem Description'' and ``Solution Characteristics Specification''
+\item Traceability matrix
+\item Addresses nonfunctional requirements (but room for improvement)
+\end{itemize}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
