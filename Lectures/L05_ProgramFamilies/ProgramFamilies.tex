@@ -25,6 +25,10 @@
 \usepackage{bm}
 \usepackage{colortbl}
 \usepackage{bnf}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+
 \newcommand{\colA}{2.1cm}
 \newcommand{\colB}{6.9cm}
 \newcommand{\colC}{1.1cm} %do not need this column if binding time is not listed
@@ -84,10 +88,10 @@
 \item VGA by default, ask if need adapter
 \item Can use my laptop
 \ei
-\item Do NOT reproduce all of the cas 741 repo in your repo, just the blank
-  project template (moved to the top level)
-\item Use the same names as the original
-\item Delete example text from templates
+% \item Do NOT reproduce all of the cas 741 repo in your repo, just the blank
+%   project template (moved to the top level)
+%\item Use the same names as the original
+%\item Delete example text from templates
 \item 80 columns in tex files
 \item Spell check
 \item Replace ``in order to'' by ``to''
@@ -96,6 +100,8 @@
   \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/Repos.xlsx}{work
     of class mates}
 \item Include the commit hash that closes the issue
+\item Close issues assigned to you
+\item SRS and CA templates updated, makefiles
 \ei
 
 \end{frame}
@@ -104,19 +110,21 @@
 
 \begin{frame}
 \frametitle{Administrative Details: Deadlines}
+
 ~\newline
 \begin{tabular}{l l l}
-\textbf{Problem Statement} & Week 02 & Sept 15\\
-\textbf{SRS Present} & Week 04 & Week of Sept 25\\
+\textbf{Problem Statement} & Week 02 & Sept 14\\
+\textbf{SRS Present} & Week 04 & Week of Sept 24\\
 \textbf{SRS} & Week 05 & Oct 4\\
-V\&V Present & Week 06 & Week of Oct 16\\
-V\&V Plan & Week 07 & Oct 25\\
-MG Present & Week 08 & Week of Oct 30\\
-MG & Week 09 & Nov 8\\
-MIS Present & Week 10 & Week of Nov 13\\
-MIS & Week 11 & Nov 22\\
-Impl.\ Present & Week 12 & Week of Nov 27\\
-Final Documentation & Week 13 & Dec 6\\
+Syst.\ VnV Present & Week 06 & Week of Oct 15\\
+System VnV Plan & Week 07 & Oct 22\\
+MG Present & Week 08 & Week of Oct 29\\
+MG & Week 09 & Nov 5\\
+MIS Present & Week 10 & Week of Nov 12\\
+MIS & Week 11 & Nov 19\\
+Unit VnV or Impl.\ Present & Week 12 & Week of Nov 26\\
+Unit VnV Plan & Week 13 & Dec 3\\
+Final Doc & Week 14 & Dec 10\\
 \end {tabular}
 
 \end{frame}
@@ -125,32 +133,32 @@ Final Documentation & Week 13 & Dec 6\\
 
 \begin{frame}
 \frametitle{Administrative Details: Presentation Schedule}
-
+Some (minor) changes from last time
 \bi
-\item{SRS Present}
+\item SRS Present
 \bi
-\item Tuesday: Paul, Isobel, Keshav
-\item Friday: Devi, Shushen, Xiaoye
+\item Wednesday: Jennifer, Brooks
+\item Friday: Vajiheh, Olu, Karol
 \ei
-\item V\&V Present
+\item Syst V\&V Plan Present
 \bi
-\item Tuesday: Steven, Alexandre P., Alexander S.
-\item Friday: Geneva, Jason, Yuzhi
+\item Wednesday: Malavika, Robert
+\item Friday: Hanane, Qirui
 \ei
 \item MG Present
 \bi
-\item Tuesday: Xiaoye, Shushen, Devi, Keshav, \structure{Alex P}, Paul
-\item Friday: Yuzhi, Jason, Geneva, Alex S, \structure{Isobel}, Steven
+\item Wednesday: Karol, Malavika, Robert, Quirui, Hanane
+\item Friday: Brooks, Vajiheh, Olu, Jennifer
 \ei
 \item MIS Present
 \bi
-\item Tuesday: Isobel, Keshav, Paul
-\item Friday: Shushen, Xiaoye, Devi
+\item Wednesday: Malavika, Robert, Qirui
+\item Friday: Hanane,  Jennifer
 \ei
-\item Impl.\ Present
+\item Unit VnV Plan or Impl.\ Present
 \bi
-\item Tuesday: Alexander S., Steven, Alexandre P.
-\item Friday: Jason, Geneva, Yuzhi
+\item Wednesday: Brooks, Vajiheh
+\item Friday: Olu, Karol
 \ei
 
 \ei
@@ -350,7 +358,7 @@ displacement of the system, or mathematically $\delta U = 0$
 \frametitle{Examples}
 \begin{itemize}
 \item \href{https://github.com/smiths/swhs}{Solar Water Heating System}
-\item \href{https://github.com/JacquesCarette/literate-scientific-software/tree/master/CaseStudies/glass/Documentation/SRS}{GlassBR}
+\item \href{https://github.com/smiths/caseStudies/tree/master/CaseStudies/glass/docs/SRS}{GlassBR}
 \end{itemize}
 \end{frame}
 
@@ -653,6 +661,7 @@ at the end of a word.}
 \item Impact analysis
 \item Reuse
 \ei
+\item \structure{Why is traceability important?} %design for change
 \end{itemize}
 
 \end{frame}
@@ -671,6 +680,32 @@ at the end of a word.}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\hoffset=-.8in
+\begin{frame}[plain, fragile]
+
+\frametitle{Program Family Examples}
+
+% if time add another program family example
+
+\begin{tikzpicture}[remember picture,overlay]
+\node [xshift=0cm,yshift=-3.cm] at (current page.center)
+{
+\includegraphics[width=1.2\textwidth]{../Figures/apple-mac-products-450x128.jpg}
+};
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+\node [xshift=0cm,yshift=1.cm] at (current page.center)
+{
+\includegraphics[width=0.8\textwidth]{../Figures/dodge-lineup.jpg}
+};
+\end{tikzpicture}
+
+\end{frame}
+\hoffset=0in
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 \frametitle{Program Families}
