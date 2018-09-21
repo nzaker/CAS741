@@ -76,7 +76,14 @@
 
 \bi
 \item \href{http://avenue.mcmaster.ca/index.html}{Marking scheme for SRS}
+\bi
+\item You should be able to see it in Avenue
+\item Do NOT submit on Avenue
+\ei
 \item \href{http://avenue.mcmaster.ca/index.html}{Grade columns in Avenue}
+\bi
+\item Presentation questions worth 1\%
+\ei
 \ei
 
 \end{frame}
@@ -87,17 +94,17 @@
 \frametitle{Administrative Details: Deadlines}
 ~\newline
 \begin{tabular}{l l l}
-\textbf{Problem Statement} & Week 02 & Sept 15\\
-\textbf{SRS Present} & Week 04 & Week of Sept 25\\
-\textbf{SRS} & Week 05 & Oct 4\\
-V\&V Present & Week 06 & Week of Oct 16\\
-V\&V Plan & Week 07 & Oct 25\\
-MG Present & Week 08 & Week of Oct 30\\
-MG & Week 09 & Nov 8\\
-MIS Present & Week 10 & Week of Nov 13\\
-MIS & Week 11 & Nov 22\\
-Impl.\ Present & Week 12 & Week of Nov 27\\
-Final Documentation & Week 13 & Dec 6\\
+\textbf{SRS or CA Present} & Week 04 & Week of Sept 24\\
+\textbf{SRS or CA} & Week 05 & Oct 4\\
+Syst.\ VnV Present & Week 06 & Week of Oct 15\\
+System VnV Plan & Week 07 & Oct 22\\
+MG Present & Week 08 & Week of Oct 29\\
+MG & Week 09 & Nov 5\\
+MIS Present & Week 10 & Week of Nov 12\\
+MIS & Week 11 & Nov 19\\
+Unit VnV or Impl.\ Present & Week 12 & Week of Nov 26\\
+Unit VnV Plan & Week 13 & Dec 3\\
+Final Doc & Week 14 & Dec 10\\
 \end {tabular}
 
 \end{frame}
@@ -106,36 +113,58 @@ Final Documentation & Week 13 & Dec 6\\
 
 \begin{frame}
 \frametitle{Administrative Details: Presentation Schedule}
-Assign Questioners
+
 \bi
-\item{SRS Present}
+\item SRS Present
 \bi
-\item Tuesday: Paul, Isobel, Keshav
-\item Friday: Devi, Shushen, Xiaoye
+\item Wednesday: Jennifer, Brooks
+\item Friday: Vajiheh, Olu, Karol
 \ei
-\item V\&V Present
+\item Syst V\&V Plan Present
 \bi
-\item Tuesday: Steven, Alexandre P., Alexander S.
-\item Friday: Geneva, Jason, Yuzhi
+\item Wednesday: Malavika, Robert
+\item Friday: Hanane
 \ei
 \item MG Present
 \bi
-\item Tuesday: Xiaoye, Shushen, Devi, Keshav, Alex P, Paul
-\item Friday: Yuzhi, Jason, Geneva, Alex S, Isobel, Steven
+\item Wednesday: Karol, Malavika, Robert, Hanane
+\item Friday: Brooks, Vajiheh, Olu, Jennifer
 \ei
 \item MIS Present
 \bi
-\item Tuesday: Isobel, Keshav, Paul
-\item Friday: Shushen, Xiaoye, Devi
+\item Wednesday: Malavika, Robert
+\item Friday: Hanane,  Jennifer
 \ei
-\item Impl.\ Present
+\item Unit VnV Plan or Impl.\ Present
 \bi
-\item Tuesday: Alexander S., Steven, Alexandre P.
-\item Friday: Jason, Geneva, Yuzhi
+\item Wednesday: Brooks, Vajiheh
+\item Friday: Olu, Karol
 \ei
 
 \ei
 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Assigned ``Questioners''}
+
+\be
+\item Jennifer: Brooks, Vajiheh, Olu
+\item Brooks: Vajiheh, Olu, Karol
+\item Vajiheh: Olu, Karol, Malavika
+\item Olu: Karol, Malavika, Robert
+\item Karol: Malavika, Robert, Hanane
+\item Malavika: Robert, Hanane, Jennifer
+\item Robert: Hanane, Jennifer, Brooks
+\item Hanane: Jennifer, Brooks, Vajiheh
+\ee
+\bi
+\item Do not hesitate to ask anyone questions
+\item Consider setting up your own reviewing arrangements for your written
+  documents
+\ei
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -150,6 +179,229 @@ Assign Questioners
 \item LaTeX?
 \ei
 \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Program Families}
+
+\begin{itemize}
+
+\item Can think of general purpose (or multi-purpose) SC software as a program
+  family
+\item Some examples of physical models are also appropriate for consideration as
+  a family
+\item A program family is a set of programs where it makes more sense to develop
+  them together as opposed to separately
+\item Analogous to families in other domains
+\begin{itemize}
+\item Automobiles
+\item Computers
+\item ...
+\end{itemize}
+\item Need to identify the commonalities
+\item Need to identify the variabilities
+\item Discussed in general in \cite{ClementsAndNorthrop2001,PohlEtAl2005}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Background}
+
+\begin{itemize}
+
+\item Program family idea since the 1970s (Dijkstra, Parnas, Weiss, Pohl, ...) - variabilities are often from a finite
+set of simple options \cite{Parnas1976, Parnas1979, Dijkstra1972}
+\item Families of algorithms and code generation in SC (Carette, ATLAS, Blitz++, ...) - not much emphasis on
+requirements \cite{Carette2006, WhaleyEtAl2001, Veldhuizen1998, Blitz2010}
+%\item Problem Solving Environments (PSEs)
+\item Work on requirements for SC
+\begin{itemize}
+\item Template for a single physical model \cite{SmithEtAl2007, SmithAndLai2005}
+\item Template for a family of multi-purpose tool \cite{Smith2006,
+    SmithAndChen2004, SmithAndChen2004b}
+\item Template for a family of physical models
+  \cite{SmithMcCutchanAndCarette2017, SmithEtAl2008, McCutchan2007}
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Motivation}
+%:Improve Quality of Product and Process
+\begin{itemize}
+
+\item Requirements documentation
+\begin{itemize}
+\item Allows judgement of quality %need to know what require, 
+\item Improves communication
+\begin{itemize}
+\item Between domain experts% and domain experts %missing models etc.
+\item Between domain experts and programmers %experts on num algos
+\item Explicit assumptions
+\item Range of applicability
+%\item Tradeoffs between nonfunctional requirements %ends arguments about best, 
+% need to know what is most imp, might not need same accuracy for every aspect of the problem
+\end{itemize}
+%\item Provides a foundation for incremental delivery
+\end{itemize}
+
+\item A family approach, potentially including a DSL to allow generation of specialized programs
+\begin{itemize}
+\item Improves efficiency of product and process
+\item Facilitates reuse of requirements and design, which improves reliability
+\item Improves usability and learnability%DSL
+%\item Improves learnability for non-experts %DSL
+\item Clarifies the state of the art
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Advantages of Program Families to SC?}
+
+\begin{itemize}
+\item Usual benefits
+\begin{itemize}
+\item Reduced development time
+\item Improved quality
+\item Reduced maintenance effort
+\item Increased ability to cope with complexity
+\end{itemize}
+\item Reusability
+\begin{itemize}
+\item Underused potential for reuse in SC
+\item Reuse commonalities
+\item Systematically handle variabilities
+\end{itemize}
+\item Usability
+\begin{itemize}
+\item Documentation often lacking in SC
+\item Documentation part of program family methodology
+\item Create family members that are only as general purpose as necessary
+\end{itemize}
+\item Improved performance
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Is SC Suited to a Program Family Approach?}
+
+Based on criteria from Weiss \cite{ArdisAndWeiss1997, Weiss1997, Weiss1998,
+  CukaAndWeiss1997,WeissAndLai1999}
+\begin{itemize}
+\item The redevelopment hypothesis
+\begin{itemize}
+\item A significant portion of requirements, design and code should be common between family members
+\item Common model of software development in SC is to rework an existing program
+\item Progress is made by removing assumptions
+\end{itemize}
+
+\item The oracle hypothesis
+\begin{itemize}
+\item Likely changes should be predictable
+\item Literature on SC, example systems, mathematics
+\end{itemize}
+
+\item The organizational hypothesis
+\begin{itemize}
+\item Design so that predicted changes can be made independently
+\item Tight coupling between data structures and algorithms
+\item Need a suitable abstraction
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Challenges}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{temp}}
+\item Validatable
+\begin{itemize}
+\item Requirements can be complete, consistent, traceable and unambiguous, but still not validatable
+\item Input and outputs are continuously valued variables
+%\item Examples continuously valued variables: time, velocity, temperature, displacement, concentration, stress, etc.
+%\item Infinite number of inputs and outputs
+\item Correct solution is unknown a priori %difficult to have a test oracle
+\item Given $dy/dt = f(t, y)$ and $y(t_0) = y_0$, find $y(t_n)$ 
+%, where $y(t)$ is a function ($y:\mathbb{R} \rightarrow 
+%\mathbb{R}$), $f(t,y)$ is a function ($f:\mathbb{R}\times \mathbb{R} \rightarrow \mathbb{R}$), $t$ is an independent
+%variable (often time), $t_0$ is an initial value for $t$ and $t_n$ is the final value for $t$
+%\item For arbitrary $f(t, y)$ the true solution is unknown, correct value is often not known a priori
+%\item Same problem with $Ax = b$
+%\item $\int e^{x^2} dx$
+%\item Passing one test does not imply passing a nearby test
+\end{itemize}
+\item Abstract
+\begin{itemize}
+% \item Not difficult to be abstract
+\item If too abstract, then difficult to meet NFRs for accuracy and speed
+\item Assumptions can help restrict scope, but possibly as much work as solving the original problem
+\begin{itemize}
+\item $A x = b$
+\item $x^T A x > 0, \forall x$
+\end{itemize}
+%say output should be solution, or say cannot compute, possibly with a reason
+\item Algorithm selection should occur at the design stage
+
+\end{itemize}
+
+\setcounter{temp}{\value{enumi}}
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\frametitle{Challenges (Continued)}
+
+\begin{enumerate}
+\setcounter{enumi}{\value{temp}}
+\item Nonfunctional requirements
+\begin{itemize}
+\item Proving accuracy requirements with a priori error analysis is a difficult mathematical exercise that generally
+leads to weak error bounds
+% mention Wilkinson
+\item Context sensitive tradeoffs between NFRs can be difficult to specify
+\item Absolute quantitative requirements are often unrealistic
+% make the point about relative requirements elsewhere
+\end{itemize}
+\item Capture and Reuse Existing Knowledge
+\begin{itemize}
+\item Cannot ignore the enormous wealth of information that currently exists %not a green field development
+\item A good design will often involve integrating existing software libraries
+\item Reuse software and the requirements documentation
+% scientific software is stable
+\end{itemize}
+
+\setcounter{temp}{\value{enumi}}
+\end{enumerate}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -240,9 +492,13 @@ Assign Questioners
 {b) Calculation}
 {c) Output}}
 
+\item \structure{Requirements (added to template)}
+
+%\item \structure{Likely Changes}
+
 \item{Traceability Matrix}
 
-\item{References}
+%\item{References}
 
 \end{enumerate}
 \end{minipage}
@@ -365,7 +621,7 @@ interval}
 {...}
 {i) Portability,}}
 
-\structure {\item {Solution Validation Strategies,}}
+\structure {\item {Solution Validation Strategies, (moved to separate document)}}
 
 \item{Other System Issues:}
 %{ Open Issues}
@@ -828,7 +1084,7 @@ Possible entries in $x$ & set of $\mathbb{R} \cup \{- \infty, \infty, undef \}$ 
 
 \begin{frame}
 
-\frametitle{Solution Validation Strategies}
+\frametitle{Solution Validation Strategies (for VnV Plan)}
 
 \begin{itemize}
 \item Create test cases with known solutions
