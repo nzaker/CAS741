@@ -45,7 +45,18 @@
 \bi
 \item Administrative details
 \item Questions?
+\item Finish what started last day
+\bi
+\item Nonfunctional software testing
+\item Theoretical foundations of testing
+\item Complete coverage principle
 \ei
+\item White box testing
+\item Oracle problem
+\item SCS Specific Ideas
+\item Overview of template
+\ei
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -71,15 +82,16 @@
 \frametitle{Administrative Details: Deadlines}
 ~\newline
 \begin{tabular}{l l l}
-\textbf{SRS Issues} & Reading week & Oct 10\\
-\textbf{V\&V Present} & Week 06 & Week of Oct 16\\
-\textbf{V\&V Plan} & Week 07 & Oct 25\\
-MG Present & Week 08 & Week of Oct 30\\
-MG & Week 09 & Nov 8\\
-MIS Present & Week 10 & Week of Nov 13\\
-MIS & Week 11 & Nov 22\\
-Impl.\ Present & Week 12 & Week of Nov 27\\
-Final Documentation & Week 13 & Dec 6\\
+\textbf{SRS Issues} & Reading week & Oct 9\\
+\textbf{Syst.\ VnV Present} & Week 06 & Week of Oct 15\\
+\textbf{System VnV Plan} & Week 07 & Oct 22\\
+MG Present & Week 08 & Week of Oct 29\\
+MG & Week 09 & Nov 5\\
+MIS Present & Week 10 & Week of Nov 12\\
+MIS & Week 11 & Nov 19\\
+Unit VnV or Impl.\ Present & Week 12 & Week of Nov 26\\
+Unit VnV Plan & Week 13 & Dec 3\\
+Final Doc & Week 14 & Dec 10\\
 \end {tabular}
 
 \end{frame}
@@ -90,25 +102,25 @@ Final Documentation & Week 13 & Dec 6\\
 \frametitle{Administrative Details: Presentation Schedule}
 
 \bi
-\item V\&V Present
+\item Syst V\&V Plan Present
 \bi
-\item \textbf{Tuesday: Steven, Alexandre P., Alexander S.}
-\item \textbf{Friday: Geneva, Jason, Yuzhi}
+\item Wednesday: Malavika, Robert
+\item Friday: Hanane
 \ei
 \item MG Present
 \bi
-\item Tuesday: Xiaoye, Shusheng, Devi, Keshav, Alex P, Paul
-\item Friday: Yuzhi, Jason, Geneva, Alex S, Isobel, Steven
+\item Wednesday: Karol, Malavika, Robert, Hanane
+\item Friday: Brooks, Vajiheh, Olu, Jennifer
 \ei
 \item MIS Present
 \bi
-\item Tuesday: Isobel, Keshav, Paul
-\item Friday: Shusheng, Xiaoye, Devi
+\item Wednesday: Malavika, Robert
+\item Friday: Hanane,  Jennifer
 \ei
-\item Impl.\ Present
+\item Unit VnV Plan or Impl.\ Present
 \bi
-\item Tuesday: Alexander S., Steven, Alexandre P.
-\item Friday: Jason, Geneva, Yuzhi
+\item Wednesday: Brooks, Vajiheh
+\item Friday: Olu, Karol
 \ei
 \ei
 
@@ -122,6 +134,156 @@ Final Documentation & Week 13 & Dec 6\\
 \item Questions about SRS?
 \item Questions about V\&V?
 \end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Sample Nonfunctional System Testing}
+\begin{itemize}
+\item Stress testing - Determines if the system can function when subject to large volumes
+\item Usability testing
+\item Performance measurement
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Sample Functional System Testing}
+\begin{itemize}
+% \item Requirements: Determines if the system can perform its function correctly and that the correctness can be
+% sustained over a continuous period of time
+% %\item Regression: Determines if changes to the system do not invalidate previous positive testing results
+% \item Error Handling: Determines the ability of the system to properly process
+%   incorrect transactions
+% \item Manual Support: Determines that the manual support procedures are documented and complete, where manual support
+% involves procedures, interfaces between people and the system, and training procedures
+\item Parallel: Determines the results of the new application are consistent with the processing of the previous
+application or version of the application
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Theoretical Foundations Of Testing: Definitions}
+\begin{itemize}
+\item P (program), D (input domain), R (output domain)
+\bi
+\item P: D $\rightarrow$ R (may be partial)
+\ei
+\item Correctness defined by OR $\subseteq$ D $\times$ R
+\bi
+\item P(d) correct if $\langle$ d, P(d) $\rangle \in$ OR
+\item P correct if all P(d) are correct
+\ei
+\item Failure
+\bi
+\item P(d) is not correct
+\item May be undefined (error state) or may be the wrong result
+\ei
+\item Error (Defect)
+\bi
+\item Anything that may cause a failure
+\bi
+\item Typing mistake
+\item Programmer forgot to test ``x=0''
+\ei
+\ei
+\item Fault
+\bi
+\item Incorrect intermediate state entered by program
+\ei
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Definitions Questions}
+\begin{itemize}
+\item \structure{A test case t is an element of D or R?}
+\item \structure{A test set T is a finite subset of D or R?}
+\item \structure{How would we define whether a test is successful?}
+\item \structure{How would we define whether a test set is successful?}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Definitions Continued}
+\begin{itemize}
+\item Test case t: An element of D
+\item Test set T: A finite subset of D
+\item Test is successful if P(t) is correct
+\item Test set successful if P correct for all t in T
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Theoretical Foundations of Testing}
+
+\begin{itemize}
+\item Desire a test set $T$ that is a finite subset of $D$ that will uncover all errors
+\item Determining and ideal $T$ leads to several
+  \href{https://en.wikipedia.org/wiki/Undecidable_problem}{undecideable
+    problems}
+\item No algorithm exists:
+\bi
+\item To state if a test set will uncover all possible errors
+\item To derive a test set that would prove program correctness
+\item To determine whether suitable input exists to guarantee execution of a
+  given statement in a given program
+\item etc.
+\ei
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Empirical Testing}
+
+\begin{itemize}
+\item Need to introduce empirical testing principles and heuristics as a
+  compromise between the impossible and the inadequate
+\item Find a strategy to select \structure{significant} test cases
+\item Significant means the test cases have a high potential of uncovering the
+  presence of errors
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Complete-Coverage Principle}
+
+\begin{itemize}
+\item Try to group elements of $D$ into subdomains $D_1$, $D_2$, ..., $D_n$
+  where any element of each $D_i$ is likely to have similar behaviour
+\item $D = D_1 \cup D_2 \cup ... \cup D_n$
+\item Select one test as a representative of the subdomain
+\item If $D_j \cap D_k = \emptyset$ for all $j \neq k$, (partition), any element
+  can be chosen from each subdomain
+\item Otherwise choose representatives to minimize number of tests, yet
+  fulfilling the principle
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Complete-Coverage Principle}
+
+\includegraphics[scale=0.5]{../Figures/CompleteCoveragePrinciple.png}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -555,7 +717,7 @@ Summary of most points below in \cite{Smith2016}
 \begin{frame}
 \frametitle{Validation Testing Report for PMGT}
 \begin{itemize}
-\item Prepared by Wen Yu
+\item Prepared by Wen Yu (\href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/Examples/MeshGenToolbox/doc/testingApp.pdf}{here})
 \item Do not know the correct solution, but know properties of the correct solution
 \item Automated correctness validation tests
 \begin{itemize}
