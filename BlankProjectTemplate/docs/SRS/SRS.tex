@@ -129,7 +129,15 @@ description of the unit and the SI name.
   %	\caption{Provide a caption}
 %\end{table}
 
-\wss{Only include the units that your SRS actually uses}
+\wss{Only include the units that your SRS actually uses.}
+
+\wss{Derived units, like newtons, pascal, etc, should show their derivation
+    (the units they are derived from) if their constituent units are in the
+    table of units (that is, if the units they are derived from are used in the
+    document).  For instance, the derivation of pascals as
+    $\si{\pascal}=\si{\newton\per\square\meter}$ is shown if newtons and m are
+    both in the table.  The derivations of newtons would not be shown if kg and
+    s are not both in the table.}
 
 \subsection{Table of Symbols}
 
