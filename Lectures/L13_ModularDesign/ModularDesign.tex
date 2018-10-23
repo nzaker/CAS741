@@ -47,7 +47,7 @@
 \bi
 \item Administrative details
 \item Questions?
-\item Feedback on SRS
+%\item Feedback on SRS
 \item Overview of design
 \item Modular decomposition: advantages, guidelines etc.
 \item Module guide
@@ -62,20 +62,22 @@
 \frametitle{Administrative Details}
 
 \bi
-\item GitHub issues
-\bi
-\item When closing issues give the hash for the corresponding commit
-\item Everyone should have an issue to review my comments on their SRS or CA
-\ei
-\item GitHub issues for colleagues
+%\item GitHub issues
+%\bi
+% \item When closing issues give the hash for the corresponding commit
+% \item Everyone should have an issue to review my comments on their SRS or CA
+% \ei
+\item VnV GitHub issues for colleagues
 \bi
 \item Assigned 1 colleague (see \texttt{Repos.xlsx} in repo)
 \item Provide at least 5 issues on their VnV Plan
 \item Grading as before
-\item Due by Tuesday, Oct 30, 11:59 pm
+\item Due by Friday, Oct 26, 11:59 pm
+\item If you have an extension past today, please let your partner know
+\item If your partner has an extension, you have three days after their deadline
 \ei
 
-\item For MG presentation, we'll try to use my laptop only
+%\item For MG presentation, we'll try to use my laptop only
 \item Grading scheme for VnV now available on Avenue
 \item Template for MG updated in repo
 \ei
@@ -86,15 +88,16 @@
 
 \begin{frame}
 \frametitle{Administrative Details: Deadlines}
+
 ~\newline
 \begin{tabular}{l l l}
-\textbf{V\&V Plan} & Week 07 & Oct 25\\
-\textbf{MG Present} & Week 08 & Week of Oct 30\\
-MG & Week 09 & Nov 8\\
-MIS Present & Week 10 & Week of Nov 13\\
-MIS & Week 11 & Nov 22\\
-Impl.\ Present & Week 12 & Week of Nov 27\\
-Final Documentation & Week 13 & Dec 6\\
+MG Present & Week 08 & Week of Oct 29\\
+MG & Week 09 & Nov 5\\
+MIS Present & Week 10 & Week of Nov 12\\
+MIS & Week 11 & Nov 19\\
+Unit VnV or Impl.\ Present & Week 12 & Week of Nov 26\\
+Unit VnV Plan & Week 13 & Dec 3\\
+Final Doc & Week 14 & Dec 10\\
 \end {tabular}
 
 \end{frame}
@@ -107,20 +110,19 @@ Final Documentation & Week 13 & Dec 6\\
 \bi
 \item MG Present
 \bi
-\item \textbf{Tuesday: Xiaoye, Shusheng, Devi, Keshav, Alex P, Paul}
-\item \textbf{Friday: Yuzhi, Jason, Geneva, Alex S, Isobel, Steven}
+\item \textbf{Wednesday: Karol, Malavika, Robert, Hanane}
+\item \textbf{Friday: Brooks, Vajiheh, Olu, Jennifer}
 \ei
 \item MIS Present
 \bi
-\item Tuesday: Isobel, Keshav, Paul
-\item Friday: Shusheng, Xiaoye, Devi
+\item Wednesday: Malavika, Robert
+\item Friday: Hanane,  Jennifer
 \ei
-\item Impl.\ Present
+\item Unit VnV Plan or Impl.\ Present
 \bi
-\item Tuesday: Alexander S., Steven, Alexandre P.
-\item Friday: Jason, Geneva, Yuzhi
+\item Wednesday: Brooks, Vajiheh
+\item Friday: Olu, Karol
 \ei
-
 \ei
 
 \end{frame}
@@ -136,45 +138,45 @@ Final Documentation & Week 13 & Dec 6\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\frametitle{Feedback on SRS}
-\begin{itemize}
-\item Overall well done!
-\item Don't need padding (\textbf{Watch for MG!})
-\bi
-\item Don't make more complicated than it is
-\item Don't add assumptions that the data will be in the correct format, or of
-  the correct type 
-\ei
-\item For the characteristics of intended reader try to be more specific about
-  the education.  What degree?  What course areas?  What level?
-\item If you have a reference by entry, then the referenced by chunk (or its
-  derivation) should actually reference the chunk that has it as an entry.
-\item Functional requirements should reference the instance models
-\item Add more for nonfunctional requirements
-\item Introduce type information when it will help clarify spec
-\end{itemize}
-\end{frame}
+% \begin{frame}
+% \frametitle{Feedback on SRS}
+% \begin{itemize}
+% \item Overall well done!
+% \item Don't need padding (\textbf{Watch for MG!})
+% \bi
+% \item Don't make more complicated than it is
+% \item Don't add assumptions that the data will be in the correct format, or of
+%   the correct type 
+% \ei
+% \item For the characteristics of intended reader try to be more specific about
+%   the education.  What degree?  What course areas?  What level?
+% \item If you have a reference by entry, then the referenced by chunk (or its
+%   derivation) should actually reference the chunk that has it as an entry.
+% \item Functional requirements should reference the instance models
+% \item Add more for nonfunctional requirements
+% \item Introduce type information when it will help clarify spec
+% \end{itemize}
+% \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}[fragile]
-\frametitle{LaTeX Related Feedback}
-\bi
-\item The text is better for version control, and for reading in other editors,
-  if you use a hard-wrap at 80 characters
-\item Use \verb|``quote''| to get correct quotation marks
-\item Spell check!
-\item Check for extra and missing spaces
-\item LaTeX often inserts two spaces after a period, use \verb|Dr.\ Jeckyl| or
-  \verb|Dr.~Jeckyl|
-\item For $ABC_{Average}$ in an equation use
-  \verb|$\mathit{ABC}_{\text{Average}}$| ($\mathit{ABC}_{\text{Average}}$)
-\item Use BibTeX.  You should mention the source of the
-  template~\cite{SmithAndLai2005, SmithEtAl2007} 
-\item Cite all sources!
-\ei
-\end{frame}
+% \begin{frame}[fragile]
+% \frametitle{LaTeX Related Feedback}
+% \bi
+% \item The text is better for version control, and for reading in other editors,
+%   if you use a hard-wrap at 80 characters
+% \item Use \verb|``quote''| to get correct quotation marks
+% \item Spell check!
+% \item Check for extra and missing spaces
+% \item LaTeX often inserts two spaces after a period, use \verb|Dr.\ Jeckyl| or
+%   \verb|Dr.~Jeckyl|
+% \item For $ABC_{Average}$ in an equation use
+%   \verb|$\mathit{ABC}_{\text{Average}}$| ($\mathit{ABC}_{\text{Average}}$)
+% \item Use BibTeX.  You should mention the source of the
+%   template~\cite{SmithAndLai2005, SmithEtAl2007} 
+% \item Cite all sources!
+% \ei
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -183,9 +185,18 @@ Final Documentation & Week 13 & Dec 6\\
 \frametitle{Review of our ``Faked'' Rational Design Process}
 
 \begin{center}
-\includegraphics[scale=0.7]{../Figures/OverviewOfProcess.pdf}
+\includegraphics[scale=0.55]{../Figures/VModelOfProcessXOut.pdf}
 \end{center}
 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{SWHS MG Example}
+~\\
+\href{https://github.com/smiths/swhs/tree/master/docs/Design/MG}
+{https://github.com/smiths/swhs/tree/master/docs/Design/MG}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -723,7 +734,7 @@ For the module decomposition on the previous slide:
 \item B COMPRISES A
 \item $M_{S,i} = \{ M_k | M_k \in S \wedge M_k \mbox{ IS\_COMPONENT\_OF } M_i \}$ we say that $M_{S,i}$ IMPLEMENTS
 $M_i$ 
-\item \structure{How is IS\_COMPONENT\_OF represented in UML?}
+%\item \structure{How is IS\_COMPONENT\_OF represented in UML?}
 \end{itemize}
 
 \end{frame}
