@@ -78,7 +78,7 @@
 
 \begin{document}
 
-\title{Program Family Title} 
+\title{Program Family Title \wss{\famname should appear in the title}} 
 \author{Author Name}
 \date{\today}
 
@@ -434,5 +434,18 @@ show the values of the symbolic parameters introduced in the report.}
 
 \wss{The definition of the requirements will likely call for SYMBOLIC\_CONSTANTS.
 Their values are defined in this section for easy maintenance.}
+
+\noindent \wss{Advice on using the template:
+\begin{itemize}
+\item Assumptions have to be invoked somewhere
+\item ``Referenced by'' implies that there is an explicit reference
+\item Think of traceability matrix, list of assumption invokations and list of
+  reference by fields as automatically generatable
+\item If you say the format of the output (plot, table etc), then your
+  requirement could be more abstract
+\item For families the notion of binding time should be introduced
+\item Think of families as a library, not as a single program
+\end{itemize}
+}
 
 \end{document}
