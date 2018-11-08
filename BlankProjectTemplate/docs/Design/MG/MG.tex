@@ -30,6 +30,12 @@
 \newcommand{\mthemnum}{M\themnum}
 \newcommand{\mref}[1]{M\ref{#1}}
 
+\newcommand{\progname}{ProgName} % PUT YOUR PROGRAM NAME HERE %Every program
+                                % should have a name - same as name in SRS -
+                                % rather than repeat this command, in the future
+                                % it should be
+                                % moved to a common file
+
 \begin{document}
 
 \title{Module Guide: Project Title \wss{include software's name}} 
@@ -221,14 +227,12 @@ module. The \emph{Services} field specifies \emph{what} the module will do
 without documenting \emph{how} to do it. For each module, a suggestion for the
 implementing software is given under the \emph{Implemented By} title. If the
 entry is \emph{OS}, this means that the module is provided by the operating
-system or by standard programming language libraries.  Also indicate if the
-module will be implemented specifically for the software.
+system or by standard programming language libraries.  \emph{\progname{}} means the
+module will be implemented by the \progname{} software.
 
-Only the leaf modules in the
-hierarchy have to be implemented. If a dash (\emph{--}) is shown, this means
-that the module is not a leaf and will not have to be implemented. Whether or
-not this module is implemented depends on the programming language
-selected.
+Only the leaf modules in the hierarchy have to be implemented. If a dash
+(\emph{--}) is shown, this means that the module is not a leaf and will not have
+to be implemented.
 
 \subsection{Hardware Hiding Modules (\mref{mHH})}
 
