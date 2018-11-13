@@ -53,23 +53,38 @@ Date 2 & 1.1 & Notes\\
 
 \newpage
 
+\section{Reference Material}
+
+This section records information for easy reference.
+
+\subsection{Abbreviations and Acronyms}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l l} 
+  \toprule		
+  \textbf{symbol} & \textbf{description}\\
+  \midrule 
+  AC & Anticipated Change\\
+  DAG & Directed Acyclic Graph \\
+  M & Module \\
+  MG & Module Guide \\
+  OS & Operating System \\
+  R & Requirement\\
+  SC & Scientific Computing \\
+  SRS & Software Requirements Specification\\
+  \progname & Explanation of program name\\
+  UC & Unlikely Change \\
+  \wss{etc.} & \wss{...}\\
+  \bottomrule
+\end{tabular}\\
+
+\newpage
+
 \tableofcontents
 
 \listoftables
 
 \listoffigures
-
-\section*{Abbreviations and Acronyms}
-
-\renewcommand{\arraystretch}{1.2}
-\begin{tabular}{l l} 
-\toprule		
-\textbf{symbol} & \textbf{description}\\
-\midrule 
-MG & Module Guide\\
-\wss{etc.} & \wss{...}\\
-\bottomrule
-\end{tabular}\\
 
 \newpage
 
@@ -90,7 +105,7 @@ Our design follows the rules layed out by \citet{ParnasEtAl1984}, as follows:
 \begin{itemize}
 \item System details that are likely to change independently should be the
   secrets of separate modules.
-\item Each data structure is used in only one module.
+\item Each data structure is implemented in only one module.
 \item Any other program that requires information stored in a module's data
   structures must obtain it by calling access programs belonging to that module.
 \end{itemize}
@@ -212,6 +227,15 @@ actually be implemented.
 The design of the system is intended to satisfy the requirements developed in
 the SRS. In this stage, the system is decomposed into modules. The connection
 between requirements and modules is listed in Table \ref{TblRT}.
+
+\wss{The intention of this section is to document decisions that are made
+  ``between'' the requirements and the design.  To satisfy some requirements,
+  design decisions need to be made.  Rather than make these decisions implicit,
+  they are explicitly recorded here.  For instance, if a program has security
+  requirements, a specific design decision may be made to satisfy those
+  requirements with a password.  In scientific examples, the choice of algorithm
+could potentially go here, if that is a decision that is exposed by the
+interface.}
 
 \section{Module Decomposition} \label{SecMD}
 
