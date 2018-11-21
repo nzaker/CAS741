@@ -43,7 +43,7 @@
 
 \bi
 \item Administrative details
-\item Feedback on MG
+%\item Feedback on MG
 \item Final documentation
 \item Questions?
 \item License and copyright
@@ -68,11 +68,11 @@
 \item Assigned 1 colleague (see \texttt{Repos.xlsx} in repo)
 \item Provide at least 5 issues on their MIS
 \item Grading as before
-\item Due by Tuesday, Dec 5, 11:59 pm
+\item Due by Friday, Nov 30, 11:59 pm
 \ei
 \item Today is the last ``lecture''
-\item Next week for presentations
-\item Following Tuesday for Discussion
+\item Next week and following for presentations
+%\item Following Tuesday for Discussion
 \ei
 
 \end{frame}
@@ -83,11 +83,17 @@
 \frametitle{Administrative Details: Deadlines}
 ~\newline
 \begin{tabular}{l l l}
-MIS & Week 11 & Nov 23\\
+\textbf{MIS} & Week 11 & Nov 23\\
 Unit VnV or Impl.\ Present & Week 12, 13 & Wed, Nov 28, Dec 5\\
 Unit VnV Plan & Week 13 & Dec 3\\
 Final Doc & Week 14 & Dec 10\\
 \end {tabular}
+
+\begin{itemize}
+\item Roll Unit VnV Plan into Final Documentation?
+\item Git issues for Final Documentation?
+\end{itemize}
+
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -106,6 +112,8 @@ Final Doc & Week 14 & Dec 10\\
 \item Code
 \item Tools used
 \item Testing
+\item Unit VnV Plan
+\item API documentation via doxygen
 \item As always it is fine to show work in progress
 \item Good to bring questions to the class
 \ei
@@ -115,18 +123,36 @@ Final Doc & Week 14 & Dec 10\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% \begin{frame}
+% \frametitle{Feedback on MG}
+
+% \bi
+% \item Good work!  Good starting point.  May have to modify design as a response
+%   to MIS
+% \item If multiple anticipated changes map to the same module, you should explain
+%   why
+% \item If one anticipated change maps to multiple modules, you should explain why
+% \item You don't have an input parameters module
+% \ei
+
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}
-\frametitle{Feedback on MG}
-
-\bi
-\item Good work!  Good starting point.  May have to modify design as a response
-  to MIS
-\item If multiple anticipated changes map to the same module, you should explain
-  why
-\item If one anticipated change maps to multiple modules, you should explain why
-\item You don't have an input parameters module
-\ei
-
+\frametitle{Unit VnV Plan}
+\begin{itemize}
+\item
+  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/BlankProjectTemplate/docs/VnVPlan/UnitVnVPlan/}
+  {See template}
+\item Scope - what modules will be verified
+\item Your approach for automated testing
+\item Tools for code coverage metrics
+\item Non-testing based verification (if planned)
+\item Unit test cases for each module - from black box and white box
+\item Performance tests for individual modules
+  \item Evidence that all modules are considered
+\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -240,15 +266,6 @@ Final Doc & Week 14 & Dec 10\\
 \item Robustness - can the software handle garbage inputs reasonably
 \item Performance - measured if appropriate
 \item Usability - measured if appropriate
-\end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Final Documentation: Test Plan}
-\begin{itemize}
-\item See template
 \end{itemize}
 \end{frame}
 
@@ -522,7 +539,7 @@ Final Doc & Week 14 & Dec 10\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Assurance Cases in Scientific Computing \cite{SmithEtAl2017}}
+\frametitle{Assurance Cases in Scientific Computing \cite{SmithEtAl2018_ICSEPoster}}
 
 \bi
 \item Assurance cases
