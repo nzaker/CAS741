@@ -13,10 +13,11 @@
 \usepackage[round]{natbib}
 
 \input{../../Comments}
+\input{../../Common}
 
 \begin{document}
 
-\title{Project Title: Unit Verification and Validation Plan} 
+\title{Project Title: Unit Verification and Validation Plan for \progname{}} 
 \author{Author Name}
 \date{\today}
 	
@@ -36,6 +37,18 @@ Date 2 & 1.1 & Notes\\
 
 ~\newpage
 
+\tableofcontents
+
+\listoftables
+
+\wss{Do not include if not relevant}
+
+\listoffigures
+
+\wss{Do not include if not relevant}
+
+\newpage
+
 \section{Symbols, Abbreviations and Acronyms}
 
 \renewcommand{\arraystretch}{1.2}
@@ -47,15 +60,8 @@ Date 2 & 1.1 & Notes\\
   \bottomrule
 \end{tabular}\\
 
-\wss{symbols, abbreviations or acronyms -- you can reference the SRS tables if needed}
-
-\newpage
-
-\tableofcontents
-
-\listoftables
-
-\listoffigures
+\wss{symbols, abbreviations or acronyms -- you can reference the SRS, MG or MIS
+  tables if needed}
 
 \newpage
 
@@ -68,86 +74,110 @@ This document ... \wss{provide an introductory blurb and roadmap of the
 
 \subsection{Purpose}
 
+\wss{Identify software that is being unit tested (verified).}
+
 \subsection{Scope}
 
-\subsection{Overview of Document}
+\wss{What modules are outside of the scope.  If there are modules that are
+  developed by someone else, then you would say here if you aren't planning on
+  verifying them.  There may also be modules that are part of your software, but
+  have a lower priority for verification than others.  If this is the case,
+  explain your rationale for the ranking of module importance.}
 
 \section{Plan}
 	
-\subsection{Software Description}
-
-\subsection{Test Team}
+\subsection{Verification and Validation Team}
 
 \wss{Probably just you.  :-)}
 
-\subsection{Automated Testing Approach}
+\subsection{Automated Testing and Verification Tools}
 
-\subsection{Verification Tools}
-
-\wss{Thoughts on what tools to use, such as the following: unit testing
-  framework, valgrind, static analyzer, make, continuous integration, test
-  coverage tool, etc.}
-
-% \subsection{Testing Schedule}
-		
-% See Gantt Chart at the following url ...
+\wss{What tools are you using for automated testing.  Likely a unit testing
+  framework and maybe a profiling tool, like ValGrind.  Other possible tools
+  include a static analyzer, make, continuous integration tools, test coverage
+  tools, etc.  Explain your plans for summarizing code coverage metrics.}
 
 \subsection{Non-Testing Based Verification}
 
 \wss{List any approaches like code inspection, code walkthrough, symbolic
-  execution etc.  Enter not applicable if that is the case.}
+  execution etc.  Enter not applicable if you do not plan on any non-testing
+  based verification.}
 
-\section{System Test Description}
-	
+\section{Unit Test Description}
+
+\wss{Reference your MIS and explain your overall philosophy for test case
+  selection.}
+
 \subsection{Tests for Functional Requirements}
 
-\subsubsection{Area of Testing1}
-		
-\paragraph{Title for Test}
+\wss{Most of the verification will be through automated unit testing.  If
+  appropriate specific modules can be verified by a non-testing based
+  technique.  That can also be documented in this section.}
+
+\subsubsection{Module 1}
+
+\wss{Include a blurb here to explain why the subsections below cover the module.
+  References to the MIS would be good.  You will want tests from a black box
+  perspective and from a white box perspective.  Explain to the reader how the
+  tests were selected.}
 
 \begin{enumerate}
 
 \item{test-id1\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
+  be automatic}
 					
 Initial State: 
 					
 Input: 
 					
-Output: 
-					
+Output: \wss{The expected result for the given inputs}
+
+Test Case Derivation: \wss{Justify the expected value given in the Output field}
+
 How test will be performed: 
 					
 \item{test-id2\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
+  be automatic}
 					
 Initial State: 
 					
 Input: 
 					
-Output: 
-					
+Output: \wss{The expected result for the given inputs}
+
+Test Case Derivation: \wss{Justify the expected value given in the Output field}
+
 How test will be performed: 
 
+\item{...\\}
+    
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\subsubsection{Module 2}
 
 ...
 
 \subsection{Tests for Nonfunctional Requirements}
 
-\subsubsection{Area of Testing1}
-		
-\paragraph{Title for Test}
+\wss{If there is a module that needs to be independently assessed for
+  performance, those test cases can go here.  In some projects, planning for
+  nonfunctional tests of units will not be that relevant.}
 
+\wss{These tests may involve collecting performance data from previously
+  mentioned functional tests.}
+
+\subsubsection{Module ?}
+		
 \begin{enumerate}
 
 \item{test-id1\\}
 
-Type: 
+Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
+  be automatic}
 					
 Initial State: 
 					
@@ -171,54 +201,13 @@ How test will be performed:
 
 \end{enumerate}
 
-\subsubsection{Area of Testing2}
+\subsubsection{Module ?}
 
 ...
 
-\subsection{Traceability Between Test Cases and Requirements}
+\subsection{Traceability Between Test Cases and Modules}
 
-% \section{Tests for Proof of Concept}
-
-% \subsection{Area of Testing1}
-		
-% \paragraph{Title for Test}
-
-% \begin{enumerate}
-
-% \item{test-id1\\}
-
-% Type: Functional, Dynamic, Manual, Static etc.
-					
-% Initial State: 
-					
-% Input: 
-					
-% Output: 
-					
-% How test will be performed: 
-					
-% \item{test-id2\\}
-
-% Type: Functional, Dynamic, Manual, Static etc.
-					
-% Initial State: 
-					
-% Input: 
-					
-% Output: 
-					
-% How test will be performed: 
-
-% \end{enumerate}
-
-% \subsection{Area of Testing2}
-
-% ...
-				
-\section{Unit Testing Plan}
-		
-\wss{Unit testing plans for internal functions and, if appropriate, output
-  files}
+\wss{Provide evidence that all of the modules have been considered.}
 
 \bibliographystyle{plainnat}
 
@@ -228,15 +217,11 @@ How test will be performed:
 
 \section{Appendix}
 
-This is where you can place additional information.
+\wss{This is where you can place additional information, as appropriate}
 
 \subsection{Symbolic Parameters}
 
-The definition of the test cases will call for SYMBOLIC\_CONSTANTS.
-Their values are defined in this section for easy maintenance.
-
-\subsection{Usability Survey Questions?}
-
-This is a section that would be appropriate for some teams.
+\wss{The definition of the test cases may call for SYMBOLIC\_CONSTANTS.
+Their values are defined in this section for easy maintenance.}
 
 \end{document}
