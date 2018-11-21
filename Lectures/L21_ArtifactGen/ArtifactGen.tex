@@ -60,8 +60,8 @@
 
 \bi
 \item Administrative details
-\item Feedback on VnV
-\item Questions?
+%\item Feedback on VnV
+\item Questions about MIS?
 \item Artifact generation (Drasil)
 \ei
 \end{frame}
@@ -76,13 +76,21 @@
   all open issues
 \item MIS Marking Scheme
 \bi
+\item On Avenue
 \item Not all of the spec has to be formal
+\item First steps
+\bi
+\item Syntax of access programs
+\item State variables?
+\item Environment variables?
+\ei
 \ei
 \item Course evaluation
 \bi
-\item Nov 23 to Dec 7
+\item Thurs, Nov 22, 10:00 am to Thurs, Dec 6, 11:59 pm
 \item \url{https://evals.mcmaster.ca}
 \ei
+\item No class on Friday, Nov 30
 \ei
 
 \end{frame}
@@ -93,10 +101,14 @@
 \frametitle{Administrative Details: Deadlines}
 ~\newline
 \begin{tabular}{l l l}
-\textbf{MIS} & Week 12 & Nov 29\\
-\textbf{Impl.\ Present} & Week 12 & Week of Nov 27\\
-Final Documentation & Week 13 & Dec 6\\
+MIS & Week 11 & Nov 23\\
+Unit VnV or Impl.\ Present & Week 12, 13 & Wed, Nov 28, Dec 5\\
+Unit VnV Plan & Week 13 & Dec 3\\
+Final Doc & Week 14 & Dec 10\\
 \end {tabular}
+~\\
+
+Combine Unit VnV Plan deadline with Final Doc deadline?
 
 \end{frame}
 
@@ -106,12 +118,12 @@ Final Documentation & Week 13 & Dec 6\\
 \frametitle{Administrative Details: Presentation Schedule}
 
 \bi
-\item {Impl.\ Present}
+\item Unit VnV Plan or Impl.\ Present
 \bi
-\item \textbf{Tuesday: Alexander S., Steven, Alexandre P.}
-\item \textbf{Friday: Jason, Geneva, Yuzhi}
+\item Wednesday (Nov 28): Brooks, Vajiheh
+\item Wednesday (Dec 5): Olu, Karol
 \ei
-\item Can present anything related to the implementation
+\item Can present anything related to the implementation or testing
 \bi
 \item Code
 \item Tools used
@@ -125,41 +137,41 @@ Final Documentation & Week 13 & Dec 6\\
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\frametitle{Feedback on VnV Plan}
+% \begin{frame}
+% \frametitle{Feedback on VnV Plan}
 
-\bi
-\item Explicit web-link to your GitHub repo
-\item Reference your SRS document
-\item Explicitly state programming language
-\item Very nice to have explicit cross-references between documents.  Keep
-  information up to date using make
-\item Do not postpone decisions, be specific
-\item Outputs are unlikely to be an exact match for expected, instead summarize
-  the error for all tests
-\item Define what you mean by error, especially if the output is a sequence
-\item Avoid unnecessary repetition, summarize similar tests in a table,
-  distinguished by variabilities
-\ei
+% \bi
+% \item Explicit web-link to your GitHub repo
+% \item Reference your SRS document
+% \item Explicitly state programming language
+% \item Very nice to have explicit cross-references between documents.  Keep
+%   information up to date using make
+% \item Do not postpone decisions, be specific
+% \item Outputs are unlikely to be an exact match for expected, instead summarize
+%   the error for all tests
+% \item Define what you mean by error, especially if the output is a sequence
+% \item Avoid unnecessary repetition, summarize similar tests in a table,
+%   distinguished by variabilities
+% \ei
 
-\end{frame}
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\frametitle{VnV Feedback Continued}
+% \begin{frame}
+% \frametitle{VnV Feedback Continued}
 
-\bi
-\item Spell check!  Proof read!
-\item Great to see usability tests, but need more information on how tests will
-  be run.  For instance, what specific task will they be asked to perform?
-\item Great to see code walkthroughs, but need more detail
-\item Provide enough information that the reader can easily verify your test cases,
-  especially the expected output
-\item \textbf{Write as if someone else will be doing the testing}
-\ei
+% \bi
+% \item Spell check!  Proof read!
+% \item Great to see usability tests, but need more information on how tests will
+%   be run.  For instance, what specific task will they be asked to perform?
+% \item Great to see code walkthroughs, but need more detail
+% \item Provide enough information that the reader can easily verify your test cases,
+%   especially the expected output
+% \item \textbf{Write as if someone else will be doing the testing}
+% \ei
 
-\end{frame}
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -177,7 +189,7 @@ Final Documentation & Week 13 & Dec 6\\
 \frametitle{Abstract}
 
 \begin{itemize}
-\item \textbf{Goal} -- Improve quality of \{SCS\}
+\item \textbf{Goal} -- Improve quality of SCS
 \item \textbf{Idea} -- Adapt ideas from SE
 \item \textbf{Document Driven Design}
 \begin{itemize}
