@@ -1,0 +1,49 @@
+\documentclass[12pt]{article}
+
+\usepackage{enumitem,amssymb}
+\newlist{todolist}{itemize}{2}
+\setlist[todolist]{label=$\square$}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+\newcommand{\done}{\rlap{$\square$}{\raisebox{2pt}{\large\hspace{1pt}\cmark}}%
+\hspace{-2.5pt}}
+\newcommand{\wontfix}{\rlap{$\square$}{\large\hspace{1pt}\xmark}}
+
+\begin{document}
+
+\title{SRS Checklist}
+\author{Spencer Smith}
+\date{\today}
+
+\maketitle
+
+% Show an item is done by   \item[\done] Frame the problem
+% Show an item will not be fixed by   \item[\wontfix] profit
+
+\begin{itemize}
+  
+\item Structure
+\begin{todolist}
+  \item Frame the problem
+  \item Write solution
+  \item profit
+\end{todolist}
+
+\item Grammar, spelling, presentation
+\begin{todolist}
+  \item No spelling mistakes (use a spell checker!)
+  \item No grammar mistakes (review, as someone else to review (at least a few
+    sections)
+  \item No low information content phrases (url plus examples)
+\end{todolist}
+
+\item LaTeX
+\begin{todolist}
+  \item Instructor comments are left turned on
+  \item 
+\end{todolist}
+
+\end{itemize}
+
+\end{document}
