@@ -62,14 +62,10 @@
 
 \begin{itemize}
 
-\item New Graduate Student Orientation: Monday, September 9, 10 am to 1 pm %may
+\item New Grad Stdnt Orientation: Mon, Sept 9, 10 am -- 1 pm %may
                                 %cancel our class
-\item Lecture times (ITB/222)
-\begin{itemize}
-\item Wednesdays, 10:30 am to 12:00 noon
-\item Fridays, , 10:30 am to 12:00 noon
-\end{itemize}
-\item This course uses Avenue
+\item Lectures: Mon and Thurs, 10:30 am -- 12:00 noon
+\item Avenue for grade tracking
 \begin{itemize}
 \item \url{http://avenue.mcmaster.ca/} 
 \item Consider putting a picture up on Avenue
@@ -77,7 +73,7 @@
 \item We'll also use git on GitLab for the course material
 \begin{itemize}
 \item \url{https://gitlab.cas.mcmaster.ca/}
-\item Create your account by logging in
+\item Create your account by logging in, option to set CAS password to MacID password
 \item Course material and issue tracking at \url{https://gitlab.cas.mcmaster.ca/smiths/cas741}
 \end{itemize}
 \item Your projects will be hosted on GitHub
@@ -128,7 +124,8 @@
 \item Displacement of a structure
 \item Thickness of cast film
 \item Temperature of water in a solar water heating tank over time
-\item etc.
+\item Ordinary Differential Equation solver
+\item Root finding solver etc.
 \ei
 \item Includes analysis, design and ``exploration'' % point made by Isobel and Alex P
 \end{itemize}
@@ -141,7 +138,8 @@
 \frametitle{Software Engineering (SE)}
 
 \begin{itemize}
-\item An area of engineering that deals with the development of software systems that
+\item SE is an area of engineering that deals with the development of software
+  systems that
 \begin{itemize}
 \item Are large or complex
 \item Exist in multiple versions
@@ -149,11 +147,12 @@
 \item Are continuously being modified
 \item Are built by teams
 \end{itemize}
-\item Software engineering is ``application of a systematic, disciplined, quantifiable approach to the development,
-operation and maintenance of software'' (IEEE 1990)
-\item D.\ Parnas (1978) defines software engineering as ``multi-person construction of multi-version software''
-\item Like other areas of engineering, software engineering relies heavily on mathematical techniques, especially
-logic and discrete mathematics
+\item SE is ``application of a systematic, disciplined, quantifiable approach to
+  the development, operation and maintenance of software'' (IEEE 1990)
+\item D.\ Parnas (1978) defines SE as ``multi-person
+  construction of multi-version software''
+\item Like other areas of engineering, SE relies heavily on
+  mathematical techniques (logic and discrete math)
 \item SE might be applied to SC for software certification
 \end{itemize}
 
@@ -222,11 +221,12 @@ logic and discrete mathematics
  
    \item P.Eng.~(Licensed Professional Engineer in Ontario).
  
-   \item \structure{Teaching}: Software design, scientific computing, introduction to computing, 
-     communication skills, software project management.
+   \item \structure{Teaching}: Software design, scientific computing,
+     introduction to computing, communication skills, software project
+     management.
  
-   \item \structure{Research}: Application of software engineering methodologies to improve the quality of
-     scientific computing software.
+   \item \structure{Research}: Application of software engineering methodologies
+     to improve the quality of scientific computing software.
  
  \end{itemize}
 
@@ -268,7 +268,8 @@ logic and discrete mathematics
 \begin{itemize}
 \item Calendar description
 \begin{itemize}
-\item Principles of software development for reliable scientific and engineering software
+\item Principles of software development for reliable and sustainable scientific
+  and engineering software
 \item Systematic process for development and documentation of
 \bi
 \item Requirements
@@ -277,6 +278,7 @@ logic and discrete mathematics
 \item Implementation
 \item Verification and Validation Plan
 \item Verification and Validation Report
+\item Code
 \ei
 \end{itemize}
 \end{itemize}
@@ -312,6 +314,22 @@ logic and discrete mathematics
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Project Selection: Desired Qualities}
+\begin{itemize}
+\item Related to scientific computing
+\item Simple, but not trivial
+\item If feasible, select a project related to your research
+\item Possibly re-implement existing software
+\item Each student project needs to be unique
+\item Possibly a specific physical problem
+\item Possibly a (family of) general purpose tool(s)
+\item Some examples follow, the links are just places to get started
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 
@@ -377,26 +395,23 @@ Not all docs necessary
 
 \begin {enumerate}
 
-\item Presentations and class discussion 10\%
+\item Presentations and class discussion 5\%
 
-\item Quality of GitHub issues provided to classmates 5\%
+\item ``Domain Expert'' and secondary reviewer roles 10\%
 
 \item Problem Statement 0\%
 
-\item System Requirements Specification (SRS) 20\%
+\item System Requirements Specification (SRS) 15\%
 
-\item Verification and Validation Plan 15\%
-\begin{itemize}
-\item System VnV Plan 10\%
-\item Unit VnV Plan 5\%
-\end{itemize}
+\item System Verification and Validation (VnV-Syst) Plan 15\%
 
-\item Module Guide (MG) 5\%
-
-\item Module Interface Specification (MIS) 15\%
+\item Module Guide and Module Interface Specification (MG and MIS) 15\%
 
 \item Final Documentation (including revised versions of previous documents,
-  plus the source code and a testing reports (System and Unit)) 30\%
+  plus the source code, unit testing plan, reflection report and testing
+  reports (System and Unit)) 40\%
+
+\item Drasil simple physics example, pull request accepted 5\% (Bonus)
 
 \end {enumerate}
 
@@ -446,6 +461,9 @@ the transcript, and/or suspension or expulsion from the university.
 \begin{frame}
 \frametitle{Assigned Reading}
 
+As often as possible, hyperlinks are included for references in the lecture
+slides
+
 \begin {itemize}
 
 \item
@@ -469,6 +487,21 @@ the transcript, and/or suspension or expulsion from the university.
   \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/ReferenceMaterial/ParnasAndClements1986.pdf}
   {\bibentry{ParnasAndClements1986}}
 \item \href{https://github.com/smiths/swhs}{Solar Water Heating System Example}
+\item
+  \href{https://jacquescarette.github.io/Drasil/examples/SWHS/srs/SWHS_SRS.html}
+  {Solar Water Heating System Example SRS (Generated by Drasil)}
+\item
+  \href{https://jacquescarette.github.io/Drasil/examples/Projectile/srs/Projectile_SRS.html}
+  {Projectile Example SRS (Generated by Drasil)}
+\item Recommended reading order for SRS documents
+\begin{itemize}
+\item Goal Statement
+\item Instance Models
+\item Requirements
+\item Introduction
+\item Specific System Description
+\end{itemize}
+
 \end{itemize}
 
 \end{frame}

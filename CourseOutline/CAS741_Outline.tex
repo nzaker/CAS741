@@ -45,14 +45,15 @@ Dr.~Spencer Smith\\
 Office: ITB/167\\
 E-mail: \texttt{smiths@mcmaster.ca}\\
 Web: \url{http://www.cas.mcmaster.ca/~smiths}\\
-Office Hours Term 1: Drop in, or by appointment\\
+Office Hours: Drop in, or by appointment\\
 
 \section{Calendar Description} 
 
 This course presents the basic principles of software development for reliable
-scientific and engineering software.  Using example applications, a systematic
-process is given for the development and documentation of requirements, system
-design, module design, implementation, testing and inspection.
+and sustainable scientific and engineering software.  Using example
+applications, a systematic process is given for the development and
+documentation of requirements, system design, module design, implementation,
+testing and inspection.
 
 \section{Introduction}
 
@@ -153,8 +154,8 @@ waterfall model, with the following milestones:
 \item Module Guide (MG)
 \item Module Interface Specification (MIS)
 \item Implementation (any appropriate programming language)
-\item Verification and Validation (VnV) Plan (divided between several documents)
-\item Verification and Validation (VnV) Report (divided between several documents) 
+\item Verification and Validation (VnV) Plan (divided between system and unit documents)
+\item Verification and Validation (VnV) Report (divided between system and unit documents) 
 
 \end {enumerate}
 
@@ -170,44 +171,54 @@ Each student will be expected to do an informal presentation on some subset of t
 MIS, Implementation, VnV Plan and VnV Report.  It is expected the class discussion will
 assist in improving the quality of the written deliverables.  Each student will
 be expected to hand in the following written documents: SRS, MG, MIS, VnV Plan,
-VnV Report and Final Documentation.
+VnV Report, code and Final Documentation.
 
 \section {Grading}
 
 \begin {enumerate}
 
-\item Presentations and class discussion 10\%
+\item Presentations and class discussion 5\%
 
-\item ``Domain Expert'' and secondary reviewer roles 5\%
+\item ``Domain Expert'' and secondary reviewer roles 10\%
 
 \item Problem Statement 0\%
 
-\item System Requirements Specification (SRS) 20\%
+\item System Requirements Specification (SRS) 15\%
 
-\item System Verification and Validation (VnV) Plan 15\%
-\begin{enumerate}
-\item System VnV Plan
-\item Unit VnV Plan
-\end{enumerate}
+\item System Verification and Validation (VnV-Syst) Plan 15\%
 
-\item MG and Module Interface Specification (MIS) 20\%
+\item Module Guide and Module Interface Specification (MG and MIS) 15\%
 
-\item Final Documentation 30\%
+\item Final Documentation 40\%
 \begin{enumerate}
 \item Problem Statement (Revised)
 \item SRS (Revised)
 \item System VnV Plan (Revised)
 \item MG (Revised)
 \item MIS (Revised)
-\item Unit VnV Plan (Revised)
+\item Unit VnV Plan
 \item Code
 \item System VnV Report
 \item Unit VnV Report
+\item Reflection Report
 \end{enumerate}
+
+\item Drasil simple physics example, pull request accepted 5\% (Bonus)
 
 \end {enumerate}
 
-explain domain expert and secondary reviewer roles.
+Each student will be assigned as a ``Domain Expert'' (DE) for one of their
+classmates.  The DE will review (via GitHub issues) their assigned project.  In
+addition, they will write the code for one of the modules of their assigned
+project and issue a pull request through GitHub.  For the secondary reviewer
+role, the instructor will assign various review tasks throughout the term.  The
+secondary reviewers feedback will focus more on the structure and format of the
+documentation, rather than on issues related to domain knowledge.
+
+The potential bonus marks involve creating a simple physics example in Drasil
+(\url{https://github.com/JacquesCarette/Drasil}).  Drasil represents recent
+(still incomplete) work to automate many of the tasks that are currently done
+manually for design and documenting SC software.
 
 \section {Policy Statements}
 
