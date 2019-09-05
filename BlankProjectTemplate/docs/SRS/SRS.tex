@@ -213,7 +213,10 @@ which heat is transferred in
 \plt{This template document assumes that a single program is being documented.
   If you are documenting a family of models, you should start with a commonality
   analysis.  A separate template is provided for this.  For program
-  families you should look at \cite{Smith2006, SmithMcCutchanAndCarette2017}.}
+  families you should look at \cite{Smith2006, SmithMcCutchanAndCarette2017}.
+  Single family member programs are often programs based on a single physical
+  model.  General purpose tools are usually documented as a family.  Families of
+  physical models also come up.}
 
 \plt{The SRS is not generally written, or read, sequentially.  The SRS is a
   reference document.  It is generally read in an ad hoc order, as the need
@@ -244,6 +247,20 @@ which heat is transferred in
 \plt{You can borrow any wording from the text given in the template.  It is part
   of the template, and not considered an instance of academic integrity.  Of
   course, you need to cite the source of the template.}
+
+\plt{When the documentation is done, it should be possible to trace back to the
+  source of every piece of information.  Some information will come from
+  external sources, like terminology.  Other information will be derived, like
+  General Definitions.}
+
+\plt{An SRS document should have the following qualities: unambiguous,
+  consistent, complete, validatable, abstract and traceable.}
+
+\plt{The overall goal of the SRS is that someone that meets the Characteristics
+  of the Intended Reader (Section~\ref{sec_IntendedReader}) can learn,
+  understand and verify the captured domain knowledge.  They should not have to
+  trust the authors of the SRS on any statements.  They should be able to
+  independently verify/derive every statement made.}
 
 \section{Introduction}
 
@@ -396,12 +413,15 @@ The description here should be in the problem space, not the solution space.}
 
 \subsubsection{Terminology and  Definitions}
 
+\plt{This section is expressed in words, not with equations.  It provide the
+  meaning of the different words and phrases used in the domain of the problem.
+The terminology is used to introduce concepts from the world outside of the
+mathematical model  The terminology provides a real world connection to give the
+mathematical model meaning.}
+
 This subsection provides a list of terms that are used in the subsequent
 sections and their meaning, with the purpose of reducing ambiguity and making it
 easier to correctly understand the requirements:
-
-\plt{This section is expressed in words, not with equations.  It provide the
-  meaning of the different words and phrases used in the domain of the problem.}
 
 \begin{itemize}
 
@@ -449,13 +469,15 @@ includes the following elements:
 
 \subsubsection{Goal Statements}
 
-\plt{A goal is a functional objective the system under consideration should
-  achieve. Goals provide criteria for sufficient completeness of a requirements
-  specification and for requirements pertinence. Goals will be refined in
-  Section “Instanced Models” (Section~\ref{sec_instance}). Large and complex
-  goals should be decomposed into smaller sub-goals.  The goals are written
-  abstractly, with a minimal amount of technical language.  They should be
-  understandable by non-domain experts.}
+\plt{The goal statements refine the ``Problem Description''
+  (Section~\ref{Sec_pd}).  A goal is a functional objective the system under
+  consideration should achieve. Goals provide criteria for sufficient
+  completeness of a requirements specification and for requirements
+  pertinence. Goals will be refined in Section “Instanced Models”
+  (Section~\ref{sec_instance}). Large and complex goals should be decomposed
+  into smaller sub-goals.  The goals are written abstractly, with a minimal
+  amount of technical language.  They should be understandable by non-domain
+  experts.}
 
 \noindent Given the \plt{inputs}, the goal statements are:
 
@@ -500,8 +522,17 @@ includes the following elements:
   about how the information is used.  In one problem the definition of
   acceleration can be a TM, in another it would be a DD.}
 
+\plt{There is repetition between the information given in the different chunks
+  (TM, GDs etc) with other information in the document.  For instance, the
+  meaning of the symbols, the units etc are repeated.  This is so that the
+  chunks can stand on their own when being read by a reviewer/user.  It also
+  facilitates reuse of the models in a different context.}
+
 \noindent \plt{The relationships between the parts of the document are show in
-  the following figure.}
+  the following figure.  In this diagram ``may ref'' has the same role as
+  ``uses'' above.  The figure adds ``Likely Changes,'' which are able to
+  reference (use) Assumptions.}
+
 \begin{figure}[H]
   \includegraphics[scale=0.9]{../../../Lectures/Figures/RelationsBetweenTM_GD_IM_DD_A.pdf}
 \end{figure}
@@ -513,6 +544,9 @@ models can be verified.
 
 \subsubsection{Assumptions} \label{sec_assumpt}
 
+\plt{The assumptions are a refinement of the scope.  The scope is general, where
+  the assumptions are specific.  All assumptions should be listed, even those
+  that domain experts know so well that they are rarely (if ever) written down.}
 \plt{The document should not take for granted that the reader knows which
   assumptions have been made. In the case of unusual assumptions, it is
   recommended that the documentation either include, or point to, an explanation
@@ -529,7 +563,9 @@ likely change [LC], in which the respective assumption is used.
 \item[A\refstepcounter{assumpnum}\theassumpnum \label{A_meaningfulLabel}:]
   \plt{Short description of each assumption.  Each assumption
     should have a meaningful label.  Use cross-references to identify the
-    appropriate traceability to T, GD, DD etc., using commands like dref, ddref etc.}
+    appropriate traceability to T, GD, DD etc., using commands like dref, ddref
+    etc.  Each assumption should be atomic - that is, there should not be an
+    explicit (or implicit) ``and'' in the text of an assumption.}
 
 \end{itemize}
 
@@ -582,8 +618,15 @@ on.  \plt{Modify the examples below for your problem, and add additional models
 
 \subsubsection{General Definitions}\label{sec_gendef}
 
-This section collects the laws and equations that will be used in deriving the
-data definitions, which in turn are used to build the instance models.
+\plt{General Definitions (GDs) are a refinement of one or more TMs, and/or of
+  other GDs.  The GDs are less abstract than the TMs.  Generally the reduction
+  in abstraction is possible through invoking (using/referencing) Assumptions.
+  For instance, the TM could be Newton's Law of Cooling stated abstracting.  The
+  GD could take the general law and apply it to get a 1D equation.}
+
+This section collects the laws and equations that will be used in building the
+instance models.
+
 \plt{Some projects may not have any content for this section, but the section
   heading should be kept.}  \plt{Modify the examples below for your problem, and
   add additional definitions as appropriate.}
@@ -628,9 +671,20 @@ between the environment and the object (\si{\celsius}).
 \subsubsection*{Detailed derivation of simplified rate of change of temperature}
 
 \plt{This may be necessary when the necessary information does not fit in the
-  description field.} 
+  description field.}
+\plt{Derivations are important for justifying a given GD.  You want it to be
+  clear where the equation came from.}
 
 \subsubsection{Data Definitions}\label{sec_datadef}
+
+\plt{The Data Definitions are definitions of symbols and equations that are
+  given for the problem.  They are not derived; they are simply used by other
+  models.  For instance, if a problem depends on density, there may be a data
+  definition for the equation defining density.  The DDs are given information
+  that you can use in your other modules.}
+
+\plt{All Data Definitions should be used (referenced) by at least one other
+  model.}
 
 This section collects and defines all the data needed to build the instance
 models. The dimension of each quantity is also given.  \plt{Modify the examples
@@ -676,6 +730,12 @@ Symbol &$q_C$\\
 \end{minipage}\\
 
 \subsubsection{Instance Models} \label{sec_instance}    
+
+\plt{The motivation for this section is to reduce the problem defined in
+  ``Physical System Description'' (Section~\ref{sec_phySystDescrip}) to one
+  expressed in mathematical terms. The IMs are built by refining the TMs and/or
+  GDs.  This section should remain abstract.  The SRS should specify the
+  requirements without considering the implementation.}
 
 This section transforms the problem defined in Section~\ref{Sec_pd} into 
 one which is expressed in mathematical terms. It uses concrete symbols defined 
@@ -730,20 +790,23 @@ The goals \plt{reference your goals} are solved by \plt{reference your instance
 
 \subsubsection*{Derivation of ...}
 
-\plt{May be necessary to include this subsection in some cases.}
+\plt{The derivation shows how the IM is derived from the TMs/GDs.  In cases
+  where the derivation cannot be described under the Description field, it will
+  be necessary to include this subsection.}
 
-\subsubsection{Data Constraints} \label{sec_DataConstraints}    
+\subsubsection{Input Data Constraints} \label{sec_DataConstraints}    
 
-Table~\ref{TblInputVar} shows the data constraints on the
-input output variables.  The column for physical constraints gives
-the physical limitations on the range of values that can be taken by the
-variable.  The column for software constraints restricts the range of inputs to
-reasonable values.  The constraints are conservative, to give the user of the
-model the flexibility to experiment with unusual situations.  The column of
-typical values is intended to provide a feel for a common scenario.  The
-uncertainty column provides an estimate of the confidence with which the
-physical quantities can be measured.  This information would be part of the
-input if one were performing an uncertainty quantification exercise.
+Table~\ref{TblInputVar} shows the data constraints on the input output
+variables.  The column for physical constraints gives the physical limitations
+on the range of values that can be taken by the variable.  The column for
+software constraints restricts the range of inputs to reasonable values.  The
+software constraints will be helpful in the design stage for picking suitable
+algorithms.  The constraints are conservative, to give the user of the model the
+flexibility to experiment with unusual situations.  The column of typical values
+is intended to provide a feel for a common scenario.  The uncertainty column
+provides an estimate of the confidence with which the physical quantities can be
+measured.  This information would be part of the input if one were performing an
+uncertainty quantification exercise.
 
 The specification parameters in Table~\ref{TblInputVar} are listed in
 Table~\ref{TblSpecParams}.
@@ -804,6 +867,9 @@ A correct solution must exhibit \plt{fill in the details}.  \plt{These
 
 \section{Requirements}
 
+\plt{The requirements refine the goal statement.  They will make heavy use of
+  references to the instance models.}
+
 This section provides the functional requirements, the business tasks that the
 software is expected to complete, and the nonfunctional requirements, the
 qualities that the software is expected to exhibit.
@@ -850,7 +916,8 @@ qualities that the software is expected to exhibit.
 \noindent \begin{itemize}
 
 \item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{Give
-    the likely changes, with a reference to the related assumption (aref), as appropriate.}
+    the unlikely changes.  The design can assume that the changes listed will
+    not occur.}
 
 \end{itemize}
 
@@ -868,6 +935,9 @@ general definitions, data definitions, instance models, and likely changes on
 the assumptions.
 
 \plt{You will have to modify these tables for your problem.}
+
+\plt{The traceability matrix is challenging to maintain manually.  Please do
+  your best.  In the future tools (like Drasil) will make this much easier.}
 
 \afterpage{
 \begin{landscape}
