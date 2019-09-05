@@ -313,6 +313,14 @@ interfaces between the system and its environment, describes the user
 characteristics and lists the system constraints.  \plt{This text can likely be
   borrowed verbatim.}
 
+\plt{The purpose of this section is to provide general information about the
+  system so the specific requirements in the next section will be easier to
+  understand. The general system description section is designed to be
+  changeable independent of changes to the functional requirements documented in
+  the specific system description. The general system description provides a
+  context for a family of related models.  The general description can stay the
+  same, while specific details are changed between family members.}
+
 \subsection{System Context}
 
 \plt{Your system context will include a figure that shows the abstract view of
@@ -365,7 +373,13 @@ characteristics and lists the system constraints.  \plt{This text can likely be
 
 \subsection{System Constraints}
 
-\plt{You may not have any system constraints}
+\plt{System constraints differ from other type of requirements because they
+  limit the developers’ options in the system design and they identify how the
+  eventual system must fit into the world. This is the only place in the SRS
+  where design decisions can be specified.  That is, the quality requirement for
+  abstraction is relaxed here.  However, system constraints should only be
+  included if they are truly required. In the context of CAS 741, you often will
+  may not have any system constraints.}
 
 \section{Specific System Description}
 
@@ -377,7 +391,8 @@ the instance models.  \plt{Add any project specific details that are relevant
 
 \subsection{Problem Description} \label{Sec_pd}
 
-\progname{} is \plt{what problem does your program solve?}
+\progname{} is intended to solve ... \plt{What problem does your program solve?
+The description here should be in the problem space, not the solution space.}
 
 \subsubsection{Terminology and  Definitions}
 
@@ -385,13 +400,29 @@ This subsection provides a list of terms that are used in the subsequent
 sections and their meaning, with the purpose of reducing ambiguity and making it
 easier to correctly understand the requirements:
 
+\plt{This section is expressed in words, not with equations.  It provide the
+  meaning of the different words and phrases used in the domain of the problem.}
+
 \begin{itemize}
 
 \item 
 
 \end{itemize}
 
-\subsubsection{Physical System Description}
+\subsubsection{Physical System Description} \label{sec_phySystDescrip}
+
+\plt{The purpose of this section is to clearly and unambiguously state the
+  physical system that is to be modelled. Effective problem solving requires a
+  logical and organized approach. The statements on the physical system to be
+  studied should cover enough information to solve the problem. The physical
+  description involves element identification, where elements are defined as
+  independent and separable items of the physical system. Some example elements
+  include acceleration due to gravity, the mass of an object, and the size and
+  shape of an object. Each element should be identified and labelled, with their
+  interesting properties specified clearly. The physical description can also
+  include interactions of the elements, such as the following: i) the
+  interactions between the elements and their physical environment; ii) the
+  interactions between elements; and, iii) the initial or boundary conditions.}
 
 The physical system of \progname{}, as shown in Figure~?,
 includes the following elements:
@@ -404,7 +435,7 @@ includes the following elements:
 
 \end{itemize}
 
-\plt{A figure here may make sense for most SRS documents}
+\plt{A figure here makes sense for most SRS documents}
 
 % \begin{figure}[h!]
 % \begin{center}
@@ -418,6 +449,14 @@ includes the following elements:
 
 \subsubsection{Goal Statements}
 
+\plt{A goal is a functional objective the system under consideration should
+  achieve. Goals provide criteria for sufficient completeness of a requirements
+  specification and for requirements pertinence. Goals will be refined in
+  Section “Instanced Models” (Section~\ref{sec_instance}). Large and complex
+  goals should be decomposed into smaller sub-goals.  The goals are written
+  abstractly, with a minimal amount of technical language.  They should be
+  understandable by non-domain experts.}
+
 \noindent Given the \plt{inputs}, the goal statements are:
 
 \begin{itemize}
@@ -430,12 +469,54 @@ includes the following elements:
 
 \subsection{Solution Characteristics Specification}
 
+\plt{This section specifies the information in the solution domain of the system
+  to be developed. This section is intended to express what is required in
+  such a way that analysts and stakeholders get a clear picture, and the
+  latter will accept it. The purpose of this section is to reduce the problem
+  into one expressed in mathematical terms. Mathematical expertise is used to
+  extract the essentials from the underlying physical description of the
+  problem, and to collect and substantiate all physical data pertinent to the
+  problem.}
+
+\plt{This section presents the solution characteristics by successively refining
+  models.  It starts with the abstract/general Theoretical Models (TMs) and
+  refines them to the concrete/specific Instance Models (IMs).  If necessary
+  there are intermediate refinements to General Definitions (GDs).  All of these
+  refinements can potentially use Assumptions (A) and Data Definitions (DD).
+  TMs are refined to create new models, that are called GMs or IMs. DDs are not
+  refined; they are just used. GDs and IMs are derived, or refined, from other
+  models. DDs are not derived; they are just given. TMs are also just given, but
+  they are refined, not used.  If a potential DD includes a derivation, then
+  that means it is refining other models, which would make it a GD or an IM.}
+
+\plt{The above makes a distinction between ``refined'' and ``used.'' A model is
+  refined to another model if it is changed by the refinement. When we change a
+  general 3D equation to a 2D equation, we are making a refinement, by applying
+  the assumption that the third dimension does not matter. If we use a
+  definition, like the definition of density, we aren't refining, or changing
+  that definition, we are just using it.}
+
+\plt{The same information can be a TM in one problem and a DD in another.  It is
+  about how the information is used.  In one problem the definition of
+  acceleration can be a TM, in another it would be a DD.}
+
+\noindent \plt{The relationships between the parts of the document are show in
+  the following figure.}
+\begin{figure}[H]
+  \includegraphics[scale=0.9]{../../../Lectures/Figures/RelationsBetweenTM_GD_IM_DD_A.pdf}
+\end{figure}
+
 The instance models that govern \progname{} are presented in
 Subsection~\ref{sec_instance}.  The information to understand the meaning of the
 instance models and their derivation is also presented, so that the instance
 models can be verified.
 
 \subsubsection{Assumptions} \label{sec_assumpt}
+
+\plt{The document should not take for granted that the reader knows which
+  assumptions have been made. In the case of unusual assumptions, it is
+  recommended that the documentation either include, or point to, an explanation
+  and justification for the assumption.}
 
 This section simplifies the original problem and helps in developing the
 theoretical model by filling in the missing information for the physical
@@ -453,6 +534,11 @@ likely change [LC], in which the respective assumption is used.
 \end{itemize}
 
 \subsubsection{Theoretical Models}\label{sec_theoretical}
+
+\plt{Theoretical models are sets of abstract mathematical equations or axioms
+  for solving the problem described in Section ``Physical System Description''
+  (Section~\ref{sec_phySystDescrip}). Examples of theoretical models are
+  physical laws, constitutive equations, relevant conversion factors, etc.}
 
 This section focuses on the general equations and laws that \progname{} is based
 on.  \plt{Modify the examples below for your problem, and add additional models
@@ -954,11 +1040,5 @@ Their values are defined in this section for easy maintenance.}
   requirement could be more abstract
 \end{itemize}
 }
-
-\noindent \plt{The relationships between the parts of the document are show in the
-  following figure}
-\begin{figure}[H]
-  \includegraphics[scale=0.9]{../../../Lectures/Figures/RelationsBetweenTM_GD_IM_DD_A.pdf}
-\end{figure}
 
 \end{document}
