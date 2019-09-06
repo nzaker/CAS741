@@ -63,6 +63,16 @@
   \item Someone that meets the characteristics of the intended reader could
     verify all of the statement made in the SRS.  That is, they do not have to
     trust the SRS authors on any information.
+    \item Terminology, definitions, symbols, TMs and DDs can be given without
+      derivation, except possibly for a source (citation), but all GDs and IMs
+      should be derived/justified.  At least check a representative sample for
+      this criteria.
+    \item SRS is unambiguous.  At least check a representative sample.
+    \item SRS is consistent.  At least check a representative sample.
+    \item SRS is validatable.  At least check a representative sample.
+    \item SRS is abstract.  At least check a representative sample.
+    \item SRS is traceable.  At least check a representative sample.
+      
 \end{todolist}
 
 \item Reference Material
@@ -82,47 +92,66 @@
 
 \item Introduction
   \begin{todolist}
-  \item 
+  \item Introductory blurb focuses on the problem domain
+  \item Introductory blurb Includes a ``roadmap''
+  \item ``Purpose of the Document'' discusses the documentation's purpose, not
+    the program's purpose
+  \item Scope of the reuqirements is an abstract version of the assumptions
+  \item Characteristics of the intended reader are not confused with the user
+    characteristics
+  \item Characteristics of the intended reader are unambiguous
   \end{todolist}
 
 \item General System Description
   \begin{todolist}
-  \item 
+  \item System context includes a figure showing the relation between the
+    software system and external entities
+  \item User characteristics are unambiguous
+  \item System constraints have an appropriate rationale (a constraint without a
+    reason for that constraint is likely making the SRS less abstract than it
+    should be)
   \end{todolist}
 
 \item Problem Description
   \begin{todolist}
-  \item 
+  \item Each item of the physical system is identified and labelled
+  \item Goal statements are abstract
+  \item Goal statements use a minimal amount of technical language,
+    understandable by non-domain experts 
   \end{todolist}
 
 \item Solution Characteristics Specification
   \begin{todolist}
   \item Each assumption is ``atomic'' (no explicit or implicit ``ands'')
   \item Assumptions are a refinement of the scope
+  \item Each assumptions are referenced at least once
   \item The rationale is given for assumptions that require justification
   \item The derivation of all GDs as refinements from other models is clear
   \item The derivation of all IMs as refinements from other models is clear
   \item All DD are used (referenced) by at least one other model
+  \item The IMs remain abstract
+  \item Input data constraints are given, with a rationale where appropriate
+  \item Properties of a correct solution are given
   \end{todolist}
   
 \item Functional Requirements
   \begin{todolist}
-  \item 
+  \item IMs and (possibly) TMs and GMs are referenced as appropriate by the requirements.
   \end{todolist}
 
 \item Nonfunctional Requirements
   \begin{todolist}
-  \item 
+  \item NFRs are verifiable
   \end{todolist}
 
 \item Likely and Unlikely changes
   \begin{todolist}
-  \item 
+  \item Likely changes are feasible to hide in the design
   \end{todolist}
 
 \item Traceability Matrices
   \begin{todolist}
-  \item 
+  \item Traceability matrix is complete
   \end{todolist}
 
 \end{itemize}
