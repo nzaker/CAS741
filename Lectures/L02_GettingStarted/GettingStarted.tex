@@ -59,6 +59,11 @@
 \item Any more introductions?
 \item Project choices
 \item Software tools
+\begin{itemize}
+\item Git, GitLab and GitHub (Issue Creating Exercise)
+\item LaTeX
+\item Make
+\end{itemize}
 \item Questions on suggested reading?
 \item Software Engineering for Scientific Computing literature
 \ei
@@ -71,10 +76,21 @@
 \frametitle{Administrative Details}
 
 \bi
-\item Classes are 1.5 hours long  :-)
+\item Can everyone access GitLab?
+  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741}
+  {https://gitlab.cas.mcmaster.ca/smiths/cas741}
 \item Use folder structure given in repo (will be updating)
 \item Post any questions as issues in our repo
-\item Problem statement due Friday, Sept 14 by 11:59 pm
+\item Create a GitHub account if you don't already have one
+\item Add \texttt{smiths} to your GitHub repos
+\item Problem statement
+\begin{itemize}
+\item Problem statement due Thurs, Sept 19 by 11:59 pm
+\item Assign the instructor an issue to review your problem
+    statement
+\end{itemize}
+\item Issue creating exercises due Thurs, Sept 19 by 10:30 am
+\item Feel free to add me to you Linked-In network
 \ei
 
 \end{frame}
@@ -82,14 +98,15 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Benches and Glassboards}
+\frametitle{Administrative Details: Domain Expert}
 
-\begin{tikzpicture}[remember picture,overlay]
-\node [xshift=0cm,yshift=0.15cm] at (current page.center)
-{
-\includegraphics[width=0.5\textwidth]{../Figures/GlassBoards.jpg}
-};
-\end{tikzpicture}
+\begin {itemize}
+
+\item Creates issues for their partner's written deliverables
+\item Asks questions during their partner's presentations
+\item Implements one module following their partner's spec
+
+\end {itemize}
 
 \end{frame}
 
@@ -109,37 +126,24 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Administrative Details: Grade Assessment}
+\frametitle{Administrative Details: Presentations}
 
-\begin {enumerate}
+~\newline
+\begin{tabular}{l l l}
+SRS Present & Week 04 & Week of Sept 30\\
+Syst.\ VnV Present & Week 07 & Week of Oct 24\\
+MG Present & Week 9 & Week of Oct 29\\
+MIS Present & Week 11 & Week of Nov 12\\
+Unit VnV or Implement Present & Week 13 & Week of Nov 26\\
+\end {tabular}
 
-\item Presentations and class discussion 10\%
-
-\item Quality of GitHub issues provided to classmates 5\%
-
-\item Problem Statement 0\%
-
-\item System Requirements Specification (SRS) 20\%
-
-\item Verification and Validation (VnV) Plan 15\%
-\begin{enumerate}
-\item System VnV Plan 10\%
-\item Unit VnV Plan 5\%
-\end{enumerate}
-
-\item Module Guide (MG) 5\%
-
-\item Module Interface Specification (MIS) 15\%
-
-\item Final Documentation 30\%
-\begin{enumerate}
-\item Problem Statement, SRS, System VnV Plan, MG, MIS, Unit VnV Plan (Revised)
-\item Code
-\item System VnV Report
-\item Unit VnV Report
-\end{enumerate}
-
-\end {enumerate}
+\bi
+\item Very tentative dates
+\item Specific schedule depends on final class registration and need
+\item Informal presentations with the goal of improving everyone's written
+  deliverables
+\item Domain experts and secondary reviewers (and others) will ask questions
+\ei
 
 \end{frame}
 
@@ -149,12 +153,13 @@
 \frametitle{Administrative Details: Report Deadlines}
 ~\newline
 \begin{tabular}{l l l}
-Problem Statement & Week 02 & Sept 14\\
-System Requirements Specification (SRS) & Week 05 & Oct 4\\
-System VnV Plan & Week 07 & Oct 22\\
-Module Guide (MG) & Week 09 & Nov 5\\
-Module Interface Specification (MIS) & Week 11 & Nov 19\\
-Unit VnV Plan & Week 13 & Dec 3\\
+Issue Creation Exercise & Week 03 & Sept 19\\
+Problem Statement & Week 03 & Sept 19\\
+System Requirements Specification (SRS) & Week 06 & Oct 7\\
+System VnV Plan & Week 08 & Oct 22\\
+Module Guide (MG) & Week 10 & Nov 5\\
+Module Interface Specification (MIS) & Week 12 & Nov 19\\
+%Unit VnV Plan & Week 14 & Dec 3\\
 Final Documentation & Week 14 & Dec 10\\
 \end {tabular}
 
@@ -163,6 +168,7 @@ Final Documentation & Week 14 & Dec 10\\
 11:59 pm of the due date
 \item If you need an extension, please ask
 \item Two days after each major deliverable, your GitHub issues will be due
+\item Domain expert code due 1 week after MIS deadline
 \ei
 
 \end{frame}
@@ -170,31 +176,7 @@ Final Documentation & Week 14 & Dec 10\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Administrative Details: Presentations}
-
-~\newline
-\begin{tabular}{l l l}
-SRS Present & Week 04 & Week of Sept 24\\
-Syst.\ VnV Present & Week 06 & Week of Oct 15\\
-MG Present & Week 08 & Week of Oct 29\\
-MIS Present & Week 10 & Week of Nov 12\\
-Unit VnV or Implement Present & Week 12 & Week of Nov 26\\
-\end {tabular}
-
-\bi
-\item Tentative dates
-\item Specific schedule depends on final class registration and need
-\item Informal presentations with the goal of improving everyone's written
-  deliverables
-\item You will be assigned to ask questions of your colleagues
-\ei
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Introductions}
+\frametitle{Introductions (if necessary)}
 
 \begin{itemize}
 \item Your name
@@ -202,6 +184,7 @@ Unit VnV or Implement Present & Week 12 & Week of Nov 26\\
 \item Academic background
 \item Experience with:
 \begin{itemize}
+\item Science (such as physics)
 \item Scientific computing
 \item Continuous math
 \item Discrete math
@@ -284,8 +267,12 @@ Unit VnV or Implement Present & Week 12 & Week of Nov 26\\
 \frametitle{Tool Tutorials}
 \begin{itemize}
 \item Best way to learn is by doing
-\item Some getting started information and exercises in the ToolTutorials
+\item Some getting started information and exercises in the
+  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/tree/master/ToolTutorials} {ToolTutorials}
   folder, modified from undergrad classes
+\item Tutorials for
+  \href{https://gitlab.cas.mcmaster.ca/smiths/se2aa4_cs2me3/tree/master/Tutorials}
+  {se 2aa4 and cs 2me3}
 \item Many other resources on-line
 \item Your colleagues can help too
 \end{itemize}
@@ -345,7 +332,34 @@ First either init repo or clone (git init, git clone), then typical workflow is
 \item \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/tree/master/ToolTutorials/gitAndGitLab}{See brief document in course repo}
 \item \href{https://github.com/JacquesCarette/literate-scientific-software/issues}{See
   examples}
+\item Tutorials for
+  \href{https://gitlab.cas.mcmaster.ca/smiths/se2aa4_cs2me3/tree/master/Tutorials/T01a-Git/slides}
+  {se 2aa4 and cs 2me3}
 \item \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/issues}{Create an issue}
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Issue Creating Exercise}
+
+\bi
+\item Due by Thurs, Sept 19, 10:30 am
+\item Create 2 to 3 issues for case studies in Drasil repo
+\item \href{https://jacquescarette.github.io/Drasil/}
+  {https://jacquescarette.github.io/Drasil/}
+\item Select any case study that interests you and review the SRS
+\item Create issues at \href{https://github.com/JacquesCarette/Drasil/issues}
+  {https://github.com/JacquesCarette/Drasil/issues}
+\item Assign issues to \texttt{smiths}
+\item Consider using SRS
+  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/BlankProjectTemplate/docs/SRS/SRS-Checklist.pdf}
+  {checklist} (except for major revision history)
+\item Additional guidance in
+  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/BlankProjectTemplate/docs/SRS/SRS.tex}
+  {SRS Template}
 \ei
 
 \end{frame}
@@ -356,7 +370,12 @@ First either init repo or clone (git init, git clone), then typical workflow is
 \frametitle{LaTeX}
 \begin{itemize}
 \item A typesetting language
-\item \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/tree/master/ToolTutorials/LaTeX}{Some initial information in course repo}
+\item
+  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/tree/master/ToolTutorials/LaTeX}
+  {Some initial information in course repo}
+\item Tutorials for
+  \href{https://gitlab.cas.mcmaster.ca/smiths/se2aa4_cs2me3/tree/master/Tutorials/T02a-LaTeX}
+  {se 2aa4 and cs 2me3}
 \item Start from an example
 \bi
 \item The lectures notes
@@ -371,6 +390,8 @@ First either init repo or clone (git init, git clone), then typical workflow is
 \begin{frame}
 \frametitle{Make}
 \begin{itemize}
+\item \href{https://swcarpentry.github.io/make-novice/} {Software Carpentry:
+    Automation and Make}
 \item The Blank Project Template
 \end{itemize}
 \end{frame}
