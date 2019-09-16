@@ -211,6 +211,8 @@ Final Documentation & Week 14 & Dec 9\\
 with respect to some aspect
 \item \structure{What are some important aspects (qualities) for scientific software?}
 \item User Satisfaction = The Important Qualities are High + Within Budget
+  \item We will focus on qualities relevant for software, including qualities
+    for the documentation, code and executable
 \end{itemize}
 \end{frame}
 
@@ -238,7 +240,7 @@ with respect to some aspect
 \item Internal qualities
 \begin{itemize}
 \item Verifiability
-%\item Productivity
+\item Productivity
 \item Usability
 \item Maintainability
 %\begin{itemize}
@@ -379,8 +381,8 @@ unambiguous and verifiable?
 
 \structure{What are some examples of excellent usability?}\\
 ~\\
-\structure{When you go to a friend's house, you can likely operate their microwave without
-reading the manual.  What did human factors engineers do to make this possible?}
+\structure{When you visit a hotel, especially in another country, do you expect
+  some confusion with operating the shower?}
 
 \end{frame}
 
@@ -412,6 +414,17 @@ reading the manual.  What did human factors engineers do to make this possible?}
   product's properties (such as correctness and performance) can be verified
 \item Verifiability can be both an internal and an external quality
 %\item What is the relationship between verifiability and correctness?
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Productivity}
+
+\begin{itemize}
+\item 
 \end{itemize}
 
 \end{frame}
@@ -523,16 +536,40 @@ What do software developers do to promote maintainability?
 \frametitle{Reproducibility}
 
 \begin{itemize}
-\item The cornerstone of the scientific method
+\item The cornerstone of the scientific method~\cite{Davison2012}
+\item QA has, ``a bad name among creative scientists and
+  engineers''~\cite[p.~352]{Roache1998}, but participating in QA also improves reproducibility
+\item Reproducibility benefits from a consistent and repeatable
+  computing environment, version control and separating code from
+  configuration/parameters~\cite{Davison2012}
 \item Historically not well done for SCS
-\item Progress on re-running old code with docker, VMs
-\item Long way to go to replicability from original theory
+\item Need for action is highlighted by a study of 402 computer systems papers -
+  only 48.3\% of the code was both available and compilable
+  \cite{CollbergEtAl2015}.
+\item \cite{CrickAndHall2014} point out potential roadblocks for
+  reproducibility, including page length constraints and differing detail needs
+  depending on the audience
 \end{itemize}
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}
+\frametitle{Reproducibility}
+
+\begin{itemize}
+\item Interest is growing \cite{BenureauAndRougier2017, BaileyEtAl2016}
+\item Progress on re-running old code with docker, VMs
+\item Replicability is rarely achieved, as shown for microarray gene expression
+  \cite{IoannidisEtAl2009} and for economics modelling
+  \cite{IonescuAndJansson2013}
+\item Long way to go to replicability from original theory
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}
 \frametitle{Sustainability}
 
@@ -583,7 +620,7 @@ Draw a diagram showing the relationships between the various software qualities
 \begin{itemize}
 \item Requirements for a family of related software products
 \item Sometime for specific physical problems
-\item Commonly used for a library of general purpose tools
+\item Commonly used for a \structure{library of general purpose tools}
 \item Distinguish commonalities, variabilities and parameters of variation
 \end{itemize}
 
