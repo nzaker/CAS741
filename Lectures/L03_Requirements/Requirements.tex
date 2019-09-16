@@ -69,12 +69,14 @@
 \frametitle{Administrative Details}
 
 \bi
-\item Can everyone access GitLab?
-  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741}{https://gitlab.cas.mcmaster.ca/smiths/cas741}
+% \item Can everyone access GitLab?
+%   \href{https://gitlab.cas.mcmaster.ca/smiths/cas741}{https://gitlab.cas.mcmaster.ca/smiths/cas741}
 \item Create a GitHub account if you don't already have one
 \item Add \texttt{smiths} to your GitHub repos
 \item Linked-In
-\item \structure{Assign the instructor an issue to review your problem statement}
+\item \structure{Assign the instructor an issue to review your problem
+    statement - Due by Sept 19}
+\item Issue creating exercises due Thurs, Sept 19 by 10:30 am
 \ei
 
 \end{frame}
@@ -82,55 +84,53 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Administrative Details: Deadlines}
+\frametitle{Administrative Details: Presentations}
 
 ~\newline
 \begin{tabular}{l l l}
-Problem Statement & Week 02 & Sept 14\\
-SRS Present & Week 04 & Week of Sept 24\\
-SRS & Week 05 & Oct 4\\
-Syst.\ VnV Present & Week 06 & Week of Oct 15\\
-System VnV Plan & Week 07 & Oct 22\\
-MG Present & Week 08 & Week of Oct 29\\
-MG & Week 09 & Nov 5\\
-MIS Present & Week 10 & Week of Nov 12\\
-MIS & Week 11 & Nov 19\\
-Unit VnV or Impl.\ Present & Week 12 & Week of Nov 26\\
-Unit VnV Plan & Week 13 & Dec 3\\
-Final Doc & Week 14 & Dec 10\\
+SRS Present & Week 05 & Week of Sept 30\\
+Syst.\ VnV Present & Week 07 & Week of Oct 21\\
+MG + MIS Syntax Present & Week 9 & Week of Nov 4\\
+MIS Semantics Present & Week 11 & Week of Nov 18\\
+Unit VnV or Impl.\ Present & Week 12/13 & Week of Nov 28\\
 \end {tabular}
+
+\bi
+%\item Very tentative dates
+\item Specific schedule depends on final class registration and need
+\item Informal presentations with the goal of improving everyone's written
+  deliverables
+\item Domain experts and secondary reviewers (and others) will ask questions
+\ei
 
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{frame}
-% \frametitle{Introductions}
+\begin{frame}
+\frametitle{Administrative Details: Report Deadlines}
+~\newline
+\begin{tabular}{l l l}
+Issue Creation Exercise & Week 03 & Sept 19\\
+Problem Statement & Week 03 & Sept 19\\
+SRS & Week 06 & Oct 7\\
+System VnV Plan & Week 08 & Oct 28\\
+MG + MIS & Week 10 & Nov 25\\
+%Unit VnV Plan & Week 14 & Dec 3\\
+Final Documentation & Week 14 & Dec 9\\
+\end {tabular}
 
-% \begin{itemize}
-% \item Your name
-% \item Degree program
-% \item Academic background
-% \item Experience with:
-% \begin{itemize}
-% \item Scientific computing
-% \item Continuous math
-% \item Discrete math
-% \item Software engineering
-% \item Software development technology
-% \bi
-% \item Git
-% \item GitHub or GitLab
-% \item LaTeX
-% \item Make etc.
-% \ei
-% \end{itemize}
-% \item What do you hope to get out of this course?
-% \end{itemize}
+\bi
+\item The written deliverables will be graded based on the repo contents as of
+11:59 pm of the due date
+\item If you need an extension, please ask
+\item Two days after each major deliverable, your GitHub issues will be due
+\item Domain expert code due 1 week after MIS deadline
+\ei
 
-% \end{frame}
+\end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 \frametitle{Questions?}
@@ -166,7 +166,7 @@ Final Doc & Week 14 & Dec 10\\
 \item Why is this an important problem?
 \item What is the context of the problem you are solving? 
 \bi
-\item Who are the stakeholders?
+\item Who are the stakeholders? (``fake it'' so it is not 741 specific)
 \item What is the environment for the software?
 \ei
 \item A page description should be sufficient
@@ -516,6 +516,32 @@ What do software developers do to promote maintainability?
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
+\frametitle{Reproducibility}
+
+\begin{itemize}
+\item The cornerstone of the scientific method
+\item Historically not well done for SCS
+\item Progress on re-running old code with docker, VMs
+\item Long way to go to replicability from original theory
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Sustainability}
+
+\begin{itemize}
+\item The latest ``buzz word''
+\item Seems to mean maintainability + productivity
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
 \frametitle{Relationship between Qualities}
 
 Draw a diagram showing the relationships between the various software qualities
@@ -593,17 +619,13 @@ material properties, the goal statements are:
 
 \begin{itemize}
 
-\item[GS1:] Predict the water 
-temperature over time.
+\item[GS1:] Predict the water temperature over time.
 
-\item[GS2:] Predict the PCM 
-temperature over time.
+\item[GS2:] Predict the PCM temperature over time.
 	
-\item[GS3:] Predict the 
-change in the energy of the water over time.
+\item[GS3:] Predict the change in the energy of the water over time.
 
-\item[GS4:] Predict the 
-change in the energy of the PCM over time.
+\item[GS4:] Predict the change in the energy of the PCM over time.
 
 \end{itemize}
 
