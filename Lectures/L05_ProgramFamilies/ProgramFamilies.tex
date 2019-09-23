@@ -82,29 +82,25 @@
 \frametitle{Administrative Details}
 
 \bi
-\item Problem statement should be clear on input and output
+%\item Problem statement should be clear on input and output
 \item Presentations
 \bi
 \item VGA by default, ask if need adapter
-\item Can use my laptop
+\item Can use my laptop, but track pad is difficult to use
 \ei
 % \item Do NOT reproduce all of the cas 741 repo in your repo, just the blank
 %   project template (moved to the top level)
 %\item Use the same names as the original
 %\item Delete example text from templates
-\item Writing checklist
-\item Repos.xlsx
-\item Domain experts - volunteers
+\item \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/Repos.xlsx}{Repos.xlsx}
+\item Domain experts - volunteers?
 \item 80 columns in tex files
-\item Spell check
-\item Replace ``in order to'' by ``to''
-\item Use a \texttt{.gitignore} file
-\item Look at
-  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/Repos.xlsx}{work
-    of class mates}
-\item Include the commit hash that closes the issue
-\item Close issues assigned to you
-\item SRS and CA templates updated, makefiles
+%\item Spell check
+%\item Replace ``in order to'' by ``to''
+%\item Use a \texttt{.gitignore} file
+%\item Include the commit hash that closes the issue
+%\item Close issues assigned to you
+\item CA template now updated
 \ei
 
 \end{frame}
@@ -194,175 +190,11 @@ Unit VnV or Impl.\ Present & Week 12/13 & Week of Nov 28\\
 \begin{frame}
 \frametitle{Questions?}
 \begin{itemize}
-\item Questions about problem statements?
 \item Questions about SRS?
-  \item
-  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/BlankProjectTemplate/docs/SRS/SRS-Checklist.pdf} {Checklist?}
-\end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\frame{\frametitle{More on the Template}
-\begin{itemize}%[<+-| alert@+>]%[iacolor=gray]
-\item Why a new template?
-\item The new template
-\begin{itemize}
-\item Overview of changes from existing templates
-\item Goal $\rightarrow$ Theoretical Model $\rightarrow$ Instanced Model hierarchy
-\item Traceability matrix
-\item System behaviour, including input constraints
-\end{itemize}
-\end{itemize}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\frame{\frametitle{Why a New Template?}
-From \cite{SmithAndLai2005, Lai2004}
-\begin{enumerate}%[<+-| alert@+>]%[iacolor=gray]
-%\item Reasons for a new template also form principles for its design
-\item One user viewpoint for the physical model
-\item Assumptions distinguish models
-\item High potential for reuse of functional requirements
-\item Characteristic hierarchical nature facilitates change
-\item Continuous mathematics presents a challenge
-\end{enumerate}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\frame{\frametitle{Overview of the New Template}
-
-\begin{itemize}
-
-\item{Reference Material}
-
-\item{Introduction:} 
-{a) Purpose of the Document}
-{b) Scope of the Software Product}
-{c) Organization of the Document}
-
-\item General System Description:
-{a) System Context}
-{b) User Characteristics}
-{c) System Constraints}
-
-\item \structure<2->{Specific System Description:
-a) Problem Description 
-b) Solution Characteristics Specification
-c) Non-functional Requirements}
-
-\item{Other System Issues}
-
-\item \structure<2->{Traceability Matrix}
-
-\item List of Possible Changes in the Requirements
-
-\item{Values of Auxiliary Constants}
-
-\item{References}
-
-\end{itemize}
-}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Excerpts from Specific System Description}
-
-\begin{itemize}
-
-\item Problem Description
-\begin{itemize}
-\item Physical system description (\textbf{PS}) 
-\item Goals (\textbf{G})
-\end{itemize}
- 
-\item Solution Characteristics Specification
-\begin{itemize}
-\item Assumptions (\textbf{A})
-\item Theoretical models (\textbf{T})
-\item Data definitions
-\item Instanced models (\textbf{M})
-\item Data constraints
-\item System behaviour
-\end{itemize}
-
-\item Non-functional Requirements
-\begin{itemize}
-\item Accuracy of input data
-\item Sensitivity of the model
-\item Tolerance of the solution
-\item Solution validation strategies (now moved to a separate document)
-\end{itemize}
-
-\end{itemize}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Refinement from Abstract to Concrete}
-
-\begin{overlayarea}{\textwidth}{5.3cm}
-\begin{figure}[H]
-\includegraphics<1>[scale=0.41]{../Figures/RefinementHierarchy.pdf}
-\includegraphics<2>[scale=0.41]{../Figures/RefinementG1.pdf}
-\includegraphics<3>[scale=0.41]{../Figures/RefinementT11.pdf}
-\includegraphics<4>[scale=0.41]{../Figures/RefinementM111.pdf}
-\includegraphics<5>[scale=0.41]{../Figures/RefinementT12.pdf}
-\end{figure}
-\end{overlayarea}
-
-\begin{overlayarea}{\textwidth}{1cm}
-
-\only<2>{\textbf{G1}: Solve for unknown forces}
-
-\only<3>{
-\begin{center} 
-$%\begin{displaymath}
-\mathbf{(T1_1)}~\left\{ 
-\begin{array}{lll}
-\textrm{$\sum{F_{xi}} = 0$}\\  
-\textrm{$\sum{F_{yi}} = 0$}\\
-\textrm{$\sum{M_i} = 0$}\\
-\end{array} \right. $%\end{displaymath}
-\end{center}
-}
-
-\only<4>{
-\begin{center} $%\begin{displaymath}
-\textbf{(M1)}~\left\{ 
-\begin{array}{lll}
-\textrm{$F_{ax} - F_1\cdot \cos\theta_3 - F_2\cdot \cos\theta_4 - F_{bx} = 0$} \\ 
-\textrm{$F_{ay} - F_1\cdot \sin\theta_3 - F_2\cdot \sin\theta_4 + F_{by} = 0$}\\
-\textrm{$- F_1\cdot x_1\sin\theta_3 - F_2\cdot x_2\sin\theta_4 + F_{by}\cdot L = 0$}\\
-\end{array} \right. 
-$%\end{displaymath}
-\end{center}
-}
-
-\only<5>{
-The virtual work done by all the external forces and couples acting on the system is zero for each independent virtual
-displacement of the system, or mathematically $\delta U = 0$
-}
-\end{overlayarea}
-
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Other goals and models}
-\begin{itemize}
-\item \textbf{G2}: Solve for the functions of shear force and bending moment along the beam
-\item \textbf{G3}: Solve for the function of deflection along the beam
-\item $\mathbf{T3_1}$: $\frac{d^2 y}{d x^2} = \frac{M}{EI}$, $y(0) = y(L) = 0$
-\item $\mathbf{T3_2}$: $y$ determined by moment area method
-\item $\mathbf{T3_3}$: $y$ determined using Castigliano's theorem
-\item $\mathbf{M3_{11}}$: $y = \frac{12 \int_0^L (\int_0^L M dx) dx}{Eeh^3}$, $y(0) = y(L) = 0$
+\item Any questions on the 
+  \href{https://gitlab.cas.mcmaster.ca/smiths/cas741/blob/master/BlankProjectTemplate/docs/SRS/SRS-Checklist.pdf}
+  {SRS Checklist?}
+\item Is $a = \frac{dv}{dt}$ a TM or a DD?
 \end{itemize}
 \end{frame}
 
@@ -383,41 +215,11 @@ displacement of the system, or mathematically $\delta U = 0$
 \begin{frame}
 \frametitle{Examples}
 \begin{itemize}
-\item \href{https://github.com/smiths/swhs}{Solar Water Heating System}
-\item \href{https://github.com/smiths/caseStudies/tree/master/CaseStudies/glass/docs/SRS}{GlassBR}
+\item \href{https://github.com/smiths/swhs} {Solar Water Heating System}
+\item
+  \href{https://github.com/smiths/caseStudies/tree/master/CaseStudies/glass/docs/SRS}
+  {GlassBR}
 \end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Summary of Template}
-\begin{itemize}
-\item Quality is a concern for scientific computing software
-\item Software engineering methodologies can help
-\item Motivated, justified and illustrated a method of writing requirements specification for engineering computation
-to improve reliability
-\item Also improve quality with respect to usability, verifiability, maintainability, reusability and portability
-\item Tabular expressions to reduce ambiguity, encourage systematic approach
-\item Conclusions can be generalized because other computation problems follow the same pattern of \emph{Input} then
-\emph{Calculate} then \emph{Output}
-\item Benefits of approach should increase as the number of details and the number of people involved increase
-\end{itemize}
-\end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{frame}
-\frametitle{Summary of Template (Continued)}
-\begin{itemize}
-\item A new template for scientific computing has been developed
-\item Characteristics of scientific software guided the design
-\item Designed for reuse
-\item Functional requirements split into ``Problem Description'' and ``Solution Characteristics Specification''
-\item Traceability matrix
-\item Addresses nonfunctional requirements (but room for improvement)
-\end{itemize}
-
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -427,7 +229,8 @@ to improve reliability
 
 \begin{itemize}
 
-\item \structure{What are the important qualities for a specification?}
+\item \structure{What are the important qualities for a specification?  What
+    makes a specification a good specification?}
 
 \end{itemize}
 
@@ -501,8 +304,8 @@ two-out-of-three voting policy.}
 \end{itemize}
 \item What is a potential problems with this specification?
 \begin{itemize}
-\item<2-> {\alert{Can a message be accepted as soon as we receive 2 out of 3 identical copies, or do we need to wait
-for receipt of the 3rd}}
+\item<2-> {\alert{Can a message be accepted as soon as we receive 2 out of 3
+      identical copies, or do we need to wait for receipt of the 3rd}}
 \end{itemize}
 \end{itemize}
 
@@ -539,8 +342,8 @@ for receipt of the 3rd}}
 
 \item Specification fragment for a linear solver
 \begin{itemize}
-\item \structure{Given $A$ and $b$, solve the  linear system $A x = b$ for $x$, such that the error in any entry of
-$x$ is less than 5 \%.}
+\item \structure{Given $A$ and $b$, solve the linear system $A x = b$ for $x$,
+    such that the error in any entry of $x$ is less than 5 \%.}
 \end{itemize}
 \item What is a potential problems with this specification?
 \begin{itemize}
@@ -606,10 +409,12 @@ at the end of a word.}
 \item Represents stress
 \item Represents the Stefan-Boltzmann constant (for radiative heat transfer)
 \end{itemize}
-\item Changing the symbol may be necessary for consistency, but it could adversely effect understandability
+\item Changing the symbol may be necessary for consistency, but it could
+  adversely effect understandability
 \item Potential problem with synonyms
 \begin{itemize}
-\item Externally funded graduate students, versus eligible graduate students, versus non-VISA students
+\item Externally funded graduate students, versus eligible graduate students,
+  versus non-VISA students
 %ask who would think about graduate school?
 \item Material behaviour model versus constitutive equation
 \end{itemize}
@@ -955,6 +760,29 @@ leads to weak error bounds
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for Linear Solver}
+
+\structure{What would be a good goal statement for a library of linear solvers?}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goal Statements for Linear Solver}
+
+\begin{itemize}
+	
+\item[G1] Given a system of $n$ linear equations represented by matrix $A$ and
+  column vector $b$, return $x$ such that $Ax = b$, if possible
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}[allowframebreaks]
 \frametitle{References}
