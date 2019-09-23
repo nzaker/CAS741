@@ -762,7 +762,7 @@ leads to weak error bounds
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Goal Statements for Linear Solver}
+\frametitle{Goal Statements for a Family of Linear Solvers?}
 
 \structure{What would be a good goal statement for a library of linear solvers?}
 
@@ -771,7 +771,7 @@ leads to weak error bounds
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Goal Statements for Linear Solver}
+\frametitle{Goal Statements for a Family of Linear Solvers}
 
 \begin{itemize}
 	
@@ -779,6 +779,256 @@ leads to weak error bounds
   column vector $b$, return $x$ such that $Ax = b$, if possible
 
 \end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Theoretical Model for a Family of Linear Solvers?}
+
+\begin{itemize}
+	
+\item \structure{Is the theoretical model a commonality or a variability?}
+\item \structure{What is the theoretical model for a family of linear solvers?}
+    
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Theoretical Model for a Family of Linear Solvers}
+
+Given a square matrix $A$ and column vector $b$, the possible
+solutions for $x$ are as follows:
+
+\begin{enumerate}
+\item A unique solution $x = A^{-1} b$, if $A$ is nonsingular
+\item An infinite number of solutions if $A$ is singular and $b \in span(A)$
+\item No solution if $A$ is singular and $b \notin span(A)$
+\end{enumerate}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Instance Model for a Family of Linear Solvers?}
+
+\begin{itemize}
+	
+\item \structure{Is there an instance model for a family of linear solvers?}
+    
+\end{itemize}
+
+% No
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Symbols and Terminology for a Family of Linear Solvers?}
+
+\begin{itemize}
+	
+\item \structure{What symbols and terminology will you need to define?}
+    
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Sample Symbols and Terminology}
+
+\begin{table}[h]
+\begin{tabular}{ l p{7.5cm}}
+$n: \mathbb{N}$ & number of linear equations/number of unknowns\\
+$A: \mathbb{R}^{n \times n}$ & $n \times n$ real matrix\\
+$x: \mathbb{R}^{n \times 1}$ & $n \times 1$ real column vector\\
+$b: \mathbb{R}^{n \times 1}$ & $n \times 1$ real column vector\\
+$I: \mathbb{R}^{n \times n}$ & an $n \times n$ matrix where all entries are $0$, except for the diagonal entries, which
+are $1$\\
+$|| v || $ & the norm (estimate of magnitude) of vector $v$\\
+$A^{-1}: \mathbb{R}^{n \times n}$ & the inverse matrix, with the property that $A^{-1} A = I$\\
+singular & matrix $A$ is singular if $A^{-1}$ does not exist\\
+residual & $|| b - A x ||$\\
+\end{tabular}
+%\caption{Terminology for a Linear Solver}\label{Term_LinSolv}
+\end{table}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{What Would be the Most General Binding Time?}
+
+\begin{itemize}
+	
+\item \structure{What would be the most general binding time for the variabilities?}
+    
+\end{itemize}
+
+% build time or run time
+% scope time has already set some variabilities - a different sub-family could
+% have different variabilities
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{What Are Some Potential Input Variabilities?}
+
+\begin{itemize}
+	
+\item \structure{What are some potential input variabilities?  What are the
+    associated parameters of variation?}
+    
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\newcommand{\colA}{1.7cm}
+%\newcommand{\colB}{5.6cm}
+%\newcommand{\colC}{1.1cm} %do not need this column if binding time is not listed
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+%\frametitle{Input Variabilities}
+
+\begin{table}
+\begin{tabular}{| p{\colA} | p{\colB} | }
+\hline
+\textbf{Variability} & \textbf{Parameter of Variation} \\
+\hline
+Allowed structure of $A$ & Set of \{ full, sparse, banded, tridiagonal, block triangular,
+block structured, diagonal, upper triangular, lower triangular, Hessenberg \} \\
+\hline
+Allowed definiteness for $A$ & Set of \{ not definite, positive definite, positive semi-definite,
+negative definite, negative semi-definite \} \\
+\hline
+Allowed class of $A$ & Set of \{ diagonally dominant, Toeplitz, Vandermonde \} \\
+\hline
+Symmetric? & boolean \\
+\hline
+Values for $n$ & set of $\mathbb{N}$ \\
+\hline
+Entries in $A$ & set of $\mathbb{R}$ \\
+\hline
+Entries in $b$ & set of $\mathbb{R}$ \\
+\hline
+\end{tabular}
+%cl\caption{Variabilities for Input Assumptions}\label{Var_Table_Input}
+\end{table}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+%\frametitle{Input Variabilities}
+
+\begin{table}
+\begin{tabular}{| p{\colA} | p{\colB} | }
+\hline
+\textbf{Variability} & \textbf{Parameter of Variation} \\
+\hline
+Source\newline of input & Set of \{ from a file, through the user interface, passed in memory \} \\
+\hline
+Encoding of input & Set of \{binary, text \} \\
+\hline
+Format\newline of input $A$ & Set of \{arbitrary, by row, by column, by diagonal \} \\
+\hline
+Format\newline of input $b$ & Set of \{arbitrary, ordered \} \\
+\hline
+\end{tabular}
+%cl\caption{Variabilities for Input Assumptions}\label{Var_Table_Input}
+\end{table}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{What Are Some Potential Output Variabilities?}
+
+\begin{itemize}
+	
+\item \structure{What are some potential output variabilities? What are the
+    associated parameters of variation?}
+    
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Output Variabilities}
+
+\begin{table}
+\begin{tabular}{| p{\colA} | p{\colB} | }
+\hline
+\textbf{Variability} & \textbf{Parameter of Variation} \\
+\hline
+Destination for output $x$ & Set of \{ to a file, to the screen, to memory \} \\
+\hline
+Encoding of output $x$ & Set of \{binary, text \} \\
+\hline
+Format of output $x$ & Set of \{arbitrary, ordered \} \\
+\hline
+Output residual & boolean (true if the program returns the residual) \\
+\hline
+Possible entries in $x$ & set of $\mathbb{R}$ \\
+\hline
+\end{tabular}
+%\caption{Variabilities for Output}\label{Var_Table_Output}
+\end{table}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{What Are Some Potential Calculation Variabilities?}
+
+\begin{itemize}
+	
+\item \structure{What are some potential calculation variabilities? What are the
+    associated parameters of variation?}
+    
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Calculation Variabilities}
+
+\begin{table}
+\begin{tabular}{| p{\colA} | p{\colB} | }
+\hline
+\textbf{Variability} & \textbf{Parameter of Variation} \\
+\hline
+Check input? & boolean (false if the input is assumed to satisfy the input assumptions)\\ 
+\hline
+Exceptions generated? & boolean (false if the goal is non-stop arithmetic)\\ 
+\hline
+Norm used for residual & Set of \{1-norm, 2-norm, $\infty$-norm \} \\
+\hline
+\end{tabular}
+%\caption{Variabilities for Calculation}\label{Var_Table_Calc}
+\end{table}
 
 \end{frame}
 
