@@ -419,7 +419,12 @@ on.  \plt{Modify the examples below for your problem, and add additional models
   constraints section should be referenced for the relevant constraint.  Design
   constraint related variabilities should be listed separately.}
 
-\plt{Variabilities related to data structure choices would go here.}
+\plt{Variabilities related to data structure choices would go in this section.
+  However, these variabilities are related to design, so they should be
+  separated from the more abstract variabilities.}
+
+\plt{Algorithmic variations would go here as well, but as for data structures,
+  they should be separated from the more abstract variabilities.}
 
 \subsection{Output} \label{sec_Output}    
 
@@ -460,9 +465,12 @@ qualities that the software is expected to exhibit.
 
 \subsection{Nonfunctional Requirements}
 
-\plt{Although nonfunctional requirements could be a variability between family
-  members, in most cases the family members will share the same nonfunctional
-  requirements.}
+\plt{To allow the Non-Functional Requirements (NFRs) to vary between family
+  members, try to parameterize them.  The value of the parameter is than a variability.}
+
+\plt{An important variability between family members it the relative importance
+  of the NFRs.  \citet{Smith2006} shows how pairwise comparisons can be used to
+  rank the importance of NFRs.}
 
 \plt{List your nonfunctional requirements.  You may consider using a fit
   criterion to make them verifiable.}
