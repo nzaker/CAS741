@@ -78,7 +78,7 @@
 
 \begin{document}
 
-\title{Program Family Title \wss{\famname should appear in the title}} 
+\title{Program Family Title \plt{\famname should appear in the title}} 
 \author{Author Name}
 \date{\today}
 
@@ -87,6 +87,24 @@
 ~\newpage
 
 \pagenumbering{roman}
+
+\plt{The CA template is related to the SRS template.  Many of the sections are
+  in common.  The notes and advice for the SRS template are not reproduced
+  here.  Please have a look at the SRS template for advice.}
+
+\plt{This CA template is based on \citet{Smith2006}.  An example for a family of
+  material models is given in \citet{SmithMcCutchanAndCarette2017}.  This
+  example is for a physics based family.  Often the families will be based on
+  generic numerical techniques, rather than physics.}
+
+\plt{A good mindset for thinking about the families is often to think of the
+  family as providing a library of services, as opposed to a single executable.
+  The library of services can be used to build an application that uses a subset
+  of the services, which is like providing the smaller library as a single
+  family member.}
+
+\plt{In CAS 741, you will not have to implement the entire family.  We will
+  decide on a reasonable subset of the family for implementation.}
 
 \section{Revision History}
 
@@ -129,7 +147,7 @@ description of the unit and the SI name.
   %	\caption{Provide a caption}
 %\end{table}
 
-\wss{Only include the units that your CA actually uses.  If there are no units
+\plt{Only include the units that your CA actually uses.  If there are no units
   for your problem, like for a general purpose library, you should still include
 the heading, with the content ``not applicable'' (or similar).}
 
@@ -152,8 +170,11 @@ which heat is transferred in
 \\ 
 \bottomrule
 \end{longtable*}
-\wss{Use your problems actual symbols.  The si package is a good idea to use for
+\plt{Use your problems actual symbols.  The si package is a good idea to use for
   units.}
+\plt{For the case of a generic numerical library, units will likely not be
+  included.  For instance, a linear ODE solver will not know the units of its
+  coefficients.}
 
 \subsection{Abbreviations and Acronyms}
 
@@ -171,12 +192,13 @@ which heat is transferred in
   PS & Physical System Description\\
   R & Requirement\\
   SRS & Software Requirements Specification\\
-  \famname{} & \wss{put your famram name here}\\
+  \famname{} & \plt{put your famram name here}\\
   T & Theoretical Model\\
   \bottomrule
 \end{tabular}\\
 
-\wss{Add any other abbreviations or acronyms that you add}
+\plt{Add any other abbreviations or acronyms that you add.}
+\plt{Only include abbreviations and acronyms that are actually used.}
 
 \newpage
 
@@ -188,13 +210,13 @@ which heat is transferred in
 
 \section{Introduction}
 
-\wss{This CA template is based on \citet{Smith2006}.  It
+\plt{This CA template is based on \citet{Smith2006}.  It
   will get you started, but you will have to make changes.  Any changes to
   section headings should be approved by the instructor, since that implies a
   deviation from the template.  Although the bits shown below do not include
   type information, you may need to add this information for your problem.}
 
-\wss{Feel free to change the appearance of the report by modifying the LaTeX
+\plt{Feel free to change the appearance of the report by modifying the LaTeX
   commands.}
 
 \subsection{Purpose of Document}
@@ -213,7 +235,7 @@ constraints.
 
 \subsection{Potential System Contexts}
 
-\wss{Your system context will likely include an explicit list of user and system
+\plt{Your system context will likely include an explicit list of user and system
   responsibilities}
 
 \begin{itemize}
@@ -236,7 +258,14 @@ The end user of \famname{} should have an understanding of undergraduate Level
 
 \subsection{Potential System Constraints}
 
-\wss{You may not have any system constraints}
+\plt{You may not have any system constraints.}
+
+\plt{If you need to make design decisions for your family, these decisions will
+  be made here as constraints.  For instance, if all inputs will have to use the
+same file format, this would be a constraint that would be included here.}
+
+\plt{You should generally limit the number of constraints, to keep the CA
+  abstract.}
 
 \section{Commonalities}
 
@@ -257,7 +286,7 @@ easier to correctly understand the requirements:
 \subsection{Data Definitions} \label{sec_datadef}
 
 This section collects and defines all the data needed to build the instance
-models. The dimension of each quantity is also given.  \wss{Modify the examples
+models. The dimension of each quantity is also given.  \plt{Modify the examples
   below for your problem, and add additional definitions as appropriate.}
 
 ~\newline
@@ -301,11 +330,11 @@ Symbol &$q_C$\\
 
 \subsection{Goal Statements}
 
-\noindent Given the \wss{inputs}, the goal statements are:
+\noindent Given the \plt{inputs}, the goal statements are:
 
 \begin{itemize}
 
-\item[GS\refstepcounter{goalnum}\thegoalnum \label{G_meaningfulLabel}:] \wss{One
+\item[GS\refstepcounter{goalnum}\thegoalnum \label{G_meaningfulLabel}:] \plt{One
     sentence description of the goal.  There may be more than one.  Each Goal
     should have a meaningful label.}
 
@@ -314,7 +343,7 @@ Symbol &$q_C$\\
 \subsection{Theoretical Models} \label{sec_theoretical}
 
 This section focuses on the general equations and laws that \famname{} is based
-on.  \wss{Modify the examples below for your problem, and add additional models
+on.  \plt{Modify the examples below for your problem, and add additional models
   as appropriate.}
 
 ~\newline
@@ -353,20 +382,44 @@ on.  \wss{Modify the examples below for your problem, and add additional models
 
 ~\newline
 
+\plt{In a CA, the TMs often do not need to be refined.  However, this is not a
+  rule.  In some cases, it may make sense to introduce an IM, or possibly even a
+  GD in between the TM and the IM.}
+
 \section{Variabilities}
+
+\plt{The variabilities are summarized in the following subsections.  They may
+  each be summarized separately, like in \citet{SmithMcCutchanAndCarette2017}, or
+  in a table, as in \citet{Smith2006}.}
+
+\plt{For each variability, a description should be given, along with the
+  parameters of variation and the binding time.  The parameters of variation
+  give the type that defines possible values.  The binding time is when the
+  variability is set.  The possible values are specification time (scope time),
+  build time and run time.}
 
 \subsection{Assumptions}
 
 \begin{itemize}
 
 \item[A\refstepcounter{assumpnum}\theassumpnum \label{A_meaningfulLabel}:]
-  \wss{Short description of each assumption.  Each assumption
+  \plt{Short description of each assumption.  Each assumption
     should have a meaningful label.  Use cross-references to identify the
     appropriate traceability to T, GD, DD etc., using commands like dref, ddref etc.}
 
 \end{itemize}
 
+\plt{Input assumptions will be appropriate for many problems.  Some input will
+  have simplifying constraints, and other inputs will not.}
+
 \subsection{Calculation} \label{sec_Calculation}
+
+\plt{The calculation variabilities should be as abstract as possible.  If there
+  are variabilities that are related to imposed design decisions, the system
+  constraints section should be referenced for the relevant constraint.  Design
+  constraint related variabilities should be listed separately.}
+
+\plt{Variabilities related to data structure choices would go here.}
 
 \subsection{Output} \label{sec_Output}    
 
@@ -376,39 +429,49 @@ This section provides the functional requirements, the business tasks that the
 software is expected to complete, and the nonfunctional requirements, the
 qualities that the software is expected to exhibit.
 
-\subsection{Functional Requirements}
+\subsection{Family of Functional Requirements}
+
+\plt{Since the CA will often be applied to a library, the functionality will not
+  be a single use case.  Therefore, this section should summarize the family of
+  potential requirements.  A good way to provide an overview of the functional
+  requirements would be to provide multiple use cases on how the library will be
+  employed.}
 
 \noindent \begin{itemize}
 
-\item[R\refstepcounter{reqnum}\thereqnum \label{R_Inputs}:] \wss{Requirements
+\item[R\refstepcounter{reqnum}\thereqnum \label{R_Inputs}:] \plt{Requirements
     for the inputs that are supplied by the user.  This information has to be
     explicit.}
 
-\item[R\refstepcounter{reqnum}\thereqnum \label{R_OutputInputs}:] \wss{It isn't
+\item[R\refstepcounter{reqnum}\thereqnum \label{R_OutputInputs}:] \plt{It isn't
     always required, but often echoing the inputs as part of the output is a
     good idea.}
 
-\item[R\refstepcounter{reqnum}\thereqnum \label{R_Calculate}:] \wss{Calculation
+\item[R\refstepcounter{reqnum}\thereqnum \label{R_Calculate}:] \plt{Calculation
     related requirements.}
 
 \item[R\refstepcounter{reqnum}\thereqnum \label{R_VerifyOutput}:]
-  \wss{Verification related requirements.}
+  \plt{Verification related requirements.}
 
-\item[R\refstepcounter{reqnum}\thereqnum \label{R_Output}:] \wss{Output related
+\item[R\refstepcounter{reqnum}\thereqnum \label{R_Output}:] \plt{Output related
     requirements.}
 
 \end{itemize}
 
 \subsection{Nonfunctional Requirements}
 
-\wss{List your nonfunctional requirements.  You may consider using a fit
+\plt{Although nonfunctional requirements could be a variability between family
+  members, in most cases the family members will share the same nonfunctional
+  requirements.}
+
+\plt{List your nonfunctional requirements.  You may consider using a fit
   criterion to make them verifiable.}
 
 \section{Likely Changes}    
 
 \noindent \begin{itemize}
 
-\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \wss{If
+\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{If
     there is a ranking of variabilities, or combinations of variabilities, that
     are more likely, this information can be included here.}
 
@@ -416,7 +479,7 @@ qualities that the software is expected to exhibit.
 
 \section{Traceability Matrices and Graphs}
 
-\wss{You will have to add tables.}
+\plt{You will have to add tables.}
 
 \newpage
 
@@ -427,19 +490,19 @@ qualities that the software is expected to exhibit.
 
 \section{Appendix}
 
-\wss{Your report may require an appendix.  For instance, this is a good point to
+\plt{Your report may require an appendix.  For instance, this is a good point to
 show the values of the symbolic parameters introduced in the report.}
 
 \subsection{Symbolic Parameters}
 
-\wss{The definition of the requirements will likely call for SYMBOLIC\_CONSTANTS.
+\plt{The definition of the requirements will likely call for SYMBOLIC\_CONSTANTS.
 Their values are defined in this section for easy maintenance.}
 
-\noindent \wss{Advice on using the template:
+\noindent \plt{Advice on using the template:
 \begin{itemize}
 \item Assumptions have to be invoked somewhere
 \item ``Referenced by'' implies that there is an explicit reference
-\item Think of traceability matrix, list of assumption invokations and list of
+\item Think of traceability matrix, list of assumption invocations and list of
   reference by fields as automatically generatable
 \item If you say the format of the output (plot, table etc), then your
   requirement could be more abstract
