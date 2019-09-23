@@ -12,7 +12,7 @@
 
 \begin{document}
 
-\title{SRS Checklist}
+\title{SRS and CA Checklist}
 \author{Spencer Smith}
 \date{\today}
 
@@ -127,7 +127,8 @@
   \begin{todolist}
   \item Each assumption is ``atomic'' (no explicit or implicit ``ands'')
   \item Assumptions are a refinement of the scope
-  \item Each assumptions are referenced at least once
+  \item Each assumption is referenced at least once
+  \item A link exists between each chunk and anything that references it
   \item The rationale is given for assumptions that require justification
   \item The derivation of all GDs as refinements from other models is clear
   \item The derivation of all IMs as refinements from other models is clear
@@ -139,7 +140,12 @@
   
 \item Functional Requirements
   \begin{todolist}
-  \item IMs and (possibly) TMs and GMs are referenced as appropriate by the requirements.
+  \item IMs and (possibly) TMs and GMs are referenced as appropriate by the
+    requirements.
+  \item All requirements are validatable
+  \item All requirements are abstract
+    \item Requirements are traceable to where the required details are found in
+      the document
   \end{todolist}
 
 \item Nonfunctional Requirements
