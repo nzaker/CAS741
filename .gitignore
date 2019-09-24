@@ -30,3 +30,6 @@ cabal.config
 html
 latex
 *.class
+
+# Temporary Excel files
+~$*  
