@@ -1,5 +1,14 @@
 \documentclass[12pt]{article}
 
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,
+    linkcolor=blue,
+    citecolor=blue,
+    filecolor=blue,
+    urlcolor=blue,
+    unicode=false}
+\urlstyle{same}
+
 \usepackage{enumitem,amssymb}
 \newlist{todolist}{itemize}{2}
 \setlist[todolist]{label=$\square$}
@@ -29,7 +38,8 @@
   \item Pages are numbered
   \item Revision history included for major revisions
   \item Sections from template are all present
-    \item Values of auxiliary constants are given
+  \item Values of auxiliary constants are given (constants are used to improve
+    maintainability and to increase understandability)
   \end{todolist}
 
 \item Grammar, spelling, presentation
@@ -39,7 +49,9 @@
     sections))
   \item Paragraphs are structured well (clear topic sentence, cohesive)
   \item Paragraphs are concise (not wordy)
-  \item No low information content phrases (url plus examples)
+  \item No Low Information Content (LIC) phrases
+    (\href{https://www.webpages.uidaho.edu/range357/extra-refs/empty-words.htm}{List
+      of LIC phrases})
   \item All hyperlinks work
   \item Every figure has a caption
   \item Every table has a heading

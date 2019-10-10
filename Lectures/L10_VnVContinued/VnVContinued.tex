@@ -46,11 +46,9 @@
 \item Administrative details
 \item Questions?
 \item Finish what started last day
-\bi
 \item Nonfunctional software testing
 \item Theoretical foundations of testing
 \item Complete coverage principle
-\ei
 \item White box testing
 \item Oracle problem
 \item SCS Specific Ideas
@@ -65,13 +63,24 @@
 \frametitle{Administrative Details}
 
 \bi
-\item GitHub issues for colleagues
+\item As the GitHub repo owner
 \bi
-\item Assigned 1 colleague (see \texttt{Repos.xlsx} in repo)
+\item Add your reviewers as collaborators
+\item When your project is ready for review
+\bi
+\item Assign your reviewers an issue for
+  them to create issues
+\item Assign the instructor to review
+\ei
+\ei
+\item As a GitHub reviewer
+\bi
+\item Assigned 2 colleagues (see \texttt{Repos.xlsx} in repo)
 \item Provide at least 5 issues on their SRS
 \ei
 \item Reading week, no 741 classes
-\item V\&V template updated in repo
+\item V\&V template in repo
+\item Adding a V\&V checklist to repo
 \ei
 
 \end{frame}
@@ -82,7 +91,6 @@
 \frametitle{Administrative Details: Report Deadlines}
 ~\newline
 \begin{tabular}{l l l}
-\textbf{SRS} & Week 06 & Oct 7\\
 System VnV Plan & Week 08 & Oct 28\\
 MG + MIS & Week 10 & Nov 25\\
 Final Documentation & Week 14 & Dec 9\\
@@ -157,6 +165,316 @@ Unit VnV or Impl.\ Present & Week 12/13 & Week of Nov 28\\
 \begin{itemize}
 \item Questions about SRS?
 \item Questions about V\&V?
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goals of Testing}
+
+\begin{itemize}
+
+\item \structure{If our code passes all test cases, is it now guaranteed to be
+    error free?}
+\item \structure{Are 5000 random tests always better than 5 carefully selected
+    tests?}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goals of Testing}
+
+\begin{itemize}
+
+\item To show the \structure{presence} of bugs (Dijkstra, 1972)
+\item If tests do not detect failures, we cannot conclude that software is defect-free
+\item Still, we need to do testing - driven by sound and systematic principles
+\begin{itemize}
+\item Random testing is often not a systematic principle to use
+% look at the example from the text, or divide by zero within a circular range
+\item Need a test plan
+\end{itemize}
+\item Should help isolate errors - to facilitate debugging
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Goals of Testing Continued}
+
+\begin{itemize}
+\item Should be repeatable
+\begin{itemize}
+\item Repeating the same experiment, we should get the same results
+\item Repeatability may not be true because of the effect of the execution
+  environment on testing
+\item Repeatability may not occur if there are uninitialized variables
+\item Repeatability may not happen when there is nondeterminism
+\end{itemize}
+
+\item Should be accurate
+\begin{itemize}
+\item Accuracy increases reliability
+\item Part of the motivation for formal specification
+\end{itemize}
+
+\item \structure{Is a \structure{successful} test case one that passes the test, or one
+  that shows a failure?}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Test (V\&V) Plan}
+
+\begin{itemize}
+
+\item \structure{Given that no single verification technique can prove
+    correctness, the practical approach is to use ALL verification techniques.
+    Is this statement True or False?}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Test (V\&V) Plan}
+
+\begin{itemize}
+
+\item Testing can uncover errors and build confidence in the software
+\item Resources of time, people, facilities are limited
+\item Need to plan how the software will be tested
+\item You know in advance that the software is unlikely to be perfect
+\item You need to put resources into the most important parts of the project
+\item A risk analysis can determine where to put your limited resources
+\item A risk is a condition that can result in a loss
+\item Risk analysis involves looking at how bad the loss can be and at the
+  probability of the loss occurring
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{White Box Versus Black Box Testing}
+\begin{itemize}
+\item \structure{Do you know (or can you guess) the difference between white box
+    and black box testing?}
+\item \structure{What if they were labelled transparent box and opaque box
+    testing, respectively?}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{White Box Versus Black Box Testing}
+\begin{itemize}
+\item White box testing is derived from the program's internal structure
+\item Black box testing is derived from a description of the program's function
+\item Should perform both white box and black box testing
+\item Black box testing
+\begin{itemize}
+\item Uncovers errors that occur in implementing requirements or design specifications
+\item Not concerned with how processing occurs, but with the results
+\item Focuses on functional requirements for the system
+\item Focuses on normal behaviour of the system
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{White Box Testing}
+
+\begin{itemize}
+\item Uncovers errors that occur during implementation of the program
+\item Concerned with how processing occurs
+\item Evaluates whether the structure is sound
+%\item Focuses on the nonfunctional requirements for the system
+\item Focuses on abnormal or extreme behaviour of the system
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Dynamic Testing}
+\begin{itemize}
+\item \structure{Is there a dynamic testing technique that can guarantee
+    correctness?}
+\item \structure{If so, what is the technique?}
+\item \structure{Is this technique practical?}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Dynamic Versus Static Testing}
+\begin{itemize}
+\item Another classification of verification techniques, as previously discussed
+\item Use a combination of dynamic and static testing
+\item Dynamic analysis
+\begin{itemize}
+\item Requires the program to be executed
+\item Test cases are run and results are checked against expected behaviour
+\item Exhaustive testing is the only dynamic technique that guarantees program
+validity
+\item Exhaustive testing is usually impractical or impossible
+\item Reduce number of test cases by finding criteria for choosing representative test cases
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Static Testing Continued}
+\begin{itemize}
+\item Static analysis
+\begin{itemize}
+\item Does not involve program execution
+\item Testing techniques simulate the dynamic environment
+\item Includes syntax checking
+\item Generally static testing is used in the requirements and design stage, where there is no code to execute
+\item Document and code walkthroughs
+\item Document and code inspections
+\end{itemize}
+\end{itemize}
+\end{frame}
+ 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Manual Versus Automated Testing}
+\begin{itemize}
+\item \structure{What is the difference between manual and automated testing?}
+\item \structure{What are the advantages of automated testing?}
+\item \structure{What is regression testing?}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Manual Versus Automated Testing}
+\begin{itemize}
+\item Manual testing
+\begin{itemize}
+\item Has to be conducted by people
+\item Includes by-hand test cases, structured walkthroughs, code inspections
+\end{itemize}
+\item Automated testing
+\begin{itemize}
+\item The more automated the development process, the easier to automate testing
+\item Less reliance on people
+\item Necessary for \structure{regression testing}
+\item Test tools can assist, such as Junit, Cppunit, CuTest etc.
+\item Can be challenging to automate GUI tests
+\item Test suite for Maple has 2 000 000 test cases, run on 14 platforms, every
+  night, automated reporting
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \begin{frame}
+% \frametitle{Automated Testing at MapleSoft}
+% \begin{itemize}
+% \item Three steps
+% \begin{itemize}
+% \item Write the problem description
+% \item result := solver(problem)
+% \item assert(result == expected)
+% \end{itemize}
+% \item Assert writes out code to reproduce any failures
+% \item Track failures
+% \begin{itemize}
+% \item Source code management (like CVS or Subversion)
+% \item Database of test cases, functions called
+% \item Database of source files, functions defined
+% \item Database of 40 days of timings and resources used
+% \end{itemize}
+% \item Automatically sends an e-mail to the programmer and his/her boss
+% \end{itemize}
+% \end{frame}
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Continuous Integration Testing}
+\begin{itemize}
+\item \structure{What is continuous integration testing?}
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Continuous Integration Testing}
+\begin{itemize}
+\item Information available on
+  \href{https://en.wikipedia.org/wiki/Continuous_integration}{Wikipedia}
+\item Developers integrate their code into a shared repo frequently (multiple
+  times a day)
+\item Each integration is automatically accompanied by regression tests and
+  other build tasks
+\item Build server
+\bi
+\item Unit tests
+\item Integration tests
+\item Static analysis
+\item Profile performance
+\item Extract documentation
+\item Update project web-page
+\item Portability tests
+\item etc.
+\ei
+\item Avoids potentially extreme problems with integration when the baseline and
+  a developer's code greatly differ
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Continuous Integration Tools}
+\begin{itemize}
+\item Gitlab
+\bi
+\item Example at
+  \href{https://gitlab.cas.mcmaster.ca/andrem5/RogueReborn/pipelines}{Rogue
+    Reborn}
+\ei
+\item Jenkins
+\item Travis
+\item \href{https://www.docker.com/}{Docker}
+\bi
+\item Eliminates the ``it works on my machine'' problem
+\item Package dependencies with your apps
+\item A container for lightweight virtualization
+\item Not a full VM
+\ei
 \end{itemize}
 \end{frame}
 
@@ -568,6 +886,7 @@ constituents of compound conditions are exercised at least once
   boundaries
 \item This applies to both white-box and black-box techniques
 \item In practice, use the different testing criteria in combinations
+\item Use testing tools for coverage metrics
 \end{itemize}
 
 \end{frame}
