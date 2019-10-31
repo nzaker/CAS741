@@ -146,14 +146,36 @@ Room for more volunteers.  :-)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% \begin{frame}
+% \frametitle{Finish Previous Day's Discussion}
+% \begin{itemize}
+% \item Static Definition of Uses Relation
+% \item Module Guide
+% \item MG Template
+% \item MG Verification
+% \item OO versus modular
+% \end{itemize}
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}
-\frametitle{Finish Previous Day's Discussion}
+\frametitle{MG + MIS Syntax Presentations}
 \begin{itemize}
-\item Static Definition of Uses Relation
-\item Module Guide
-\item MG Template
-\item MG Verification
-\item OO versus modular
+\item MG
+\begin{itemize}
+\item Decomposition by secrets
+\item Interesting module secrets
+\item Uses relationship
+\end{itemize}
+\item MIS Syntax
+\begin{itemize}
+\item Access routine syntax (types of inputs and outputs)
+\item State variables
+\item Environment variables
+\end{itemize}
+\item Likely better to discuss MG secret together with MIS syntax
+\item Not necessary to cover all details
 \end{itemize}
 \end{frame}
 
@@ -766,6 +788,64 @@ seq\_init():
 \item Use assumptions to simplify the MIS and to reduce the complexity of the final implementation
 \item Interface design should provide the programmer with a means to check so that they can avoid exceptions
 \item When an exceptions occurs no state transitions should take place, any output is {\it don't care}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Examples of Modules \cite{GhezziEtAl2003}}
+
+\begin{itemize}
+
+\item \structure{Record}
+\begin{itemize}
+\item Consists of only data
+\item Has state but no behaviour
+\end{itemize}
+\item \structure{Collection of related procedures (library)}
+\begin{itemize}
+\item Has behaviour but no state
+\item Procedural abstractions
+% like many routines in a scientific computing library
+\end{itemize}
+\item \structure{Abstract object}
+\begin{itemize}
+\item Consists of data (\structure{fields}) and procedures (\structure{methods})
+\item Consists of a collection of \structure{constructors},
+  \structure{selectors}, and \structure{mutators}
+\item Has state and behaviour
+\end{itemize}
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Examples of Modules Continued}
+
+\begin{itemize}
+
+\item \structure{Abstract data type (ADT)}
+\begin{itemize}
+\item Consists of a collection of abstract objects and a collection of
+  procedures that can be applied to them
+\item Defines the set of possible values for the type and the associated
+  procedures that manipulate instances of the type
+\item Encapsulates the details of the implementation of the type
+\end{itemize}
+\item \structure{Generic Modules}
+\begin{itemize}
+\item A single abstract description for a family of abstract objects or ADTs
+\item Parameterized by type
+\item Eliminates the need for writing similar specifications for modules that
+  only differ in their type information
+\item A generic module facilitates specification of a stack of integers, stack
+  of strings, stack of stacks etc.
+\end{itemize}
+
 \end{itemize}
 
 \end{frame}
