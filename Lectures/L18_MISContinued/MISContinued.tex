@@ -46,8 +46,11 @@
 
 \bi
 \item Administrative details
-\item Feedback on System VnV Plan
+%\item Feedback on System VnV Plan
 \item Questions?
+\item Take up Homework
+\item Review: Records, Libraries, ADTs, Abstract Objects, Generic ADTs
+\item Example - Student data
 \item Exceptions
 \item Quality criteria
 \item Modules with external interaction, enviro variables
@@ -61,24 +64,23 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}
-\frametitle{Administrative Details}
+% \begin{frame}
+% \frametitle{Administrative Details}
 
-\bi
-\item GitHub issues for colleagues
-\bi
-\item Assigned 1 colleague (see \texttt{Repos.xlsx} in repo)
-\item Provide at least 2 issues on their MG
-\item Grading as before
-\item Due by yesterday (Thursday), Nov 8 at 11:59 pm
-\ei
-\item MIS template in CAS 741 repo
-\ei
+% \bi
+% \item GitHub issues for colleagues
+% \bi
+% \item Assigned 1 colleague (see \texttt{Repos.xlsx} in repo)
+% \item Provide at least 2 issues on their MG
+% \item Grading as before
+% \item Due by yesterday (Thursday), Nov 8 at 11:59 pm
+% \ei
+% \item MIS template in CAS 741 repo
+% \ei
 
-\end{frame}
+% \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \begin{frame}
 \frametitle{Administrative Details: Report Deadlines}
 ~\newline
@@ -104,8 +106,7 @@ Final Documentation & Week 14 & Dec 9\\
 
 ~\newline
 \begin{tabular}{l l l}
-MG + MIS Syntax Present & Week 9 & Week of Nov 4\\
-MIS Semantics Present & Week 11 & Week of Nov 18\\
+\textbf{MIS Semantics Present} & Week 11 & Week of Nov 18\\
 Unit VnV or Impl.\ Present & Week 12/13 & Week of Nov 28\\
 \end {tabular}
 
@@ -124,11 +125,7 @@ Unit VnV or Impl.\ Present & Week 12/13 & Week of Nov 28\\
 \frametitle{Administrative Details: Presentation Schedule}
 
 \bi
-\item MG + MIS Syntax Present
-\bi
-\item Thursday: \textbf{Sasha, ?, ?}
-\ei
-\item MIS Syntax + Semantics Present
+\item \textbf{MIS Syntax + Semantics Present}
 \bi
 \item Monday: Zhi, Peter, \emph{Sasha}
 \item Thursday:  Sharon, Ao, ?
@@ -158,28 +155,106 @@ Room for more volunteers.  :-)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+% \begin{frame}
+
+% \frametitle{Feedback on System VnV Plan}
+
+% \begin{itemize}
+% \item \LaTeX{}
+% \begin{itemize}
+% \item Rules for spacing after a period
+% \item ``quotation marks''
+% \item Spell check and proof read
+% \end{itemize}
+% \item Template
+% \begin{itemize}
+% \item Can remove Section 6: ``Static Verification Techniques''
+% \item Explain why there is no validation plan
+% \item Measuring error in vectors
+% \item Include rationale for test cases
+% \item Include information on how expected output was calculated
+% \item Don't forget parallel testing
+% \end{itemize}
+% \end{itemize}
+
+% \end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{frame}
+\frametitle{Take up Homework}
+\end{frame}
 
-\frametitle{Feedback on System VnV Plan}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Examples of Modules \cite{GhezziEtAl2003}}
 
 \begin{itemize}
-\item \LaTeX{}
+
+\item \structure{Record}
 \begin{itemize}
-\item Rules for spacing after a period
-\item ``quotation marks''
-\item Spell check and proof read
+\item Consists of only data
+\item Has state but no behaviour
 \end{itemize}
-\item Template
+\item \structure{Collection of related procedures (library)}
 \begin{itemize}
-\item Can remove Section 6: ``Static Verification Techniques''
-\item Explain why there is no validation plan
-\item Measuring error in vectors
-\item Include rationale for test cases
-\item Include information on how expected output was calculated
-\item Don't forget parallel testing
+\item Has behaviour but no state
+\item Procedural abstractions
+% like many routines in a scientific computing library
+\end{itemize}
+\item \structure{Abstract object}
+\begin{itemize}
+\item Consists of data (\structure{fields}) and procedures (\structure{methods})
+\item Consists of a collection of \structure{constructors},
+  \structure{selectors}, and \structure{mutators}
+\item Has state and behaviour
 \end{itemize}
 \end{itemize}
 
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Examples of Modules Continued}
+
+\begin{itemize}
+
+\item \structure{Abstract data type (ADT)}
+\begin{itemize}
+\item Consists of a collection of abstract objects and a collection of
+  procedures that can be applied to them
+\item Defines the set of possible values for the type and the associated
+  procedures that manipulate instances of the type
+\item Encapsulates the details of the implementation of the type
+\end{itemize}
+\item \structure{Generic Modules}
+\begin{itemize}
+\item A single abstract description for a family of abstract objects or ADTs
+\item Parameterized by type
+\item Eliminates the need for writing similar specifications for modules that
+  only differ in their type information
+\item A generic module facilitates specification of a stack of integers, stack
+  of strings, stack of stacks etc.
+\end{itemize}
+
+\end{itemize}
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Example Student Data}
+\begin{itemize}
+\item
+  \href{https://gitlab.cas.mcmaster.ca/smiths/se2aa4_cs2me3/blob/master/Assignments/A2/A2.pdf}
+  {Problem Description}
+\item
+  \href{https://gitlab.cas.mcmaster.ca/smiths/se2aa4_cs2me3/tree/master/Assignments/A2/A2Soln/src}
+  {Source Code}
+\end{itemize}
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
