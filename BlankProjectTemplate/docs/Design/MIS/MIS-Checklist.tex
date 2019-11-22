@@ -41,13 +41,6 @@
   \item Writing style
   \end{todolist}
 
-\item MIS syntax
-  \begin{todolist}
-  \item Exported constants are ``hard-coded'' literal values, not variables.
-    Constants are values that are known at specification (and therefore compile) time
-  \item 
-  \end{todolist}
-
 \item MIS Module Classifications
   \begin{todolist}
   \item Types that only hold data (records) are modelled as exported types.  For
@@ -71,8 +64,24 @@
     modules, but not necessarily.  An example is given in the Generic Stack
     Module (Stack(T)) given in A3:
     \url{https://gitlab.cas.mcmaster.ca/smiths/se2aa4_cs2me3/blob/master/Assignments/A3/A3Soln/A3P1_Spec.pdf}
+  \item Abstract objects will have some kind of initialization method
+    \item Abstract objects will have an assumptions that programmers will
+      initialize first, or a state variable that is set from False to True when
+      the Abstract object is initialized - this state variable then needs to be
+      checked for each access program call
   \end{todolist}
-  
+
+  \item MIS and Mathematical syntax
+  \begin{todolist}
+  \item Exported constants are ``hard-coded'' literal values, not variables.
+    Constants are values that are known at specification (and therefore compile)
+    time
+  \item Operations do not mix incorrect types.  For instance, a character is not
+    added to an integer, an integer is not ``anded'' with a Boolean, etc.
+  \item Our modified Hoffmann and Strooper notation is used, or any new notation
+    is clearly defined.
+  \end{todolist}
+
 \item MIS Semantics for each module
   \begin{todolist}
   \item Each access program does something - either an output, or a state
@@ -90,26 +99,26 @@
   \item State invariant is initially satisfied
   \item Local functions make the specification easier to read (there is no
     requirement that the local functions will actually be implemented in code)
-  \end{todolist}
-
-  \item Mathematical syntax
-  \begin{todolist}
-    \item Operations do not mix incorrect types.  For instance, a character is
-      not added to an integer, an integer is not ``anded'' with a Boolean, etc.
-    \item Our modified Hoffmann and Strooper notation is used, or any new
-      notation is clearly defined.
+    \item Modules that deal with files, the keyboard, or the screen, have
+      environment variables to represent these respective entitites
   \end{todolist}
 
 \item MIS Quality inspection for each module
   \begin{todolist}
-  \item Minimality
-  \item
+  \item Consistent
+  \item Essential
+  \item General
+  \item Implementation independent
+  \item Minimal
+  \item High cohesion
+  \item Opaque (information hiding)
   \end{todolist}
 
-\item MIS Completnesss
+\item MIS Completeness
   \begin{todolist}
   \item All types introduced in the spec are defined somewhere
-  \item
+  \item All modules in MG are in the MIS
+  \item All required sections of the template are present for all modules
   \end{todolist}
 
 \end{itemize}
