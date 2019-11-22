@@ -85,7 +85,11 @@
     state variables for another module, or an environment variable.
   \item Outputs use $out := ...$
   \item Exceptions use $exc := ...$
-        
+  \item If the state invariant is satisfied before an access program call, it
+    will remain satisfied after the call
+  \item State invariant is initially satisfied
+  \item Local functions make the specification easier to read (there is no
+    requirement that the local functions will actually be implemented in code)
   \end{todolist}
 
   \item Mathematical syntax
