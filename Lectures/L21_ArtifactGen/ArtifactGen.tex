@@ -60,8 +60,10 @@
 
 \bi
 \item Administrative details
-%\item Feedback on VnV
-\item Questions about MIS?
+\item Next week's presentations
+\item Feedback on VnV
+\item Questions about MG/MIS?
+\item Implementing an MIS 
 \item Artifact generation (Drasil)
 \ei
 \end{frame}
@@ -74,21 +76,26 @@
 \bi
 \item For final documentation, make sure you have \textbf{addressed and closed}
   all open issues
-\item MIS Marking Scheme
-\bi
-\item On Avenue
-\item Not all of the spec has to be formal
-\item First steps
-\bi
-\item Syntax of access programs
-\item State variables?
-\item Environment variables?
-\ei
-\ei
+\item MIS marking scheme on Avenue
+% \bi
+% \item On Avenue
+% \item Not all of the spec has to be formal
+% \item First steps
+% \bi
+% \item Syntax of access programs
+% \item State variables?
+% \item Environment variables?
+% \ei
+% \ei
 \item Course evaluation
 \bi
 \item Thurs, Nov 21, 10:00 am to Thurs, Dec 5, 11:59 pm
 \item \url{https://evals.mcmaster.ca}
+\ei
+\item Module implementation
+\bi
+\item Assign to your domain expert the implementation of one module
+\item Grading will be generous, as long as you make a concerted effort
 \ei
 \ei
 
@@ -97,21 +104,44 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-\frametitle{Administrative Details: Deadlines}
+\frametitle{Administrative Details: Report Deadlines}
 ~\newline
 \begin{tabular}{l l l}
-MIS & Week 11 & Nov 23\\
-Unit VnV or Impl.\ Present & Week 12, 13 & Wed, Nov 28, Dec 5\\
-Unit VnV Plan & Week 13 & Dec 3\\
-Final Doc & Week 14 & Dec 10\\
+MG + MIS & Week 10 & Today!\\
+Final Documentation & Week 14 & Dec 9\\
 \end {tabular}
-~\\
 
-Combine Unit VnV Plan deadline with Final Doc deadline?
+\bi
+\item The written deliverables will be graded based on the repo contents as of
+11:59 pm of the due date
+\item If you need an extension, please ask
+\item Two days after each major deliverable, your GitHub issues will be due
+\item Domain expert code due 1 week after MIS deadline (after assigned issue by
+  project owner)
+\ei
 
 \end{frame}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Administrative Details: Presentations}
+
+~\newline
+\begin{tabular}{l l l}
+Unit VnV or Impl.\ Present & Week 12 & Week of Nov 25\\
+\end {tabular}
+
+\bi
+\item Informal presentations with the goal of improving everyone's written
+  deliverables
+\item Domain experts and secondary reviewers (and others) will ask questions
+  (listed in Repos.xlsx file)
+\ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 \frametitle{Administrative Details: Presentation Schedule}
@@ -119,10 +149,22 @@ Combine Unit VnV Plan deadline with Final Doc deadline?
 \bi
 \item Unit VnV Plan or Impl.\ Present
 \bi
-\item Wednesday (Nov 28): Brooks, Vajiheh
-\item Wednesday (Dec 5): Olu, Karol
+\item Monday: Bo, Sasha, ?
+\item Thursday: Zhi, Peter, Ao
 \ei
-\item Can present anything related to the implementation or testing
+\ei
+
+Optional presentation in italics.\\
+Room for more volunteers.  :-)
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Administrative Details: Unit VnV or Impl.\ Present}
+
+Can present anything related to the implementation or testing
 \bi
 \item Code
 \item Tools used
@@ -132,54 +174,74 @@ Combine Unit VnV Plan deadline with Final Doc deadline?
 \item As always it is fine to show work in progress
 \item Good to bring questions to the class
 \ei
+
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Feedback on VnV Plan}
+
+\bi
+\item Explicit web-link to your GitHub repo
+\item Reference all your other documents (even the unwritten ones)
+\item Explicitly state programming language
+\item Very nice to have explicit cross-references between documents.  Keep
+  information up to date using make
+\item Do not postpone decisions, be specific
+\item Outputs are unlikely to be an exact match for expected, instead summarize
+  the error for all tests
+\item Define what you mean by error, especially if the output is a sequence
+\item Avoid unnecessary repetition, summarize similar tests in a table,
+  distinguished by variabilities
 \ei
 
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% \begin{frame}
-% \frametitle{Feedback on VnV Plan}
+\begin{frame}
+\frametitle{VnV Feedback Continued}
 
-% \bi
-% \item Explicit web-link to your GitHub repo
-% \item Reference your SRS document
-% \item Explicitly state programming language
-% \item Very nice to have explicit cross-references between documents.  Keep
-%   information up to date using make
-% \item Do not postpone decisions, be specific
-% \item Outputs are unlikely to be an exact match for expected, instead summarize
-%   the error for all tests
-% \item Define what you mean by error, especially if the output is a sequence
-% \item Avoid unnecessary repetition, summarize similar tests in a table,
-%   distinguished by variabilities
-% \ei
+\bi
+\item Spell check!  Proof read!
+\item Great to see usability tests% , but need more information on how tests will
+  % be run.  For instance, what specific task will they be asked to perform?
+\item Great to see code walkthroughs, but need more detail
+\item Provide enough information that the reader can easily verify your test cases% ,
+  % especially the expected output
+\item \textbf{Write as if someone else will be doing the testing}
+\ei
 
-% \end{frame}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% \begin{frame}
-% \frametitle{VnV Feedback Continued}
-
-% \bi
-% \item Spell check!  Proof read!
-% \item Great to see usability tests, but need more information on how tests will
-%   be run.  For instance, what specific task will they be asked to perform?
-% \item Great to see code walkthroughs, but need more detail
-% \item Provide enough information that the reader can easily verify your test cases,
-%   especially the expected output
-% \item \textbf{Write as if someone else will be doing the testing}
-% \ei
-
-% \end{frame}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
 \frametitle{Questions?}
 \begin{itemize}
-\item Questions about MIS
+\item Questions about MG/MIS
+\end{itemize}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+\frametitle{Implementing Your MIS}
+\begin{itemize}
+\item The mapping between the MIS and the code is generally not ``term'' by
+  ``term''
+\item You do not need to use the mathematical type listed in the spec
+\item Consider A2 (Allocation to Engineering Programs)
+\begin{itemize}
+\item
+  \href{https://gitlab.cas.mcmaster.ca/smiths/se2aa4_cs2me3/blob/master/Assignments/A2/A2.pdf}
+  {Problem Description}
+\item
+  \href{https://gitlab.cas.mcmaster.ca/smiths/se2aa4_cs2me3/tree/master/Assignments/A2/A2Soln/src}
+  {Source Code}
+\end{itemize}
+
 \end{itemize}
 \end{frame}
 
