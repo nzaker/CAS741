@@ -5,7 +5,7 @@
 \usepackage{hyperref}
 \hypersetup{
     colorlinks,
-    citecolor=black,
+    citecolor=blue,
     filecolor=black,
     linkcolor=red,
     urlcolor=blue
@@ -57,7 +57,7 @@ Date 2 & 1.1 & Notes\\
 \end{tabular}\\
 
 \wss{symbols, abbreviations or acronyms -- you can simply reference the SRS
-  tables, if appropriate}
+  \citep{SRS} tables, if appropriate}
 
 \newpage
 
@@ -83,13 +83,16 @@ This document ... \wss{provide an introductory blurb and roadmap of the
 
 \subsection{Relevant Documentation}
 
-\wss{Reference relevant documentation.  This will definitely include your SRS}
+\wss{Reference relevant documentation.  This will definitely include your SRS
+  and your other project documents (MG, MIS, etc)}
+
+\citet{SRS}
 
 \section{Plan}
 	
 \subsection{Verification and Validation Team}
 
-\wss{Probably just you.  :-)}
+\wss{You, your classmates and the course instructor.  Maybe your supervisor.}
 
 \subsection{SRS Verification Plan}
 
@@ -224,7 +227,7 @@ How test will be performed:
 				
 \bibliographystyle{plainnat}
 
-\bibliography{SRS}
+\bibliography{../../../refs/References}
 
 \newpage
 
